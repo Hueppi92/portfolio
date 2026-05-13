@@ -4,8 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andreas Hüpgen</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<script src="script.js" defer></script>
 <body>
-    
+    <div class="hero-section content">
+        <div class="nav-bar">
+            <div class="lang-switch">
+                <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
+                <label for="language-toggle"></label>
+            </div>
+            <a href="#about" data-de="Ueber mich" data-en="About me"></a>
+            <a href="#skills" data-de="Skills" data-en="Skills"></a>
+            <a href="#projects" data-de="Projekte" data-en="Projects"></a>
+
+            <img src="./assets/logo/logo.png" alt="Logo" class="logo">
+             </div>
+             <div class="hero-content">
+        <p data-de="Fullstack Entwickler" data-en="Fullstack Developer"></p>
+       <h1>Andreas Hüpgen</h1>
+       <div class="button-div">
+    <button data-de="Meine Projekte" data-en="Check my work"></button>
+    <button data-de="Kontakt" data-en="Contact me"></button>
+       </div>
+</div>
+    <a class="scroll-indicator" href="#about" aria-label="Scroll down">
+        <span aria-hidden="true">↓</span>
+    </a>
+    <hr class="divider-left">
+    <div class="carousel content">
+        <div class="group">
+            <div class="card" data-de="Remote Arbeit" data-en="Remote Work"></div>
+            <div class="card" data-de="Problemloesung" data-en="Problem Solving"></div>
+            <div class="card" data-de="Teamfaehig" data-en="Team Player"></div>
+            <div class="card" data-de="Offen fuer Arbeit" data-en="Open to Work"></div>
+            <div class="card" data-de="Fullstack Entwicklung" data-en="Fullstack Development"></div>
+            <div class="card" data-de="Standort Aachen" data-en="Based in Aachen"></div>    
+         </div>
+        <div aria-hidden class="group">
+            <div class="card" data-de="Remote Arbeit" data-en="Remote Work"></div>
+            <div class="card" data-de="Problemloesung" data-en="Problem Solving"></div>
+            <div class="card" data-de="Teamfaehig" data-en="Team Player"></div>
+            <div class="card" data-de="Offen fuer Arbeit" data-en="Open to Work"></div>
+            <div class="card" data-de="Fullstack Entwicklung" data-en="Fullstack Development"></div>
+            <div class="card" data-de="Standort Aachen" data-en="Based in Aachen"></div>    
+         </div>
+        
+    </div>
+    <div class="side-contact">
+        <a class="side-email" href="mailto:a.huepgen@web.de">a.huepgen@web.de</a>
+        <div class="side-social">
+            <a class="social-link github" href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                <img src="./assets/icon/github.png" alt="GitHub">
+            </a>
+            <a class="social-link linkedin" href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                <img src="./assets/icon/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+    <hr class="divider-right">
+</div>
+    <section class="about content" id="about">
+        <div class="about-wrapper">
+            <div class="about-image-frame">
+                <div class="about-image-stripes" aria-hidden="true"></div>
+                <div class="about-image">
+                   
+                </div>
+            </div>
+            <div class="about-text">
+                <p class="about-kicker" data-de="Wer ich bin" data-en="Who I Am"></p>
+                <div class="about-card">
+                    <h2 data-de="Ueber mich" data-en="About me"></h2>
+                    <p data-de="Hey, ich bin Andreas. Ich entwickle praktische Web-Apps und setze saubere UI-Designs in responsive Frontend-Erlebnisse um." data-en="Hey there, I am Andreas. I build practical web apps and enjoy turning clean UI designs into responsive frontend experiences."></p>
+                    <ul class="about-list">
+                        <li data-de="Ich lebe in Aachen und bin offen fuer Remote-Arbeit." data-en="I am based in Aachen and open to remote work."></li>
+                        <li data-de="Ich lerne gerne neue Technologien und verbessere mich kontinuierlich." data-en="I enjoy learning new technologies and improving my craft continuously."></li>
+                        <li data-de="Ich loese Probleme ruhig, strukturiert und kollaborativ." data-en="I solve problems with a calm, structured and collaborative approach."></li>
+                        <li data-de="Mehrsprachigkeit hilft mir, effektiv mit diversen Teams zu kommunizieren." data-en="The fact that I speak multiple languages allows me to communicate effectively with diverse teams."></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills content" id="skills">
+        <div class="skills-wrapper">
+            <div class="skills-text">
+                <p class="skills-kicker" data-de="Technologien" data-en="Technologies"></p>
+                <div class="skills-card">
+                    <h2 data-de="Skill Set" data-en="Skill Set"></h2>
+                    <p data-de="Ich habe ein solides Fundament in der Frontend-Entwicklung und arbeite sicher mit HTML, CSS und JavaScript, um responsive und benutzerfreundliche Interfaces umzusetzen. Mit Git, REST-APIs und Scrum bringe ich ausserdem Struktur in die Zusammenarbeit und bleibe durch mein Growth Mindset offen fuer neue Technologien und kontinuierliches Lernen." data-en="I have a strong foundation in frontend development and work confidently with HTML, CSS and JavaScript to build responsive and user-friendly interfaces. With Git, REST APIs and Scrum, I also bring structure to collaboration and stay open to new technologies through a strong growth mindset and continuous learning."></p>
+                    <h3>
+                        <span data-de="Brauchst du noch einen" data-en="You need"></span>
+                        <strong data-de=" anderen Skill?" data-en=" another skill?"></strong>
+                    </h3>
+                    <p class="skills-note" data-de="Wenn dein Projekt noch etwas mehr braucht, arbeite ich mich gerne in neue Themen ein und erweitere mein Wissen gezielt weiter." data-en="If your project needs something beyond this, I am always happy to dive into new topics and expand my knowledge with purpose."></p>
+                    <button data-de="Lass uns sprechen" data-en="Let's Talk"></button>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="./assets/icon/HTML.png" alt="HTML">
+                    <span>HTML</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/icon/CSS.png" alt="CSS">
+                    <span>CSS</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/icon/JavaScript.png" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item skill-item-git">
+                    <img src="./assets/icon/git.png" alt="Git">
+                    <span>Git</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/icon/Rest-Api.png" alt="REST-API">
+                    <span>REST-API</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/icon/scrum.png" alt="Scrum">
+                    <span>Scrum</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/icon/growth.png" alt="Growth mindset">
+                    <span data-de="Growth Mindset" data-en="Growth mindset"></span>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

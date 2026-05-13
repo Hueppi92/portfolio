@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "about": "Uber mich",
+    "skills": "Skills",
+    "projects": "Projekte"
+  },
+  "hero": {
+    "role": "Fullstack Entwickler",
+    "ctaWork": "Meine Projekte",
+    "ctaContact": "Kontakt"
+  },
+  "carousel": {
+    "remote": "Remote Arbeit",
+    "problem": "Problemlosung",
+    "team": "Teamplayer",
+    "open": "Offen fur Arbeit",
+    "fullstack": "Fullstack Entwicklung",
+    "based": "Standort Aachen"
+  }
+}
