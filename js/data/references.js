@@ -1,27 +1,23 @@
-(() => {
-const referenceEntries = [
+var referenceEntries = [
   {
     quote: {
-      de: 'Unser Projekt hat enorm von Andreas effizienter Arbeitsweise profitiert.',
-      en: 'Our project benefited enormously from Andreas efficient way of working.'
+      de: 'Andreas hat im Projekt verlaesslich gearbeitet und Aufgaben sauber umgesetzt.',
+      en: 'Andreas worked reliably in the project and delivered his tasks cleanly.'
     },
     author: 'T. Schulz - Frontend Developer'
   },
   {
     quote: {
-      de: 'Andreas hat sich als verlässlicher Teamkollege erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.',
-      en: 'Andreas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.'
+      de: 'Die Zusammenarbeit mit Andreas war angenehm. Er hat technische Themen klar eingebracht und das Team gut unterstuetzt.',
+      en: 'Working with Andreas was smooth. He contributed technical topics clearly and supported the team well.'
     },
     author: 'H. Janisch - Team Partner'
   },
   {
     quote: {
-      de: 'Ich hatte das Glück, mit Andreas in einem Gruppenprojekt an der Developer Akademie zu arbeiten, das viel Einsatz, Wissen und Teamarbeit verlangte. Er war stets ruhig, fokussiert und hat die Gruppe stark unterstützt.',
-      en: 'I had the good fortune of working with Andreas in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, focused, and made sure our team was set up for success.'
+      de: 'Im Gruppenprojekt war Andreas ruhig, hilfsbereit und gut organisiert. Das hat die Zusammenarbeit deutlich erleichtert.',
+      en: 'In our group project, Andreas was calm, helpful, and well organized. That made collaboration much easier.'
     },
     author: 'A. Fischer - Team Partner'
   }
 ];
-
-window.referenceEntries = referenceEntries;
-})();

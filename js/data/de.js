@@ -1,5 +1,4 @@
-(() => {
-  const de = {
+var textsDe = {
     'nav-about': 'Ueber mich',
     'nav-skills': 'Skills',
     'nav-projects': 'Projekte',
@@ -20,14 +19,14 @@
     'carousel-location-2': 'Standort Aachen',
     'about-kicker': 'Wer ich bin',
     'about-title': 'Ueber mich',
-    'about-text': 'Hey, ich bin Andreas. Ich entwickle praktische Web-Apps und setze saubere UI-Designs in responsive Frontend-Erlebnisse um.',
+    'about-text': 'Hey, ich bin Andreas. Ich entwickle Web-Apps mit klarem Fokus auf saubere, gut nutzbare Oberflaechen.',
     'about-li-1': 'Ich lebe in Aachen und bin offen fuer Remote-Arbeit.',
-    'about-li-2': 'Ich lerne gerne neue Technologien und verbessere mich kontinuierlich.',
+    'about-li-2': 'Ich lerne kontinuierlich dazu und arbeite mich strukturiert in neue Themen ein.',
     'about-li-3': 'Ich loese Probleme ruhig, strukturiert und kollaborativ.',
     'about-li-4': 'Mehrsprachigkeit hilft mir, effektiv mit diversen Teams zu kommunizieren.',
     'skills-kicker': 'Technologien',
     'skills-title': 'Skill Set',
-    'skills-text': 'Ich habe ein solides Fundament in der Frontend-Entwicklung und arbeite sicher mit HTML, CSS und JavaScript, um responsive und benutzerfreundliche Interfaces umzusetzen. Mit Git, REST-APIs und Scrum bringe ich ausserdem Struktur in die Zusammenarbeit und bleibe durch mein Growth Mindset offen fuer neue Technologien und kontinuierliches Lernen.',
+    'skills-text': 'Ich arbeite mit HTML, CSS und JavaScript an responsiven, benutzerfreundlichen Interfaces. Mit Git, REST-APIs und Scrum bringe ich Struktur in die Zusammenarbeit und erweitere mein Wissen Schritt fuer Schritt in neuen Themen.',
     'skills-need-prefix': 'Brauchst du noch einen',
     'skills-need-strong': ' anderen Skill?',
     'skills-note': 'Wenn dein Projekt noch etwas mehr braucht, arbeite ich mich gerne in neue Themen ein und erweitere mein Wissen gezielt weiter.',
@@ -35,9 +34,22 @@
     'skills-growth': 'Growth Mindset',
     'projects-kicker': 'Portfolio',
     'projects-title': 'Meine Projekte',
-    'projects-text': 'Erkunde eine Auswahl meiner Arbeiten - interagiere mit Projekten, um meine Faehigkeiten in Aktion zu sehen.',
-    'references-title': 'Referenzen'
+    'projects-text': 'Hier findest du eine Auswahl meiner Projekte und einen Eindruck, wie ich arbeite.',
+    'references-title': 'Referenzen',
+    'contact-kicker': 'Kontakt',
+    'contact-title': 'Lass uns zusammen arbeiten',
+    'contact-subtitle': 'Hast du ein Problem zu loesen?',
+    'contact-description': 'Schreib mir, wenn du Unterstuetzung fuer dein Projekt suchst. Ich antworte zeitnah und klar.',
+    'contact-note-prefix': 'Du suchst einen Frontend Entwickler?',
+    'contact-note-link': 'Lass uns sprechen!',
+    'contact-name-label': 'Wie heisst du?',
+    'contact-name-hint': 'Dein Name',
+    'contact-email-label': 'Wie lautet deine E-Mail?',
+    'contact-email-hint': 'deinname@email.de',
+    'contact-message-label': 'Wie kann ich dir helfen?',
+    'contact-message-hint': 'Erzaehl mir kurz von deinem Projekt.',
+    'contact-privacy-prefix': 'Ich habe die',
+    'contact-privacy-link': 'Datenschutzrichtlinie',
+    'contact-privacy-suffix': 'gelesen und stimme der Verarbeitung meiner Daten zu.',
+    'contact-submit': 'Nachricht senden'
   };
-
-  window.textsDe = de;
-})();

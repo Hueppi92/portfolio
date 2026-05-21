@@ -17,5 +17,3 @@ function initCursorGlow() {
   if (!glow) return;
   bindCursor(glow);
 }
-
-window.initCursorGlow = initCursorGlow;

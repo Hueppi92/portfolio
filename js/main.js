@@ -1,8 +1,8 @@
 function initApp() {
-	if (window.initLanguage) window.initLanguage();
-	if (window.initCursorGlow) window.initCursorGlow();
-	if (window.initReferences) window.initReferences();
-	if (window.initProjects) window.initProjects();
+	if (typeof initLanguage === 'function') initLanguage();
+	if (typeof initCursorGlow === 'function') initCursorGlow();
+	if (typeof initReferences === 'function') initReferences();
+	if (typeof initProjects === 'function') initProjects();
 }
 
-window.onload = initApp;
+onload = initApp;

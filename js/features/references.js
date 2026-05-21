@@ -1,17 +1,16 @@
-(() => {
 const prevButton = document.getElementById('reference-prev');
 const nextButton = document.getElementById('reference-next');
 const dotsRoot = document.getElementById('reference-dots');
 const prevSlot = document.getElementById('reference-prev-slot');
 const activeSlot = document.getElementById('reference-active-slot');
 const nextSlot = document.getElementById('reference-next-slot');
-const referenceEntries = window.referenceEntries || [];
+const referencesData = referenceEntries || [];
 
 let referenceIndex = 0;
 
-const getEntry = (offset) => referenceEntries[(referenceIndex + offset + referenceEntries.length) % referenceEntries.length];
+const getEntry = (offset) => referencesData[(referenceIndex + offset + referencesData.length) % referencesData.length];
 const getQuote = (entry) => {
-  const lang = window.getLanguage ? window.getLanguage() : 'de';
+  const lang = typeof getLanguage === 'function' ? getLanguage() : 'de';
   return entry.quote[lang] || entry.quote.de || entry.quote.en || '';
 };
 const cardMarkup = (entry) => `<p class="reference-quote">${getQuote(entry)}</p><div class="reference-footer"><span class="reference-line"></span><p class="reference-name">${entry.author}</p></div>`;
@@ -25,17 +24,17 @@ function renderCard(slot, entry, isActive) {
 
 function dotMarkup(index) {
   const active = index === referenceIndex ? ' is-active' : '';
-  return `<button type="button" class="reference-dot${active}" aria-label="Go to reference ${index + 1}" onclick="window.referenceGo(${index})"></button>`;
+  return `<button type="button" class="reference-dot${active}" aria-label="Go to reference ${index + 1}" onclick="referenceGo(${index})"></button>`;
 }
 
 function renderDots() {
   if (!dotsRoot) return;
-  const dots = referenceEntries.map((_, index) => dotMarkup(index)).join('');
+  const dots = referencesData.map((_, index) => dotMarkup(index)).join('');
   dotsRoot.innerHTML = dots;
 }
 
 function renderReferences() {
-  if (!activeSlot || !referenceEntries.length) return;
+  if (!activeSlot || !referencesData.length) return;
   renderCard(prevSlot, getEntry(-1), false);
   renderCard(activeSlot, getEntry(0), true);
   renderCard(nextSlot, getEntry(1), false);
@@ -48,7 +47,7 @@ function updateReferences(nextIndex) {
 }
 
 function shiftReferences(step) {
-  updateReferences((referenceIndex + step + referenceEntries.length) % referenceEntries.length);
+  updateReferences((referenceIndex + step + referencesData.length) % referencesData.length);
 }
 
 function bindReferenceControls() {
@@ -56,16 +55,11 @@ function bindReferenceControls() {
   if (nextButton) nextButton.onclick = () => shiftReferences(1);
 }
 
-function exposeReferenceHandlers() {
-  window.referenceGo = (index) => updateReferences(index);
+function referenceGo(index) {
+  updateReferences(index);
 }
 
 function initReferences() {
-  exposeReferenceHandlers();
   bindReferenceControls();
   renderReferences();
 }
-
-window.initReferences = initReferences;
-window.renderReferences = renderReferences;
-})();

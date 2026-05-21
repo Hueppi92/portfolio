@@ -1,5 +1,4 @@
-(() => {
-  const en = {
+var textsEn = {
     'nav-about': 'About me',
     'nav-skills': 'Skills',
     'nav-projects': 'Projects',
@@ -20,14 +19,14 @@
     'carousel-location-2': 'Based in Aachen',
     'about-kicker': 'Who I Am',
     'about-title': 'About me',
-    'about-text': 'Hey there, I am Andreas. I build practical web apps and enjoy turning clean UI designs into responsive frontend experiences.',
+    'about-text': 'Hi, I am Andreas. I build web apps with a clear focus on clean and usable interfaces.',
     'about-li-1': 'I am based in Aachen and open to remote work.',
-    'about-li-2': 'I enjoy learning new technologies and improving my craft continuously.',
+    'about-li-2': 'I keep learning continuously and work through new topics in a structured way.',
     'about-li-3': 'I solve problems with a calm, structured and collaborative approach.',
     'about-li-4': 'The fact that I speak multiple languages allows me to communicate effectively with diverse teams.',
     'skills-kicker': 'Technologies',
     'skills-title': 'Skill Set',
-    'skills-text': 'I have a strong foundation in frontend development and work confidently with HTML, CSS and JavaScript to build responsive and user-friendly interfaces. With Git, REST APIs and Scrum, I also bring structure to collaboration and stay open to new technologies through a strong growth mindset and continuous learning.',
+    'skills-text': 'I work with HTML, CSS and JavaScript to build responsive and user-friendly interfaces. With Git, REST APIs and Scrum, I help keep collaboration structured and keep expanding my skills step by step.',
     'skills-need-prefix': 'You need',
     'skills-need-strong': ' another skill?',
     'skills-note': 'If your project needs something beyond this, I am always happy to dive into new topics and expand my knowledge with purpose.',
@@ -35,9 +34,22 @@
     'skills-growth': 'Growth mindset',
     'projects-kicker': 'Portfolio',
     'projects-title': 'Featured Projects',
-    'projects-text': 'Explore a selection of my work here - interact with projects to see my skills in action.',
-    'references-title': 'References'
+    'projects-text': 'Here is a selection of my projects and a practical impression of how I work.',
+    'references-title': 'References',
+    'contact-kicker': 'Contact me',
+    'contact-title': "Let's work together",
+    'contact-subtitle': 'Got a problem to solve?',
+    'contact-description': 'Feel free to reach out if you need support for your project. I reply quickly and clearly.',
+    'contact-note-prefix': 'Need a Frontend developer?',
+    'contact-note-link': "Let's talk!",
+    'contact-name-label': "What's your name?",
+    'contact-name-hint': 'Your name goes here',
+    'contact-email-label': "What's your email?",
+    'contact-email-hint': 'youremail@email.com',
+    'contact-message-label': 'How can I help you?',
+    'contact-message-hint': 'Tell me a bit about your project.',
+    'contact-privacy-prefix': 'I have read the',
+    'contact-privacy-link': 'privacy policy',
+    'contact-privacy-suffix': 'and agree to the processing of my data as outlined.',
+    'contact-submit': 'Say Hello ;)' 
   };
-
-  window.textsEn = en;
-})();

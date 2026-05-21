@@ -7,7 +7,7 @@
 
   function getTexts(lang) {
     const safeLang = normalizeLang(lang);
-    return safeLang === 'en' ? window.textsEn || {} : window.textsDe || {};
+    return safeLang === 'en' ? textsEn || {} : textsDe || {};
   }
 
   function renderText(lang) {
@@ -31,7 +31,7 @@
     localStorage.setItem('lang', currentLang);
     syncToggle();
     renderText(currentLang);
-    if (window.renderReferences) window.renderReferences();
+    if (typeof renderReferences === 'function') renderReferences();
   }
 
   function bindToggle() {
@@ -47,7 +47,7 @@
     renderText(currentLang);
   }
 
-  window.getLanguage = () => currentLang;
-  window.setLanguage = setLanguage;
-  window.initLanguage = initLanguage;
+  function getLanguage() {
+    return currentLang;
+  }
 

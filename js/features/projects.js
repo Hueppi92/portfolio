@@ -39,5 +39,3 @@ async function initProjects() {
     projectList.innerHTML = '';
   }
 }
-
-window.initProjects = initProjects;

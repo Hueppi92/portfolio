@@ -100,6 +100,35 @@
     padding: 80px 40px;
   }
 
+  .contact {
+    padding: 80px 40px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .contact-title {
+    font-size: 64px;
+  }
+
+  .contact-subtitle,
+  .contact-field label {
+    font-size: 30px;
+  }
+
+  .contact-description,
+  .contact-note,
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 20px;
+  }
+
+  .contact-submit {
+    font-size: 24px;
+  }
+
   .reference-card.is-side {
     display: none;
   }
@@ -155,6 +184,36 @@
 
   .references {
     padding: 56px 20px;
+  }
+
+  .contact {
+    padding: 56px 20px;
+  }
+
+  .contact-title {
+    font-size: 48px;
+  }
+
+  .contact-kicker {
+    font-size: 24px;
+  }
+
+  .contact-subtitle,
+  .contact-field label {
+    font-size: 24px;
+  }
+
+  .contact-description,
+  .contact-note,
+  .contact-field input,
+  .contact-field textarea,
+  .contact-check {
+    font-size: 18px;
+  }
+
+  .contact-submit {
+    width: 100%;
+    font-size: 22px;
   }
 
   .references-title {
