@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Join",
+    "tech-stack": "HTML | CSS | JavaScript | Firebase",
+    "preview": "./assets/img/join_preview.png"
+  },
+  {
+    "name": "El Pollo Loco",
+    "tech-stack": "HTML | CSS | JavaScript",
+    "preview": "./assets/img/el_pollo_preview.png"
+  }
+]

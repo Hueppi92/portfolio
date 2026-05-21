@@ -1,0 +1,41 @@
+html {
+  font-family: "Fira Code", monospace, "Karla", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #1c1c1c;
+}
+
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+button {
+  border-radius: 100px;
+  border: 1px solid white;
+  padding: 13px 24px;
+  color: white;
+  background: transparent;
+}
+
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(61, 207, 182, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  will-change: transform;
+}

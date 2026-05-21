@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andreas Hüpgen</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/hero.css">
+    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/skills.css">
+    <link rel="stylesheet" href="./styles/projects.css">
+    <link rel="stylesheet" href="./styles/references.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <script defer src="./js/data/de.js"></script>
+    <script defer src="./js/data/en.js"></script>
+    <script defer src="./js/data/references.js"></script>
+    <script defer src="./js/features/cursor.js"></script>
+    <script defer src="./js/features/language.js"></script>
+    <script defer src="./js/features/projects.js"></script>
+    <script defer src="./js/features/references.js"></script>
+    <script defer src="./js/main.js"></script>
 </head>
-<script src="script.js" defer></script>
 <body>
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
     <div class="hero-section content">
         <div class="nav-bar">
             <div class="lang-switch">
                 <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
                 <label for="language-toggle"></label>
             </div>
-            <a href="#about" data-de="Ueber mich" data-en="About me"></a>
-            <a href="#skills" data-de="Skills" data-en="Skills"></a>
-            <a href="#projects" data-de="Projekte" data-en="Projects"></a>
+            <a id="nav-about" href="#about">Ueber mich</a>
+            <a id="nav-skills" href="#skills">Skills</a>
+            <a id="nav-projects" href="#projects">Projekte</a>
 
             <img src="./assets/logo/logo.png" alt="Logo" class="logo">
              </div>
              <div class="hero-content">
-        <p data-de="Fullstack Entwickler" data-en="Fullstack Developer"></p>
+        <p id="hero-role">Fullstack Entwickler</p>
        <h1>Andreas Hüpgen</h1>
        <div class="button-div">
-    <button data-de="Meine Projekte" data-en="Check my work"></button>
-    <button data-de="Kontakt" data-en="Contact me"></button>
+    <button id="hero-btn-work">Meine Projekte</button>
+    <button id="hero-btn-contact">Kontakt</button>
        </div>
 </div>
     <a class="scroll-indicator" href="#about" aria-label="Scroll down">
@@ -34,20 +51,20 @@
     <hr class="divider-left">
     <div class="carousel content">
         <div class="group">
-            <div class="card" data-de="Remote Arbeit" data-en="Remote Work"></div>
-            <div class="card" data-de="Problemloesung" data-en="Problem Solving"></div>
-            <div class="card" data-de="Teamfaehig" data-en="Team Player"></div>
-            <div class="card" data-de="Offen fuer Arbeit" data-en="Open to Work"></div>
-            <div class="card" data-de="Fullstack Entwicklung" data-en="Fullstack Development"></div>
-            <div class="card" data-de="Standort Aachen" data-en="Based in Aachen"></div>    
+            <div class="card" id="carousel-remote-1">Remote Arbeit</div>
+            <div class="card" id="carousel-problem-1">Problemloesung</div>
+            <div class="card" id="carousel-team-1">Teamfaehig</div>
+            <div class="card" id="carousel-open-1">Offen fuer Arbeit</div>
+            <div class="card" id="carousel-fullstack-1">Fullstack Entwicklung</div>
+            <div class="card" id="carousel-location-1">Standort Aachen</div>    
          </div>
         <div aria-hidden class="group">
-            <div class="card" data-de="Remote Arbeit" data-en="Remote Work"></div>
-            <div class="card" data-de="Problemloesung" data-en="Problem Solving"></div>
-            <div class="card" data-de="Teamfaehig" data-en="Team Player"></div>
-            <div class="card" data-de="Offen fuer Arbeit" data-en="Open to Work"></div>
-            <div class="card" data-de="Fullstack Entwicklung" data-en="Fullstack Development"></div>
-            <div class="card" data-de="Standort Aachen" data-en="Based in Aachen"></div>    
+            <div class="card" id="carousel-remote-2">Remote Arbeit</div>
+            <div class="card" id="carousel-problem-2">Problemloesung</div>
+            <div class="card" id="carousel-team-2">Teamfaehig</div>
+            <div class="card" id="carousel-open-2">Offen fuer Arbeit</div>
+            <div class="card" id="carousel-fullstack-2">Fullstack Entwicklung</div>
+            <div class="card" id="carousel-location-2">Standort Aachen</div>    
          </div>
         
     </div>
@@ -73,15 +90,15 @@
                 </div>
             </div>
             <div class="about-text">
-                <p class="about-kicker" data-de="Wer ich bin" data-en="Who I Am"></p>
+                <p class="about-kicker" id="about-kicker">Wer ich bin</p>
                 <div class="about-card">
-                    <h2 data-de="Ueber mich" data-en="About me"></h2>
-                    <p data-de="Hey, ich bin Andreas. Ich entwickle praktische Web-Apps und setze saubere UI-Designs in responsive Frontend-Erlebnisse um." data-en="Hey there, I am Andreas. I build practical web apps and enjoy turning clean UI designs into responsive frontend experiences."></p>
+                    <h2 id="about-title">Ueber mich</h2>
+                    <p id="about-text">Hey, ich bin Andreas. Ich entwickle praktische Web-Apps und setze saubere UI-Designs in responsive Frontend-Erlebnisse um.</p>
                     <ul class="about-list">
-                        <li data-de="Ich lebe in Aachen und bin offen fuer Remote-Arbeit." data-en="I am based in Aachen and open to remote work."></li>
-                        <li data-de="Ich lerne gerne neue Technologien und verbessere mich kontinuierlich." data-en="I enjoy learning new technologies and improving my craft continuously."></li>
-                        <li data-de="Ich loese Probleme ruhig, strukturiert und kollaborativ." data-en="I solve problems with a calm, structured and collaborative approach."></li>
-                        <li data-de="Mehrsprachigkeit hilft mir, effektiv mit diversen Teams zu kommunizieren." data-en="The fact that I speak multiple languages allows me to communicate effectively with diverse teams."></li>
+                        <li id="about-li-1">Ich lebe in Aachen und bin offen fuer Remote-Arbeit.</li>
+                        <li id="about-li-2">Ich lerne gerne neue Technologien und verbessere mich kontinuierlich.</li>
+                        <li id="about-li-3">Ich loese Probleme ruhig, strukturiert und kollaborativ.</li>
+                        <li id="about-li-4">Mehrsprachigkeit hilft mir, effektiv mit diversen Teams zu kommunizieren.</li>
                     </ul>
                 </div>
             </div>
@@ -90,16 +107,16 @@
     <section class="skills content" id="skills">
         <div class="skills-wrapper">
             <div class="skills-text">
-                <p class="skills-kicker" data-de="Technologien" data-en="Technologies"></p>
+                <p class="skills-kicker" id="skills-kicker">Technologien</p>
                 <div class="skills-card">
-                    <h2 data-de="Skill Set" data-en="Skill Set"></h2>
-                    <p data-de="Ich habe ein solides Fundament in der Frontend-Entwicklung und arbeite sicher mit HTML, CSS und JavaScript, um responsive und benutzerfreundliche Interfaces umzusetzen. Mit Git, REST-APIs und Scrum bringe ich ausserdem Struktur in die Zusammenarbeit und bleibe durch mein Growth Mindset offen fuer neue Technologien und kontinuierliches Lernen." data-en="I have a strong foundation in frontend development and work confidently with HTML, CSS and JavaScript to build responsive and user-friendly interfaces. With Git, REST APIs and Scrum, I also bring structure to collaboration and stay open to new technologies through a strong growth mindset and continuous learning."></p>
+                    <h2 id="skills-title">Skill Set</h2>
+                    <p id="skills-text">Ich habe ein solides Fundament in der Frontend-Entwicklung und arbeite sicher mit HTML, CSS und JavaScript, um responsive und benutzerfreundliche Interfaces umzusetzen. Mit Git, REST-APIs und Scrum bringe ich ausserdem Struktur in die Zusammenarbeit und bleibe durch mein Growth Mindset offen fuer neue Technologien und kontinuierliches Lernen.</p>
                     <h3>
-                        <span data-de="Brauchst du noch einen" data-en="You need"></span>
-                        <strong data-de=" anderen Skill?" data-en=" another skill?"></strong>
+                        <span id="skills-need-prefix">Brauchst du noch einen</span>
+                        <strong id="skills-need-strong"> anderen Skill?</strong>
                     </h3>
-                    <p class="skills-note" data-de="Wenn dein Projekt noch etwas mehr braucht, arbeite ich mich gerne in neue Themen ein und erweitere mein Wissen gezielt weiter." data-en="If your project needs something beyond this, I am always happy to dive into new topics and expand my knowledge with purpose."></p>
-                    <button data-de="Lass uns sprechen" data-en="Let's Talk"></button>
+                    <p class="skills-note" id="skills-note">Wenn dein Projekt noch etwas mehr braucht, arbeite ich mich gerne in neue Themen ein und erweitere mein Wissen gezielt weiter.</p>
+                    <button id="skills-btn">Lass uns sprechen</button>
                 </div>
             </div>
             <div class="skills-grid">
@@ -129,45 +146,34 @@
                 </div>
                 <div class="skill-item">
                     <img src="./assets/icon/growth.png" alt="Growth mindset">
-                    <span data-de="Growth Mindset" data-en="Growth mindset"></span>
+                    <span id="skills-growth">Growth Mindset</span>
                 </div>
             </div>
         </div>
     </section>
-    <section class="projects content" id="projects">
-        <div class="projects-wrapper">
-            <p class="projects-kicker" data-de="Portfolio" data-en="Portfolio"></p>
-            <h2 data-de="Meine Projekte" data-en="Featured Projects"></h2>
-            <p class="projects-description" data-de="Erkunde eine Auswahl meiner Arbeiten - interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen." data-en="Explore a selection of my work here - interact with projects to see my skills in action."></p>
-            
-            <div class="projects-container">
-                <div class="project-item">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Join <span class="arrow">↗</span></h3>
-                            <p class="tech-stack">Angular | TypeScript | HTML | CSS | Firebase</p>
-                        </div>
-                    </div>
-                    <div class="project-preview">
-                        <div class="preview-stripes" aria-hidden="true"></div>
-                        <img src="./assets/img/join_preview.png" alt="Join Project Preview">
-                    </div>
-                </div>
+    <div class="project-section content" id="projects">
+        <div class="project-header">
+            <p id="projects-kicker">Portfolio</p>
+            <h2 id="projects-title">Meine Projekte</h2>
+            <p class="projects-description" id="projects-text">Erkunde eine Auswahl meiner Arbeiten - interagiere mit Projekten, um meine Faehigkeiten in Aktion zu sehen.</p>
+        </div>
+        <div class="project-list" id="project-list" data-project-list></div>
+    </div>
+    <section class="references content" id="references">
+        <div class="references-wrapper">
+            <h2 class="references-title" id="references-title">Referenzen</h2>
 
-                <hr class="project-divider">
 
-                <div class="project-item">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>El Pollo Loco <span class="arrow">↗</span></h3>
-                            <p class="tech-stack">HTML | CSS | JavaScript</p>
-                        </div>
-                    </div>
-                    <div class="project-preview">
-                        <div class="preview-stripes" aria-hidden="true"></div>
-                        <img src="./assets/img/el_pollo_preview.png" alt="El Pollo Loco Project Preview">
-                    </div>
-                </div>
+            <div class="references-stage">
+                <article class="reference-card is-side" id="reference-prev-slot" data-reference-slot="prev"></article>
+                <article class="reference-card is-active" id="reference-active-slot" data-reference-slot="active"></article>
+                <article class="reference-card is-side" id="reference-next-slot" data-reference-slot="next"></article>
+            </div>
+
+            <div class="references-controls-bottom">
+                <button class="reference-arrow" id="reference-prev" type="button" data-reference-prev aria-label="Previous reference">←</button>
+                <div class="reference-dots" id="reference-dots" data-reference-dots></div>
+                <button class="reference-arrow" id="reference-next" type="button" data-reference-next aria-label="Next reference">→</button>
             </div>
         </div>
     </section>

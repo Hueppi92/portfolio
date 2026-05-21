@@ -1,0 +1,235 @@
+@media (max-width: 1200px) {
+  .about {
+    padding: 80px 40px;
+  }
+
+  .about-wrapper {
+    grid-template-columns: minmax(320px, 620px);
+    gap: 40px;
+    justify-content: start;
+    min-height: auto;
+  }
+
+  .about-image-frame {
+    width: 100%;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-kicker {
+    font-size: 32px;
+  }
+
+  .about-text {
+    width: 100%;
+    min-height: auto;
+    margin-top: 0;
+  }
+
+  .about-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .about-card h2 {
+    font-size: 62px;
+    line-height: 1.1;
+  }
+
+  .about-card p,
+  .about-list li {
+    font-size: 17px;
+  }
+
+  .skills {
+    padding: 80px 40px;
+  }
+
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+    row-gap: 56px;
+  }
+
+  .skills-card {
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, minmax(96px, 1fr));
+    padding-top: 0;
+  }
+
+  .project-section {
+    padding: 80px 40px;
+  }
+
+  .project-header p {
+    font-size: 20px;
+  }
+
+  .project-section h2 {
+    font-size: 56px;
+  }
+
+  .projects-description {
+    font-size: 18px;
+  }
+
+  .project-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+  }
+
+  .project-name {
+    font-size: 32px;
+  }
+
+  .project-stack {
+    font-size: 14px;
+  }
+
+  .project-row-preview {
+    width: 280px;
+    height: 200px;
+    left: calc(100% + 24px);
+  }
+
+  .references {
+    padding: 80px 40px;
+  }
+
+  .reference-card.is-side {
+    display: none;
+  }
+
+  .reference-card.is-active {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-section {
+    padding: 56px 20px;
+  }
+
+  .project-header {
+    margin-bottom: 28px;
+  }
+
+  .project-header p {
+    font-size: 18px;
+  }
+
+  .project-section h2 {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  .projects-description {
+    font-size: 16px;
+  }
+
+  .project-item {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 24px 0;
+  }
+
+  .project-name {
+    font-size: 28px;
+    white-space: normal;
+  }
+
+  .project-stack {
+    justify-self: start;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .project-row-preview {
+    display: none;
+  }
+
+  .references {
+    padding: 56px 20px;
+  }
+
+  .references-title {
+    font-size: 32px;
+  }
+
+  .reference-card {
+    min-height: 240px;
+    border-radius: 24px;
+    padding: 32px 24px;
+    gap: 28px;
+  }
+
+  .reference-quote {
+    font-size: 18px;
+  }
+
+  .reference-name {
+    font-size: 16px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 700px) {
+  .about {
+    padding: 56px 20px;
+  }
+
+  .about-image-stripes {
+    left: -18px;
+    bottom: -16px;
+  }
+
+  .about-card {
+    padding: 24px 18px;
+  }
+
+  .about-card h2 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+
+  .about-card p,
+  .about-list li {
+    font-size: 16px;
+  }
+
+  .skills {
+    padding: 56px 20px;
+  }
+
+  .skills-kicker {
+    font-size: 32px;
+  }
+
+  .skills-card {
+    padding: 24px 18px;
+  }
+
+  .skills-card h2 {
+    font-size: 48px;
+  }
+
+  .skills-card h3 {
+    font-size: 28px;
+  }
+
+  .skills-card p,
+  .skills-note,
+  .skill-item span {
+    font-size: 16px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(96px, 1fr));
+    gap: 32px 24px;
+  }
+}

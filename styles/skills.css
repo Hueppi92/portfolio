@@ -1,0 +1,112 @@
+.skills {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding: 72px;
+  box-sizing: border-box;
+  background: radial-gradient(
+    22.43% 43.85% at 1.22% 52.45%,
+    rgba(8, 70, 59, 0.3) 0%,
+    #1c1c1c 100%
+  );
+}
+
+.skills-wrapper {
+  width: 100%;
+  max-width: 1232px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 568px 1fr;
+  column-gap: 112px;
+  align-items: start;
+}
+
+.skills-text {
+  display: block;
+}
+
+.skills-kicker {
+  margin: 0 0 20px;
+  color: #3dcfb6;
+  font-family: "Karla", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.skills-card {
+  width: 568px;
+  border-radius: 30px;
+  border: 1px solid #3dcfb6;
+  padding: 32px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    115deg,
+    rgba(19, 19, 19, 0.95) 15%,
+    rgba(7, 86, 74, 0.45) 100%
+  );
+}
+
+.skills-card h2 {
+  margin: 0 0 32px;
+  color: #3dcfb6;
+  font-family: "Karla", sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.skills-card p {
+  max-width: 504px;
+  margin: 0 0 28px;
+  color: #ffffff;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.skills-card h3 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-family: "Karla", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.skills-card h3 span,
+.skills-card h3 .accent,
+.skills-card h3 strong {
+  color: #3dcfb6;
+}
+
+.skills-note {
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(96px, 1fr));
+  gap: 56px 40px;
+  padding-top: 42px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.skill-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.skill-item span {
+  color: #ffffff;
+  font-family: "Fira Code", monospace;
+  font-size: 24px;
+  line-height: 1.1;
+}

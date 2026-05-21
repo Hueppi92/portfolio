@@ -1,0 +1,43 @@
+(() => {
+  const de = {
+    'nav-about': 'Ueber mich',
+    'nav-skills': 'Skills',
+    'nav-projects': 'Projekte',
+    'hero-role': 'Fullstack Entwickler',
+    'hero-btn-work': 'Meine Projekte',
+    'hero-btn-contact': 'Kontakt',
+    'carousel-remote-1': 'Remote Arbeit',
+    'carousel-problem-1': 'Problemloesung',
+    'carousel-team-1': 'Teamfaehig',
+    'carousel-open-1': 'Offen fuer Arbeit',
+    'carousel-fullstack-1': 'Fullstack Entwicklung',
+    'carousel-location-1': 'Standort Aachen',
+    'carousel-remote-2': 'Remote Arbeit',
+    'carousel-problem-2': 'Problemloesung',
+    'carousel-team-2': 'Teamfaehig',
+    'carousel-open-2': 'Offen fuer Arbeit',
+    'carousel-fullstack-2': 'Fullstack Entwicklung',
+    'carousel-location-2': 'Standort Aachen',
+    'about-kicker': 'Wer ich bin',
+    'about-title': 'Ueber mich',
+    'about-text': 'Hey, ich bin Andreas. Ich entwickle praktische Web-Apps und setze saubere UI-Designs in responsive Frontend-Erlebnisse um.',
+    'about-li-1': 'Ich lebe in Aachen und bin offen fuer Remote-Arbeit.',
+    'about-li-2': 'Ich lerne gerne neue Technologien und verbessere mich kontinuierlich.',
+    'about-li-3': 'Ich loese Probleme ruhig, strukturiert und kollaborativ.',
+    'about-li-4': 'Mehrsprachigkeit hilft mir, effektiv mit diversen Teams zu kommunizieren.',
+    'skills-kicker': 'Technologien',
+    'skills-title': 'Skill Set',
+    'skills-text': 'Ich habe ein solides Fundament in der Frontend-Entwicklung und arbeite sicher mit HTML, CSS und JavaScript, um responsive und benutzerfreundliche Interfaces umzusetzen. Mit Git, REST-APIs und Scrum bringe ich ausserdem Struktur in die Zusammenarbeit und bleibe durch mein Growth Mindset offen fuer neue Technologien und kontinuierliches Lernen.',
+    'skills-need-prefix': 'Brauchst du noch einen',
+    'skills-need-strong': ' anderen Skill?',
+    'skills-note': 'Wenn dein Projekt noch etwas mehr braucht, arbeite ich mich gerne in neue Themen ein und erweitere mein Wissen gezielt weiter.',
+    'skills-btn': 'Lass uns sprechen',
+    'skills-growth': 'Growth Mindset',
+    'projects-kicker': 'Portfolio',
+    'projects-title': 'Meine Projekte',
+    'projects-text': 'Erkunde eine Auswahl meiner Arbeiten - interagiere mit Projekten, um meine Faehigkeiten in Aktion zu sehen.',
+    'references-title': 'Referenzen'
+  };
+
+  window.textsDe = de;
+})();
