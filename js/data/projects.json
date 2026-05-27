@@ -1,12 +1,28 @@
 [
   {
+    "number": "01",
     "name": "Join",
     "tech-stack": "HTML | CSS | JavaScript | Firebase",
-    "preview": "./assets/img/join_preview.png"
+    "technologies": ["HTML", "CSS", "JavaScript", "Firebase"],
+    "preview": "./assets/img/join_preview.png",
+    "description": {
+      "de": "Task-Manager inspiriert vom Kanban-System. Aufgaben koennen per Drag and Drop organisiert, Benutzern zugewiesen und Kategorien zugeordnet werden.",
+      "en": "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "github": "https://github.com/Hueppi92/join",
+    "live": "https://join.andreas-huepgen.de"
   },
   {
+    "number": "02",
     "name": "El Pollo Loco",
     "tech-stack": "HTML | CSS | JavaScript",
-    "preview": "./assets/img/el_pollo_preview.png"
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "preview": "./assets/img/el_pollo_preview.png",
+    "description": {
+      "de": "2D Jump-and-Run-Spiel mit objektorientiertem JavaScript. Enthalten sind Gegner, Wurfobjekte, Animationen, Soundeffekte und ein fokussiertes Gameplay.",
+      "en": "2D jump and run game built with object-oriented JavaScript. It includes enemies, throwable objects, animations, sound effects, and focused gameplay."
+    },
+    "github": "https://github.com/Hueppi92/el-pollo-loco",
+    "live": "https://el-pollo-loco.andreas-huepgen.de"
   }
 ]

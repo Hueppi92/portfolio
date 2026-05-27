@@ -1,0 +1,123 @@
+body.legal-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(61, 207, 182, 0.16), transparent 42%),
+    linear-gradient(180deg, #0c3f37 0%, #132b28 18%, #1c1c1c 48%);
+}
+
+.legal-header {
+  padding: 8px 40px 0;
+  box-sizing: border-box;
+}
+
+.legal-nav {
+  min-height: 74px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 0 8px;
+  border-top: 1px solid #3dcfb6;
+  border-bottom: 1px solid #3dcfb6;
+}
+
+.lang-switch {
+  display: inline-flex;
+  background: transparent;
+  align-items: center;
+}
+
+.lang-switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lang-switch label {
+  cursor: pointer;
+  width: 84px;
+  height: 28px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.2s ease;
+  background-image: url("../assets/icon/EN.png");
+}
+
+#language-toggle:not(:checked) + label:hover {
+  background-image: url("../assets/icon/EN_hover.png");
+}
+
+#language-toggle:checked + label {
+  background-image: url("../assets/icon/DE.png");
+}
+
+#language-toggle:checked + label:hover {
+  background-image: url("../assets/icon/DE_hover.png");
+}
+
+.legal-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.legal-links a {
+  color: #d9d9d9;
+  text-decoration: none;
+  font-family: "Fira Code", monospace;
+  font-size: 18px;
+}
+
+.legal-links a:hover {
+  color: #3dcfb6;
+}
+
+.legal-home-link {
+  display: inline-flex;
+}
+
+.legal-logo {
+  width: 140px;
+  height: auto;
+}
+
+.legal-main {
+  padding: 28px 40px 0;
+  box-sizing: border-box;
+}
+
+.legal-card {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 0 48px;
+}
+
+.legal-title {
+  margin: 0 0 48px;
+  color: #3dcfb6;
+  text-align: center;
+  font-family: "Fira Code", monospace;
+  font-size: 64px;
+  line-height: 1;
+}
+
+.legal-block {
+  margin-bottom: 28px;
+}
+
+.legal-block h2 {
+  margin: 0 0 10px;
+  color: #d9d9d9;
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.legal-block p {
+  margin: 0 0 6px;
+  color: rgba(217, 217, 217, 0.86);
+  font-family: "Karla", sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+}

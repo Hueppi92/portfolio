@@ -48,6 +48,7 @@
     syncToggle();
     renderText(currentLang);
     if (typeof renderReferences === 'function') renderReferences();
+    if (window.renderProjectsSection) window.renderProjectsSection();
   }
 
   function bindToggle() {
