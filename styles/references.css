@@ -1,12 +1,22 @@
 .references {
   min-height: 100vh;
-  padding: 72px;
+  padding: 72px 0;
   box-sizing: border-box;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .references-wrapper {
   width: 100%;
-  max-width: 1440px;
+  max-width: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
 }
 
 .references-title {
@@ -31,32 +41,32 @@
   font-size: 0;
 }
 
-.reference-arrow[data-reference-prev] {
+#reference-prev.reference-arrow {
   background-image: url("../assets/icon/arrow_back.png");
 }
 
-.reference-arrow[data-reference-prev]:hover {
+#reference-prev.reference-arrow:hover {
   background-image: url("../assets/icon/arrow_back_hover.png");
 }
 
-.reference-arrow[data-reference-next] {
+#reference-next.reference-arrow {
   background-image: url("../assets/icon/arrow_forward.png");
 }
 
-.reference-arrow[data-reference-next]:hover {
+#reference-next.reference-arrow:hover {
   background-image: url("../assets/icon/arrow_forward_hover.png");
 }
 
 .references-stage {
   position: relative;
   width: 100%;
-  max-width: 1440px;
+  max-width: none;
   display: flex;
-  gap: 28px;
+  gap: 48px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 8px 0;
+  padding: 28px 0 8px;
 }
 
 .references-stage::after {
@@ -92,7 +102,7 @@
 }
 
 .reference-card.is-side {
-  opacity: 1;
+  opacity: 0.5;
   transform: scale(1);
   filter: none;
 }
@@ -104,8 +114,17 @@
   z-index: 2;
   background: rgba(61, 207, 182, 0.3);
   box-shadow: 0 0 0 1px rgba(61, 207, 182, 0.2);
+  
 }
 
+.reference-card.is-active::before {
+  content: url("../assets/icon/quotes.png");
+  position: absolute;
+  top: -16px;
+  left: -16px;
+
+
+}
 .reference-quote {
   margin: 0;
   color: #ffffff;
