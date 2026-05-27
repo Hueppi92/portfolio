@@ -39,7 +39,7 @@ let textsEn = {
     'contact-kicker': 'Contact me',
     'contact-title': "Let's work together",
     'contact-subtitle': 'Got a problem to solve?',
-    'contact-description': 'Feel free to reach out if you need support for your project. I reply quickly and clearly.',
+    'contact-description': 'Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.',
     'contact-note-prefix': 'Need a Frontend developer?',
     'contact-note-link': "Let's talk!",
     'contact-name-label': "What's your name?",
@@ -47,7 +47,7 @@ let textsEn = {
     'contact-email-label': "What's your email?",
     'contact-email-placeholder': 'youremail@email.com',
     'contact-message-label': 'How can I help you?',
-    'contact-message-placeholder': 'Tell me a bit about your project.',
+    'contact-message-placeholder': 'Hello Lukas, I am interested in...',
     'contact-name-error': 'Oops! it seems your name is missing',
     'contact-email-error': 'Hoppla! your email is required',
     'contact-email-format-error': 'Please enter a valid email address.',
@@ -56,5 +56,12 @@ let textsEn = {
     'contact-privacy-prefix': 'I have read the',
     'contact-privacy-link': 'privacy policy',
     'contact-privacy-suffix': 'and agree to the processing of my data as outlined.',
-    'contact-submit': 'Say Hello ;)' 
+    'contact-submit': 'Say Hello ;)',
+    'footer-role': 'Fullstack Developer',
+    'footer-location': 'Aachen Germany',
+    'footer-copy': '© Andreas Hüpgen 2026',
+    'footer-github': 'GitHub',
+    'footer-linkedin': 'LinkedIn',
+    'footer-email': 'Email',
+    'footer-legal': 'Legal Notice'
   };

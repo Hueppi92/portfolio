@@ -104,6 +104,23 @@
     padding: 80px 40px;
   }
 
+  .site-footer {
+    padding: 24px 40px 40px;
+  }
+
+  .footer-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: start;
+  }
+
+  .footer-copy,
+  .footer-nav {
+    justify-self: start;
+    text-align: left;
+    align-items: flex-start;
+  }
+
   .contact-wrapper {
     grid-template-columns: 1fr;
     gap: 52px;
@@ -188,6 +205,21 @@
 
   .contact {
     padding: 56px 20px;
+  }
+
+  .site-footer {
+    padding: 16px 20px 32px;
+  }
+
+  .footer-logo {
+    width: 96px;
+  }
+
+  .footer-role,
+  .footer-location,
+  .footer-copy,
+  .footer-nav a {
+    font-size: 16px;
   }
 
   .contact-title {

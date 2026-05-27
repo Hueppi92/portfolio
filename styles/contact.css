@@ -7,8 +7,8 @@
   width: 100%;
   max-width: 1440px;
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) minmax(420px, 1fr);
-  gap: 72px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
   align-items: start;
 }
 
@@ -91,12 +91,12 @@
   background: transparent;
   font-family: "Karla", sans-serif;
   font-size: 22px;
-  resize: vertical;
+  resize: none;
   padding: 0;
 }
 
 .contact-field textarea {
-  min-height: 100px;
+  min-height: 84px;
 }
 
 .contact-field input::placeholder,

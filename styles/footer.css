@@ -1,0 +1,54 @@
+.site-footer {
+  padding: 24px 72px 48px;
+  box-sizing: border-box;
+}
+
+.footer-wrapper {
+ 
+  padding-top: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 112px;
+  height: auto;
+}
+
+.footer-role,
+.footer-location,
+.footer-copy,
+.footer-nav a {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.footer-copy {
+  color: #3dcfb6;
+  text-align: center;
+  justify-self: center;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.footer-nav a:hover {
+  color: #3dcfb6;
+}
