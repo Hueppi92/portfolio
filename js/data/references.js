@@ -1,4 +1,4 @@
-var referenceEntries = [
+const referenceEntries = [
   {
     quote: {
       de: 'Andreas hat im Projekt verlaesslich gearbeitet und Aufgaben sauber umgesetzt.',

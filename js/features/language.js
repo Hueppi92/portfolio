@@ -17,6 +17,22 @@
       if (!element) return;
       element.textContent = texts[id];
     });
+
+    const contactNameInput = document.getElementById('contact-name');
+    if (contactNameInput && texts['contact-name-placeholder']) {
+      contactNameInput.placeholder = texts['contact-name-placeholder'];
+    }
+
+    const contactEmailInput = document.getElementById('contact-email');
+    if (contactEmailInput && texts['contact-email-placeholder']) {
+      contactEmailInput.placeholder = texts['contact-email-placeholder'];
+    }
+
+    const contactMessageInput = document.getElementById('contact-message');
+    if (contactMessageInput && texts['contact-message-placeholder']) {
+      contactMessageInput.placeholder = texts['contact-message-placeholder'];
+    }
+
     document.documentElement.lang = normalizeLang(lang);
   }
 

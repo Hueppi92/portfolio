@@ -182,23 +182,24 @@
                     <a href="mailto:a.huepgen@web.de" id="contact-note-link">Lass uns sprechen!</a>
                 </p>
             </div>
-            <form class="contact-form" action="mailto:a.huepgen@web.de" method="post" enctype="text/plain">
+            <form class="contact-form" action="mailto:a.huepgen@web.de" method="post" enctype="text/plain" novalidate>
                 <div class="contact-field">
                     <label for="contact-name" id="contact-name-label">Wie heisst du?</label>
-                    <input type="text" id="contact-name" name="name" autocomplete="name" required>
-                    <p class="contact-hint" id="contact-name-hint">Dein Name</p>
+                    <input type="text" id="contact-name" name="name" placeholder="Dein Name" autocomplete="name" required>
+                   
                 </div>
 
                 <div class="contact-field">
                     <label for="contact-email" id="contact-email-label">Wie lautet deine E-Mail?</label>
-                    <input type="email" id="contact-email" name="email" autocomplete="email" required>
-                    <p class="contact-hint" id="contact-email-hint">deinname@email.de</p>
+                    <input type="email" id="contact-email" name="email" placeholder="deinname@email.de" autocomplete="email" required>
+                    <p class="contact-error" id="contact-email-format-error">Bitte gib eine gueltige E-Mail-Adresse ein.</p>
+                  
                 </div>
 
                 <div class="contact-field">
                     <label for="contact-message" id="contact-message-label">Wie kann ich dir helfen?</label>
-                    <textarea id="contact-message" name="message" rows="4" required></textarea>
-                    <p class="contact-hint" id="contact-message-hint">Erzaehl mir kurz von deinem Projekt.</p>
+                    <textarea id="contact-message" name="message" placeholder="Erzaehl mir kurz von deinem Projekt." rows="4" required></textarea>
+                    
                 </div>
 
                 <label class="contact-check">
@@ -209,6 +210,7 @@
                         <span id="contact-privacy-suffix">gelesen und stimme der Verarbeitung meiner Daten zu.</span>
                     </span>
                 </label>
+                <p class="contact-error" id="contact-privacy-error">Bitte akzeptiere die Datenschutzrichtlinie.</p>
 
                 <button type="submit" class="contact-submit" id="contact-submit">Nachricht senden</button>
             </form>
@@ -219,6 +221,7 @@
     <script src="./js/data/references.js"></script>
     <script src="./js/features/cursor.js"></script>
     <script src="./js/features/language.js"></script>
+    <script src="./js/features/contact.js"></script>
     <script src="./js/features/projects.js"></script>
     <script src="./js/features/references.js"></script>
     <script src="./js/main.js"></script>

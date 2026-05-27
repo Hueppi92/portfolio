@@ -99,11 +99,31 @@
   min-height: 100px;
 }
 
-.contact-hint {
-  margin: 10px 0 0;
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.contact-field input.is-error-placeholder::placeholder,
+.contact-field textarea.is-error-placeholder::placeholder {
+  color: #ec7b7b;
+}
+
+.contact-error {
+  margin: 10px 0 0;
+  color: #ec7b7b;
   font-family: "Karla", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
+  display: none;
+}
+
+.contact-error.is-visible {
+  display: block;
+}
+
+.contact-check input[aria-invalid="true"] {
+  border-color: #ec7b7b;
 }
 
 .contact-check {
@@ -121,7 +141,26 @@
   margin-top: 2px;
   width: 18px;
   height: 18px;
-  accent-color: #3dcfb6;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #3dcfb6;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.contact-check input:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.2 8.4l2.7 2.7 6-6' fill='none' stroke='%233dcfb6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+}
+
+.contact-check input:focus-visible {
+  outline: 2px solid rgba(61, 207, 182, 0.45);
+  outline-offset: 2px;
 }
 
 .contact-check a {
@@ -164,3 +203,4 @@
   color: #3dcfb6;
   border-color: #3dcfb6;
 }
+
