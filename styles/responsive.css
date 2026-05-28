@@ -344,18 +344,26 @@
     margin-top: 24px;
   }
 
-  .scroll-indicator,
-  .divider-left,
-  .divider-right,
   .side-contact {
+    display: flex;
+  }
+
+  .side-social {
+    display: flex;
+  }
+
+  .side-email {
     display: none;
   }
 
   .carousel {
-    position: relative;
-    bottom: auto;
-    margin-top: 44px;
-    transform: rotate(-2deg);
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    right: auto;
+    width: 100vw;
+    margin-top: 0;
+    transform: translateX(-50%) rotate(-2deg);
   }
 
   .card {
@@ -667,19 +675,77 @@
 
 @media (max-width: 700px) {
   .hero-section {
-    padding: 96px 16px 72px;
+    height: 100vh;
+    min-height: 844px;
+    padding: 32px 16px 0;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+    overflow: hidden;
   }
 
   .nav-bar {
     position: absolute;
-    top: 16px;
+    top: 32px;
     left: 16px;
     right: 16px;
+    width: auto;
+    padding: 0;
+    justify-content: space-between;
   }
 
   .burger-button {
-    top: 16px;
+    top: 32px;
     right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .scroll-indicator {
+    left: 16px;
+    bottom: 248px;
+    width: 30px;
+    height: 48px;
+    border-radius: 32px;
+  }
+
+  .scroll-indicator span {
+    font-size: 16px;
+  }
+
+  .divider-left {
+    left: 30px;
+    bottom: 0;
+    height: 224px;
+  }
+
+  .divider-right {
+    height: 112px;
+    background-color: #ffffff;
+  }
+
+  .side-contact {
+    right: 16px;
+    top: auto;
+    bottom: 0;
+    gap: 24px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-social {
+    gap: 12px;
+  }
+
+  .social-link,
+  .social-link img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-link.mail {
+    display: inline-flex;
   }
 
   .nav-links {
@@ -697,37 +763,64 @@
   }
 
   .logo {
-    width: 96px;
+    width: 35px;
+    height: 48px;
+    margin-left: 0;
+  }
+
+  .hero-content {
+    gap: 12px;
   }
 
   .hero-content p {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 1;
   }
 
   .hero-content h1 {
-    font-size: 44px;
+    font-size: clamp(34px, 10.5vw, 62px);
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
 
   .button-div {
     width: auto;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 24px;
     justify-content: center;
+    margin-top: 20px;
   }
 
   .button-div button {
     width: auto;
+    height: 48px;
+    padding: 0 24px;
+    font-size: 18px;
   }
 
   .carousel {
-    margin-top: 30px;
-    padding: 14px 0;
+    position: absolute;
+    left: 50%;
+    right: auto;
+    bottom: 78px;
+    width: 1480px;
+    height: 53px;
+    transform: translateX(-50%) rotate(-3deg);
+    margin-top: 0;
+    padding: 12px 32px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(2.65px);
   }
 
   .card {
-    font-size: 18px;
-    padding: 0 14px;
+    font-size: 24px;
+    line-height: 1.2;
+    padding: 0 20px;
+  }
+
+  .card::before {
+    margin-right: 20px;
   }
 
   .about {

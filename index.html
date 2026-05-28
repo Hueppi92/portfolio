@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andreas Hüpgen</title>
+    <link rel="icon" type="image/png" href="./assets/icon/favicon_a.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,15 +22,14 @@
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
     <div class="hero-section content">
         <div class="nav-bar">
-             <div class="lang-switch">
-                    <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
-                    <label for="language-toggle"></label>
-                </div>
             <div class="nav-links" id="nav-links">
                 <a id="nav-about" href="#about">Ueber mich</a>
                 <a id="nav-skills" href="#skills">Skills</a>
                 <a id="nav-projects" href="#projects">Projekte</a>
-               
+                <div class="lang-switch">
+                    <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
+                    <label for="language-toggle"></label>
+                </div>
             </div>
             <img src="./assets/logo/logo.png" alt="Logo" class="logo">
             <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
@@ -46,41 +46,45 @@
     <button id="hero-btn-contact" onclick="location.href='#contact'">Kontakt</button>
        </div>
 </div>
-    <a class="scroll-indicator" href="#about" aria-label="Scroll down">
-        <span aria-hidden="true">↓</span>
-    </a>
-    <hr class="divider-left">
-    <div class="carousel content">
-        <div class="group">
-            <div class="card" id="carousel-remote-1">Remote Arbeit</div>
-            <div class="card" id="carousel-problem-1">Problemloesung</div>
-            <div class="card" id="carousel-team-1">Teamfaehig</div>
-            <div class="card" id="carousel-open-1">Offen fuer Arbeit</div>
-            <div class="card" id="carousel-fullstack-1">Fullstack Entwicklung</div>
-            <div class="card" id="carousel-location-1">Standort Aachen</div>    
-         </div>
-        <div aria-hidden class="group">
-            <div class="card" id="carousel-remote-2">Remote Arbeit</div>
-            <div class="card" id="carousel-problem-2">Problemloesung</div>
-            <div class="card" id="carousel-team-2">Teamfaehig</div>
-            <div class="card" id="carousel-open-2">Offen fuer Arbeit</div>
-            <div class="card" id="carousel-fullstack-2">Fullstack Entwicklung</div>
-            <div class="card" id="carousel-location-2">Standort Aachen</div>    
-         </div>
-        
-    </div>
-    <div class="side-contact">
-        <a class="side-email" href="mailto:a.huepgen@web.de">a.huepgen@web.de</a>
-        <div class="side-social">
-            <a class="social-link github" href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                <img src="./assets/icon/github.png" alt="GitHub">
-            </a>
-            <a class="social-link linkedin" href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                <img src="./assets/icon/linkedin.png" alt="LinkedIn">
-            </a>
+    <div class="hero-floating-group">
+        <a class="scroll-indicator" href="#about" aria-label="Scroll down">
+            <span aria-hidden="true">↓</span>
+        </a>
+        <hr class="divider-left">
+        <div class="carousel content">
+            <div class="group">
+                <div class="card" id="carousel-remote-1">Remote Arbeit</div>
+                <div class="card" id="carousel-problem-1">Problemloesung</div>
+                <div class="card" id="carousel-team-1">Teamfaehig</div>
+                <div class="card" id="carousel-open-1">Offen fuer Arbeit</div>
+                <div class="card" id="carousel-fullstack-1">Fullstack Entwicklung</div>
+                <div class="card" id="carousel-location-1">Standort Aachen</div>
+            </div>
+            <div aria-hidden class="group">
+                <div class="card" id="carousel-remote-2">Remote Arbeit</div>
+                <div class="card" id="carousel-problem-2">Problemloesung</div>
+                <div class="card" id="carousel-team-2">Teamfaehig</div>
+                <div class="card" id="carousel-open-2">Offen fuer Arbeit</div>
+                <div class="card" id="carousel-fullstack-2">Fullstack Entwicklung</div>
+                <div class="card" id="carousel-location-2">Standort Aachen</div>
+            </div>
+        </div>
+        <div class="side-contact">
+            <a class="side-email" href="mailto:a.huepgen@web.de">a.huepgen@web.de</a>
+            <div class="side-social">
+                <a class="social-link mail" href="mailto:a.huepgen@web.de" aria-label="Send email">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#3DCFB6" stroke-width="1.5"/><path d="m2 7 10 7 10-7" stroke="#3DCFB6" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </a>
+                <a class="social-link github" href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                    <img src="./assets/icon/github.png" alt="GitHub">
+                </a>
+                <a class="social-link linkedin" href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                    <img src="./assets/icon/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+            <hr class="divider-right">
         </div>
     </div>
-    <hr class="divider-right">
 </div>
     <section class="about content" id="about">
         <div class="about-wrapper">
@@ -234,7 +238,7 @@
     <footer class="site-footer content">
         <div class="footer-wrapper">
             <div class="footer-brand">
-                <img src="./assets/logo/logo.PNG" alt="Logo" class="footer-logo">
+                <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo">
                 <p class="footer-role" id="footer-role">Web Developer</p>
                 <p class="footer-location" id="footer-location">Aachen Germany</p>
             </div>

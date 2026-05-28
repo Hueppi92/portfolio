@@ -2,11 +2,24 @@
   width: 100%;
   height: 100vh;
   position: relative;
+  isolation: isolate;
+  overflow-x: clip;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
   background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+  z-index: -1;
 }
 
 .nav-bar {
@@ -107,6 +120,17 @@
   margin-top: 32px;
 }
 
+.hero-floating-group {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-floating-group .scroll-indicator,
+.hero-floating-group .side-contact {
+  pointer-events: auto;
+}
+
 .scroll-indicator {
   position: absolute;
   left: calc(clamp(32px, 8vw, 110px) - 14px);
@@ -149,14 +173,16 @@
 .carousel {
   position: absolute;
   bottom: 48px;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
   background: #ffffff1f;
   backdrop-filter: blur(5.300000190734863px);
   padding: 18px 0;
   display: flex;
   overflow: hidden;
-  transform: rotate(-4deg);
+  transform: translateX(-50%) rotate(-4deg);
   z-index: 3;
 }
 
@@ -188,18 +214,18 @@
 .side-contact {
   position: absolute;
   right: calc(clamp(32px, 8vw, 110px) - 12px);
-  top: 42%;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 24px;
   z-index: 4;
 }
 
 .side-email {
   color: #ffffff;
   text-decoration: none;
-  font-family: "Fira Code", monospace;
+  font-family: "Karla", sans-serif;
   font-size: 18px;
   letter-spacing: 0.02em;
   writing-mode: vertical-rl;
@@ -215,12 +241,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .social-link {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -255,10 +281,19 @@
 }
 
 .social-link img {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   transition: opacity 0.2s ease;
+}
+
+.social-link.mail {
+  display: none;
+}
+
+.social-link.mail svg {
+  width: 32px;
+  height: 32px;
 }
 
 .social-link.github img {
@@ -278,16 +313,12 @@
 }
 
 .divider-right {
-  position: absolute;
-  bottom: 0;
   width: 1px;
-  height: 210px;
+  height: 186px;
+  flex-grow: 1;
   border: 0;
   margin: 0;
-  background-color: #3dcfb6;
-  opacity: 0.7;
-  z-index: 1;
-  right: clamp(32px, 8vw, 110px);
+  background-color: #ffffff;
 }
 
 @keyframes scrollPulse {
