@@ -21,22 +21,29 @@
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
     <div class="hero-section content">
         <div class="nav-bar">
-            <div class="lang-switch">
-                <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
-                <label for="language-toggle"></label>
+             <div class="lang-switch">
+                    <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
+                    <label for="language-toggle"></label>
+                </div>
+            <div class="nav-links" id="nav-links">
+                <a id="nav-about" href="#about">Ueber mich</a>
+                <a id="nav-skills" href="#skills">Skills</a>
+                <a id="nav-projects" href="#projects">Projekte</a>
+               
             </div>
-            <a id="nav-about" href="#about">Ueber mich</a>
-            <a id="nav-skills" href="#skills">Skills</a>
-            <a id="nav-projects" href="#projects">Projekte</a>
-
             <img src="./assets/logo/logo.png" alt="Logo" class="logo">
+            <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
              </div>
              <div class="hero-content">
         <p id="hero-role">Fullstack Entwickler</p>
        <h1>Andreas Hüpgen</h1>
        <div class="button-div">
-    <button id="hero-btn-work">Meine Projekte</button>
-    <button id="hero-btn-contact">Kontakt</button>
+    <button id="hero-btn-work" onclick="location.href='#projects-kicker'">Meine Projekte</button>
+    <button id="hero-btn-contact" onclick="location.href='#contact'">Kontakt</button>
        </div>
 </div>
     <a class="scroll-indicator" href="#about" aria-label="Scroll down">
@@ -246,6 +253,7 @@
     <script src="./js/data/en.js"></script>
     <script src="./js/data/references.js"></script>
     <script src="./js/features/cursor.js"></script>
+    <script src="./js/features/menu.js"></script>
     <script src="./js/features/language.js"></script>
     <script src="./js/features/contact.js"></script>
     <script src="./js/features/projects.js"></script>

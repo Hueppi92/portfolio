@@ -39,7 +39,7 @@ let textsEn = {
     'project-modal-github': 'GitHub',
     'project-modal-live': 'Live Test',
     'project-modal-next': 'Next project',
-    'references-title': 'References',
+    'references-title': 'What my colleagues say about me',
     'contact-kicker': 'Contact me',
     'contact-title': "Let's work together",
     'contact-subtitle': 'Got a problem to solve?',

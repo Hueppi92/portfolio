@@ -121,13 +121,13 @@
   content: url("../assets/icon/quotes.png");
   position: absolute;
   top: -16px;
-  left: -16px;
+  left: -16great px;
 
 
 }
 .reference-quote {
   margin: 0;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.94);
   font-family: "Karla", sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -143,12 +143,12 @@
 .reference-line {
   height: 1px;
   width: 160px;
-  background: rgba(217, 217, 217, 0.6);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .reference-name {
   margin: 0;
-  color: #d9d9d9;
+  color: rgba(255, 255, 255, 0.84);
   font-family: "Karla", sans-serif;
   font-size: 15px;
   font-weight: 400;

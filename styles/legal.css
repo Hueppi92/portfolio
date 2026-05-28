@@ -21,41 +21,6 @@ body.legal-page {
   border-bottom: 1px solid #3dcfb6;
 }
 
-.lang-switch {
-  display: inline-flex;
-  background: transparent;
-  align-items: center;
-}
-
-.lang-switch input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.lang-switch label {
-  cursor: pointer;
-  width: 84px;
-  height: 28px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: background-image 0.2s ease;
-  background-image: url("../assets/icon/EN.png");
-}
-
-#language-toggle:not(:checked) + label:hover {
-  background-image: url("../assets/icon/EN_hover.png");
-}
-
-#language-toggle:checked + label {
-  background-image: url("../assets/icon/DE.png");
-}
-
-#language-toggle:checked + label:hover {
-  background-image: url("../assets/icon/DE_hover.png");
-}
-
 .legal-links {
   display: flex;
   align-items: center;

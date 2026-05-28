@@ -39,7 +39,7 @@ const textsDe = {
     'project-modal-github': 'GitHub',
     'project-modal-live': 'Live Test',
     'project-modal-next': 'Naechstes Projekt',
-    'references-title': 'Referenzen',
+    'references-title': 'Was meine Kollegen ueber mich sagen',
     'contact-kicker': 'Kontakt',
     'contact-title': 'Lass uns zusammen arbeiten',
     'contact-subtitle': 'Hast du ein Problem zu loesen?',
