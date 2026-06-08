@@ -16,7 +16,7 @@
   margin: 0 0 20px;
   color: #3dcfb6;
   font-family: "Karla", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
 }
 
@@ -24,23 +24,26 @@
   margin: 0 0 30px;
   color: #3dcfb6;
   font-family: "Fira Code", monospace;
-  font-size: 72px;
-  line-height: 0.95;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  font-weight: 700;
 }
 
 .contact-subtitle {
   margin: 0 0 18px;
   color: #3dcfb6;
   font-family: "Fira Code", monospace;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
+  line-height: 120%;
 }
 
 .contact-description {
   margin: 0 0 18px;
   color: #ffffff;
   font-family: "Karla", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.45;
   max-width: 560px;
 }
@@ -106,22 +109,6 @@
   color: #ec7b7b;
 }
 
-.contact-error {
-  margin: 10px 0 0;
-  color: #ec7b7b;
-  font-family: "Karla", sans-serif;
-  font-size: 16px;
-  display: none;
-}
-
-.contact-error.is-visible {
-  display: block;
-}
-
-.contact-check input[aria-invalid="true"] {
-  border-color: #ec7b7b;
-}
-
 .contact-check {
   display: flex;
   align-items: flex-start;
@@ -145,6 +132,10 @@
   cursor: pointer;
   display: inline-block;
   flex-shrink: 0;
+}
+
+.contact-check input.is-error {
+  border-color: #ec7b7b;
 }
 
 .contact-check input:checked {

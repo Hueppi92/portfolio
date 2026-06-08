@@ -12,21 +12,26 @@
     <link rel="stylesheet" href="./styles/legal.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 </head>
-<body class="legal-page">
+<body class="legal-page" onload="initializePage()">
     <header class="legal-header content">
         <div class="legal-nav">
-            <div class="lang-switch">
-                <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
-                <label for="language-toggle"></label>
-            </div>
-            <nav class="legal-links" aria-label="Primary">
-                <a id="nav-about" href="./index.html#about">About me</a>
-                <a id="nav-skills" href="./index.html#skills">Skills</a>
-                <a id="nav-projects" href="./index.html#projects">Projects</a>
-            </nav>
             <a href="./index.html" class="legal-home-link" aria-label="Back to homepage">
                 <img src="./assets/logo/logo.png" alt="Logo" class="legal-logo">
             </a>
+            <nav class="legal-links" id="nav-links" aria-label="Primary">
+                <a id="nav-about" href="./index.html#about">About me</a>
+                <a id="nav-skills" href="./index.html#skills">Skills</a>
+                <a id="nav-projects" href="./index.html#projects">Projects</a>
+                <div class="lang-switch">
+                    <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
+                    <label for="language-toggle"></label>
+                </div>
+            </nav>
+            <button class="burger-button legal-burger" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -76,7 +81,7 @@
                 <h2 id="legal-indemnity-title">Indemnity</h2>
                 <p id="legal-indemnity-text">You agree to indemnify, defend and hold harmless us, the listed students, the Developer Akademie, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice.</p>
                 <p>For any questions or notices, please contact us at a.huepgen@web.de.</p>
-                <p>Date: July 26, 2025</p>
+                <p>Date: June 2026</p>
             </div>
         </section>
     </main>
@@ -102,6 +107,7 @@
 
     <script src="./js/data/de.js"></script>
     <script src="./js/data/en.js"></script>
+    <script src="./js/features/menu.js"></script>
     <script src="./js/features/language.js"></script>
     <script src="./js/main.js"></script>
 </body>

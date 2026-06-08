@@ -1,5 +1,17 @@
 @media (max-width: 1200px) {
   .nav-bar {
+    z-index: 1000;
+  }
+
+  .burger-button {
+    z-index: 1002;
+  }
+
+  .nav-links {
+    z-index: 1001;
+  }
+
+  .nav-bar {
     gap: 24px;
     padding: 20px 32px;
   }
@@ -241,16 +253,29 @@
 }
 
 @media (max-width: 900px) {
+  .nav-bar {
+    z-index: 1000;
+  }
+
+  .burger-button {
+    z-index: 1002;
+  }
+
+  .nav-links {
+    z-index: 1001;
+  }
+
   .hero-section {
     height: auto;
     min-height: 100vh;
     padding: 116px 20px 104px;
     box-sizing: border-box;
     justify-content: center;
+    isolation: auto;
   }
 
   .nav-bar {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     right: 20px;
@@ -258,7 +283,6 @@
     padding: 0;
     justify-content: space-between;
     gap: 10px;
-    z-index: 8;
   }
 
   .logo {
@@ -274,7 +298,6 @@
     right: 20px;
     order: 2;
     margin-left: 0;
-    z-index: 12;
   }
 
   .nav-links {
@@ -375,6 +398,51 @@
   .legal-main {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .legal-page .legal-nav {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-items: stretch;
+    gap: 12px;
+  }
+
+  .legal-page .legal-links {
+    position: fixed;
+    top: 88px;
+    right: 16px;
+    width: min(60vw, 246px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 246px;
+    padding: 30px 20px 24px;
+    border: 1px solid #3dcfb6;
+    border-radius: 34px;
+    background: linear-gradient(120deg, #1c1c1c 8%, #0e5a4f 100%);
+    box-sizing: border-box;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+    z-index: 1001;
+  }
+
+  .legal-page .legal-links .lang-switch {
+    margin-top: 2px;
+    align-self: center;
+    order: 5;
+  }
+
+  body.legal-page.nav-menu-open .legal-links {
+    display: flex;
+  }
+
+  .legal-page .legal-burger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;
   }
 
   .legal-title {
@@ -536,7 +604,8 @@
   }
 
   .footer-logo {
-    width: 96px;
+    width: 112px;
+    height: 48px;
   }
 
   .footer-role,
@@ -674,6 +743,18 @@
 }
 
 @media (max-width: 700px) {
+  .nav-bar {
+    z-index: 1000;
+  }
+
+  .burger-button {
+    z-index: 1002;
+  }
+
+  .nav-links {
+    z-index: 1001;
+  }
+
   .hero-section {
     height: 100vh;
     min-height: 844px;
@@ -682,10 +763,11 @@
     align-items: center;
     background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
     overflow: hidden;
+    isolation: auto;
   }
 
   .nav-bar {
-    position: absolute;
+    position: fixed;
     top: 32px;
     left: 16px;
     right: 16px;
@@ -755,6 +837,29 @@
     min-height: 224px;
     padding: 26px 16px 20px;
     gap: 14px;
+  }
+
+  .legal-page .legal-links {
+    top: 82px;
+    right: 12px;
+    width: min(64vw, 236px);
+    min-height: 224px;
+    padding: 26px 16px 20px;
+    gap: 14px;
+  }
+
+  .legal-page .legal-links .lang-switch {
+    margin-top: 2px;
+    align-self: center;
+    order: 5;
+  }
+
+  .legal-page .legal-burger {
+    top: 32px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    z-index: 1002;
   }
 
   .nav-links a {
@@ -966,13 +1071,14 @@
   }
 
   .footer-logo {
-    width: 124px;
+    width: 35px;
+    height: 48px;
   }
 
   .footer-role,
   .footer-location,
   .footer-nav a {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.2;
   }
 
@@ -987,7 +1093,7 @@
     justify-self: center;
     text-align: center;
     margin-top: 12px;
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.04em;
   }
 
@@ -1041,6 +1147,18 @@
 }
 
 @media (max-width: 780px) {
+  .nav-bar {
+    z-index: 1000;
+  }
+
+  .burger-button {
+    z-index: 1002;
+  }
+
+  .nav-links {
+    z-index: 1001;
+  }
+
   .site-footer {
     padding: 30px 18px 20px;
   }
@@ -1056,20 +1174,13 @@
   .footer-brand {
     grid-column: 1;
     grid-row: 1;
-  }
-
-  .footer-brand {
     gap: 8px;
-  }
-
-  .footer-logo {
-    width: 124px;
   }
 
   .footer-role,
   .footer-location,
   .footer-nav a {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.2;
   }
 
@@ -1087,7 +1198,7 @@
     justify-self: center;
     text-align: center;
     margin-top: 12px;
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.04em;
   }
 }

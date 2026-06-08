@@ -62,7 +62,7 @@ const textsDe = {
     'contact-privacy-suffix': 'gelesen und stimme der Verarbeitung meiner Daten zu.',
     'contact-submit': 'Nachricht senden',
     'footer-role': 'Fullstack Entwickler',
-    'footer-location': 'Aachen Deutschland',
+    'footer-location': 'Aachen, Deutschland',
     'footer-copy': '© Andreas Hüpgen 2026',
     'footer-github': 'GitHub',
     'footer-linkedin': 'LinkedIn',

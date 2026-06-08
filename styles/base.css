@@ -2,6 +2,7 @@ html {
   font-family: "Fira Code", monospace, "Karla", sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,6 +22,12 @@ button {
   color: white;
   background: transparent;
   cursor: pointer;
+  font-size: 18px;
+ }
+
+#hero-btn-work {
+  font-size: 18px;
+  padding: 13px 24px;
 }
 
 .lang-switch {
@@ -72,6 +79,5 @@ button {
   );
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 9999;
   will-change: transform;
 }

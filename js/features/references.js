@@ -4,19 +4,29 @@ const dotsRoot = document.getElementById('reference-dots');
 const prevSlot = document.getElementById('reference-prev-slot');
 const activeSlot = document.getElementById('reference-active-slot');
 const nextSlot = document.getElementById('reference-next-slot');
-const referencesData = referenceEntries || [];
+let referencesData = [];
 
 let referenceIndex = 0;
 
-const getEntry = (offset) => referencesData[(referenceIndex + offset + referencesData.length) % referencesData.length];
+const getEntry = (offset) => {
+  if (!referencesData.length) return null;
+  return referencesData[(referenceIndex + offset + referencesData.length) % referencesData.length];
+};
+
 const getQuote = (entry) => {
+  if (!entry || !entry.quote) return '';
   const lang = typeof getLanguage === 'function' ? getLanguage() : 'de';
   return entry.quote[lang] || entry.quote.de || entry.quote.en || '';
 };
+
 const cardMarkup = (entry) => `<p class="reference-quote">${getQuote(entry)}</p><div class="reference-footer"><span class="reference-line"></span><p class="reference-name">${entry.author}</p></div>`;
 
 function renderCard(slot, entry, isActive) {
   if (!slot) return;
+  if (!entry) {
+    slot.innerHTML = '';
+    return;
+  }
   slot.classList.toggle('is-active', isActive);
   slot.classList.toggle('is-side', !isActive);
   slot.innerHTML = cardMarkup(entry);
@@ -34,7 +44,14 @@ function renderDots() {
 }
 
 function renderReferences() {
-  if (!activeSlot || !referencesData.length) return;
+  if (!activeSlot) return;
+  if (!referencesData.length) {
+    activeSlot.innerHTML = '';
+    if (prevSlot) prevSlot.innerHTML = '';
+    if (nextSlot) nextSlot.innerHTML = '';
+    if (dotsRoot) dotsRoot.innerHTML = '';
+    return;
+  }
   renderCard(prevSlot, getEntry(-1), false);
   renderCard(activeSlot, getEntry(0), true);
   renderCard(nextSlot, getEntry(1), false);
@@ -59,7 +76,26 @@ function referenceGo(index) {
   updateReferences(index);
 }
 
-function initReferences() {
+function normalizeReferenceEntries(data) {
+  if (!Array.isArray(data)) return [];
+  return data.filter((entry) => entry && entry.quote && entry.author);
+}
+
+async function fetchReferences() {
+  const response = await fetch('./js/data/references.json');
+  if (!response.ok) throw new Error(`Failed to load references: ${response.status}`);
+  const data = await response.json();
+  return normalizeReferenceEntries(data);
+}
+
+async function initReferences() {
   bindReferenceControls();
+  try {
+    referencesData = await fetchReferences();
+  } catch (error) {
+    console.error(error);
+    referencesData = [];
+  }
+  referenceIndex = 0;
   renderReferences();
 }

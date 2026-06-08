@@ -62,7 +62,7 @@ let textsEn = {
     'contact-privacy-suffix': 'and agree to the processing of my data as outlined.',
     'contact-submit': 'Say Hello ;)',
     'footer-role': 'Fullstack Developer',
-    'footer-location': 'Aachen Germany',
+    'footer-location': 'Aachen, Germany',
     'footer-copy': '© Andreas Hüpgen 2026',
     'footer-github': 'GitHub',
     'footer-linkedin': 'LinkedIn',

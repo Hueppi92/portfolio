@@ -1,11 +1,10 @@
-.references {
-  min-height: 100vh;
-  padding: 72px 0;
-  box-sizing: border-box;
+.references {  box-sizing: border-box;
   display:flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top:160px;
+  margin-bottom:144px;
 
 }
 
@@ -21,10 +20,11 @@
 
 .references-title {
   margin: 0 0 32px;
-  color: #d9d9d9;
-  font-family: "Karla", sans-serif;
-  font-size: 40px;
-  font-weight: 500;
+  color: rgba(61, 207, 182, 1);
+  font-family: "Fira Code", monospace;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0%;
 }
 
 .reference-arrow {
@@ -74,7 +74,6 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 3;
   background: linear-gradient(
     90deg,
     #1c1c1c 0%,
@@ -111,7 +110,6 @@
   opacity: 1;
   transform: scale(1.05);
   filter: none;
-  z-index: 2;
   background: rgba(61, 207, 182, 0.3);
   box-shadow: 0 0 0 1px rgba(61, 207, 182, 0.2);
   
@@ -121,7 +119,7 @@
   content: url("../assets/icon/quotes.png");
   position: absolute;
   top: -16px;
-  left: -16great px;
+  left: -16px;
 
 
 }

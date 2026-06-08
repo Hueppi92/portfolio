@@ -13,7 +13,6 @@ function setActiveMenuLink(targetHash) {
 function closeMobileMenu() {
   if (!burgerButton || !navLinks) return;
   document.body.classList.remove('nav-menu-open');
-  burgerButton.setAttribute('aria-expanded', 'false');
 }
 
 function toggleMobileMenu() {
@@ -24,7 +23,7 @@ function toggleMobileMenu() {
     return;
   }
   document.body.classList.add('nav-menu-open');
-  burgerButton.setAttribute('aria-expanded', 'true');
+  
 }
 
 function bindMenuLinks() {
@@ -38,22 +37,46 @@ function bindMenuLinks() {
   });
 }
 
+function setActiveMenuSection(sectionId) {
+  if (!navLinks) return;
+  const links = navLinks.querySelectorAll('a[href^="#"]');
+  links.forEach((link) => {
+    link.classList.toggle('is-active', link.getAttribute('href') === `#${sectionId}`);
+  });
+}
+
+function syncActiveMenuBySection() {
+  const about = document.getElementById('about');
+  const skills = document.getElementById('skills');
+  const projects = document.getElementById('projects');
+  if (!about || !skills || !projects) return;
+
+  const viewportSection = window.scrollY + window.innerHeight / 2;
+  if (viewportSection >= projects.offsetTop) return setActiveMenuSection('projects');
+  if (viewportSection >= skills.offsetTop) return setActiveMenuSection('skills');
+  setActiveMenuSection('about');
+}
+
+function handleOutsideMenuClick(event) {
+  const target = event.target;
+  if (!target || !document.body.classList.contains('nav-menu-open')) return;
+  if (navLinks.contains(target) || burgerButton.contains(target)) return;
+  closeMobileMenu();
+}
+
+function handleMenuResize() {
+  if (window.innerWidth > 900) closeMobileMenu();
+  syncActiveMenuBySection();
+}
+
 function initMobileMenu() {
   if (!burgerButton || !navLinks) return;
-  setActiveMenuLink();
+  syncActiveMenuBySection();
   burgerButton.onclick = toggleMobileMenu;
   bindMenuLinks();
-  window.addEventListener('hashchange', () => setActiveMenuLink());
-  document.addEventListener('click', (event) => {
-    const target = event.target;
-    if (!target || !document.body.classList.contains('nav-menu-open')) return;
-    if (navLinks.contains(target) || burgerButton.contains(target)) return;
-    closeMobileMenu();
-  });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMobileMenu();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeMobileMenu();
-  });
+  window.addEventListener('hashchange', syncActiveMenuBySection);
+  window.addEventListener('scroll', syncActiveMenuBySection, { passive: true });
+  window.addEventListener('resize', handleMenuResize);
+  document.addEventListener('click', handleOutsideMenuClick);
+  document.addEventListener('keydown', (event) => event.key === 'Escape' && closeMobileMenu());
 }

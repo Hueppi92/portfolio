@@ -24,6 +24,7 @@ body.legal-page {
 .legal-links {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 24px;
 }
 
@@ -43,8 +44,29 @@ body.legal-page {
 }
 
 .legal-logo {
-  width: 140px;
-  height: auto;
+  width: 48px;
+  height: 48px;
+}
+
+.legal-burger {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  padding: 10px 9px;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.legal-burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #3dcfb6;
+  border-radius: 999px;
 }
 
 .legal-main {

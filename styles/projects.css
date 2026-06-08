@@ -1,9 +1,10 @@
 .project-section {
-  min-height: 100vh;
+ 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 72px;
+  padding-bottom: 0;
   box-sizing: border-box;
   position: relative;
 }
@@ -51,8 +52,8 @@
 
 .project-item {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  display:flex;
+  justify-content: space-between;  
   align-items: center;
   gap: 32px;
   width: 100%;
@@ -95,7 +96,6 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.28s ease, transform 0.28s ease;
-  z-index: 2;
   isolation: isolate;
 }
 
@@ -112,7 +112,6 @@
     rgba(61, 207, 182, 0.8) 0 1px,
     transparent 2px 14px
   );
-  z-index: 0;
 }
 
 .project-row-image {
@@ -125,7 +124,6 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 1;
 }
 
 .project-item:hover .project-row-preview,
@@ -139,7 +137,6 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  z-index: 1;
   color: #ffffff;
   font-family: "Fira Code", monospace;
   font-size: 40px;
@@ -167,7 +164,6 @@
 
 .project-stack {
   position: relative;
-  z-index: 1;
   justify-self: end;
   color: #ffffff;
   font-family: "Karla", sans-serif;
@@ -189,7 +185,6 @@ body.project-modal-open {
   justify-content: center;
   padding: 40px;
   box-sizing: border-box;
-  z-index: 40;
 }
 
 .project-modal.is-open {

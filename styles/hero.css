@@ -3,24 +3,14 @@
   height: 100vh;
   position: relative;
   isolation: isolate;
-  overflow-x: clip;
+ overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
 }
 
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
-  z-index: -1;
-}
 
 .nav-bar {
   position: absolute;
@@ -50,9 +40,10 @@
 }
 
 .logo {
-  width: 156px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   opacity: 0.8;
+  margin-left: auto;
   transition:
     opacity 0.3s ease,
     transform 0.3s ease;
@@ -60,10 +51,6 @@
 
 .logo:hover {
   content: url("../assets/logo/logo_hover.png");
-}
-
-.logo {
-  margin-left: auto;
 }
 
 .burger-button {
@@ -107,7 +94,7 @@
 }
 
 .hero-content h1 {
-  font-size: 96px;
+  font-size: 128px;
   font-weight: 700;
   font-family: "Karla";
   margin: 0;
@@ -126,17 +113,14 @@
   pointer-events: none;
 }
 
-.hero-floating-group .scroll-indicator,
-.hero-floating-group .side-contact {
-  pointer-events: auto;
-}
 
-.scroll-indicator {
+
+ .scroll-indicator {
   position: absolute;
   left: calc(clamp(32px, 8vw, 110px) - 14px);
   bottom: 220px;
-  width: 32px;
-  height: 56px;
+  width: 30px;
+  height: 48px;
   border: 1px solid #3dcfb6;
   border-radius: 999px;
   color: #ffffff;
@@ -144,12 +128,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 4;
-}
+} 
 
 .scroll-indicator span {
-  font-size: 28px;
-  line-height: 1;
+  
   animation: scrollPulse 1.8s ease-in-out infinite;
 }
 
@@ -166,7 +148,6 @@
   margin: 0;
   background-color: #3dcfb6;
   opacity: 0.7;
-  z-index: 1;
   left: clamp(32px, 8vw, 110px);
 }
 
@@ -183,7 +164,6 @@
   display: flex;
   overflow: hidden;
   transform: translateX(-50%) rotate(-4deg);
-  z-index: 3;
 }
 
 .group {
@@ -219,7 +199,6 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  z-index: 4;
 }
 
 .side-email {
