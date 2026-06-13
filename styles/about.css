@@ -1,4 +1,8 @@
 .about {
+  width: 100%;
+}
+
+.about-inner {
   min-height: 100vh;
   display: flex;
   align-items: flex-start;

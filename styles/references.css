@@ -1,4 +1,9 @@
-.references {  box-sizing: border-box;
+.references {
+  width: 100%;
+}
+
+.references-inner {
+  box-sizing: border-box;
   display:flex;
   flex-direction: row;
   align-items: center;
@@ -70,17 +75,10 @@
 }
 
 .references-stage::after {
-  content: "";
+  content: none;
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    #1c1c1c 0%,
-    rgba(28, 28, 28, 0) 12%,
-    rgba(28, 28, 28, 0) 88%,
-    #1c1c1c 100%
-  );
 }
 
 .reference-card {
@@ -96,7 +94,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 44px;
-  background: rgba(61, 207, 182, 0.3);
+  background: transparent;
   transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
 }
 
@@ -110,7 +108,7 @@
   opacity: 1;
   transform: scale(1.05);
   filter: none;
-  background: rgba(61, 207, 182, 0.3);
+  background: transparent;
   box-shadow: 0 0 0 1px rgba(61, 207, 182, 0.2);
   
 }
@@ -148,7 +146,7 @@
   margin: 0;
   color: rgba(255, 255, 255, 0.84);
   font-family: "Karla", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   white-space: nowrap;
 }

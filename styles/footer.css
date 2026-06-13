@@ -1,4 +1,8 @@
 .site-footer {
+  width: 100%;
+}
+
+.site-footer-inner {
   padding: 36px 86px 0;
   box-sizing: border-box;
 }
@@ -22,10 +26,9 @@
 
 .footer-logo {
   width: 48px;
-  height: 48px;
-  opacity: 1;
-  transition:
-    opacity 0.3s ease;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .footer-logo:hover {

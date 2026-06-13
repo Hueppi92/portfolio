@@ -6,7 +6,7 @@
     "technologies": ["HTML", "CSS", "JavaScript", "Firebase"],
     "preview": "./assets/img/join_preview.png",
     "description": {
-      "de": "Task-Manager inspiriert vom Kanban-System. Aufgaben koennen per Drag and Drop organisiert, Benutzern zugewiesen und Kategorien zugeordnet werden.",
+      "de": "Task-Manager inspiriert vom Kanban-System. Aufgaben können per Drag and Drop organisiert, Benutzern zugewiesen und Kategorien zugeordnet werden.",
       "en": "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories."
     },
     "github": "https://github.com/Hueppi92/join",

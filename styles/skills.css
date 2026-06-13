@@ -1,14 +1,12 @@
 .skills {
-  min-height: 100vh;
+  width: 100%;
+}
+
+.skills-inner {
   display: flex;
   align-items: flex-start;
   padding: 72px;
   box-sizing: border-box;
-  background: radial-gradient(
-    22.43% 43.85% at 1.22% 52.45%,
-    rgba(8, 70, 59, 0.3) 0%,
-    #1c1c1c 100%
-  );
 }
 
 .skills-wrapper {
@@ -75,7 +73,6 @@
 }
 
 .skills-card h3 span,
-.skills-card h3 .accent,
 .skills-card h3 strong {
   color: #3dcfb6;
 }

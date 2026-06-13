@@ -91,6 +91,7 @@ function openProjectModal(index) {
   if (!projectModal) return;
   projectModal.classList.add('is-open');
   projectModal.setAttribute('aria-hidden', 'false');
+    projectModal.removeAttribute('inert');
   document.body.classList.add('project-modal-open');
 }
 
@@ -98,6 +99,7 @@ function closeProjectModal() {
   if (!projectModal) return;
   projectModal.classList.remove('is-open');
   projectModal.setAttribute('aria-hidden', 'true');
+    projectModal.setAttribute('inert', '');
   document.body.classList.remove('project-modal-open');
 }
 

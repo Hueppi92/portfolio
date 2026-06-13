@@ -1,4 +1,8 @@
 .contact {
+  width: 100%;
+}
+
+.contact-inner {
   padding: 72px;
   box-sizing: border-box;
 }
@@ -98,6 +102,12 @@
   padding: 0;
 }
 
+.contact-field textarea {
+  display: block;
+  min-height: 5.4em;
+  line-height: 1.35;
+}
+
 .contact-field input::placeholder,
 .contact-field textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);
@@ -109,15 +119,42 @@
   color: #ec7b7b;
 }
 
+.contact-field-error {
+  margin: 6px 0 0;
+  color: #ec7b7b;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  line-height: 1.35;
+  min-height: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.contact-field-error.is-visible {
+  opacity: 1;
+}
+
 .contact-check {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: start;
   margin: 26px 0;
   color: #ffffff;
   font-family: "Karla", sans-serif;
   font-size: 18px;
   line-height: 1.4;
+}
+
+.contact-check > span {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.contact-check .contact-field-error {
+  grid-column: 1 / -1;
+  margin-top: 0;
 }
 
 .contact-check input {
@@ -131,7 +168,7 @@
   background: transparent;
   cursor: pointer;
   display: inline-block;
-  flex-shrink: 0;
+  grid-column: 1;
 }
 
 .contact-check input.is-error {

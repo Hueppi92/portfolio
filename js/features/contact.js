@@ -1,202 +1,425 @@
-function initContactValidation() {
-  const form = document.querySelector('.contact-form');
-  if (!form) return;
+const contactForm_name = document.getElementById("contact-name");
+const contactForm_email = document.getElementById("contact-email");
+const contactForm_message = document.getElementById("contact-message");
+const contactForm_submit = document.getElementById("contact-submit");
+const contactForm_privacy = document.getElementById("contact-privacy");
 
-  form.setAttribute('novalidate', 'novalidate');
-  registerValidationResetHandlers(form);
+const contactValidationState = {
+  errors: {},
+  touched: {
+    name: false,
+    email: false,
+    message: false,
+    privacy: false,
+  },
+};
 
-  form.addEventListener('submit', handleContactSubmit);
+const contactDefaultPlaceholders = {
+  name: contactForm_name ? contactForm_name.placeholder : "",
+  email: contactForm_email ? contactForm_email.placeholder : "",
+  message: contactForm_message ? contactForm_message.placeholder : "",
+};
+
+const contactFieldErrorIds = {
+  name: "contact-name-error-inline",
+  email: "contact-email-error-inline",
+  message: "contact-message-error-inline",
+  privacy: "contact-privacy-error-inline",
+};
+
+function getContactTexts() {
+  const lang = typeof getLanguage === "function" ? getLanguage() : "de";
+  if (lang === "en") return typeof textsEn !== "undefined" ? textsEn : {};
+  return typeof textsDe !== "undefined" ? textsDe : {};
+}
+
+function getContactText(key, fallback) {
+  const texts = getContactTexts();
+  return texts[key] || fallback;
+}
+
+function validateEmail(email) {
+  const re =
+    /^(?!.*\.\.)([A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*)@((?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,})$/;
+  return re.test(email);
+}
+
+function setFieldError(field, message) {
+  if (message) {
+    contactValidationState.errors[field] = message;
+  } else {
+    delete contactValidationState.errors[field];
+  }
+}
+
+function validateNameField() {
+  const name = contactForm_name.value.trim();
+  if (!name) {
+    return getContactText("contact-name-error", "Please enter your name.");
+  }
+  if (name.length < 2) {
+    return getContactText(
+      "contact-validation-name",
+      "Please enter at least 2 characters.",
+    );
+  }
+  return "";
+}
+
+function validateEmailField() {
+  const email = contactForm_email.value.trim();
+  if (!email) {
+    return getContactText(
+      "contact-validation-email-required",
+      "Please enter your email.",
+    );
+  }
+  if (!validateEmail(email)) {
+    return getContactText(
+      "contact-validation-email-format",
+      "Please enter a valid email.",
+    );
+  }
+  return "";
+}
+
+function validateMessageField() {
+  const message = contactForm_message.value.trim();
+  if (!message) {
+    return getContactText(
+      "contact-message-error",
+      "Please enter your message.",
+    );
+  }
+  if (message.length < 10) {
+    return getContactText(
+      "contact-validation-message",
+      "Please enter at least 10 characters.",
+    );
+  }
+  return "";
+}
+
+function validatePrivacyField() {
+  if (!contactForm_privacy) return "";
+  if (!contactForm_privacy.checked) {
+    return getContactText(
+      "contact-validation-privacy",
+      "Please accept the privacy policy.",
+    );
+  }
+  return "";
+}
+
+function validateField(field) {
+  if (field === "name") {
+    setFieldError("name", validateNameField());
+    return;
+  }
+  if (field === "email") {
+    setFieldError("email", validateEmailField());
+    return;
+  }
+  if (field === "message") {
+    setFieldError("message", validateMessageField());
+    return;
+  }
+  if (field === "privacy") {
+    setFieldError("privacy", validatePrivacyField());
+  }
+}
+
+function getContactFieldErrorElement(field) {
+  const errorId = contactFieldErrorIds[field];
+  if (!errorId) return null;
+
+  const existingElement = document.getElementById(errorId);
+  if (existingElement) return existingElement;
+
+  const errorElement = document.createElement("p");
+  errorElement.id = errorId;
+  errorElement.className = "contact-field-error";
+  errorElement.setAttribute("aria-live", "polite");
+
+  if (field === "name" && contactForm_name) {
+    const wrapper = contactForm_name.closest(".contact-field");
+    if (wrapper) wrapper.appendChild(errorElement);
+  }
+
+  if (field === "email" && contactForm_email) {
+    const wrapper = contactForm_email.closest(".contact-field");
+    if (wrapper) wrapper.appendChild(errorElement);
+  }
+
+  if (field === "message" && contactForm_message) {
+    const wrapper = contactForm_message.closest(".contact-field");
+    if (wrapper) wrapper.appendChild(errorElement);
+  }
+
+  if (field === "privacy" && contactForm_privacy) {
+    const wrapper = contactForm_privacy.closest(".contact-check");
+    if (wrapper) wrapper.appendChild(errorElement);
+  }
+
+  return document.getElementById(errorId);
+}
+
+function renderFieldErrorText(field, message) {
+  const errorElement = getContactFieldErrorElement(field);
+  if (!errorElement) return;
+  errorElement.textContent = message || "";
+  errorElement.classList.toggle("is-visible", Boolean(message));
+}
+
+function renderFieldState(field) {
+  if (field === "name") {
+    const message = contactValidationState.errors.name || "";
+    const isEmpty = contactForm_name.value.trim().length === 0;
+    const showPlaceholderError = Boolean(message) && isEmpty;
+    const showInlineError = Boolean(message) && !isEmpty;
+    contactForm_name.classList.toggle(
+      "is-error-placeholder",
+      showPlaceholderError,
+    );
+    contactForm_name.setAttribute("aria-invalid", message ? "true" : "false");
+    contactForm_name.placeholder = showPlaceholderError
+      ? message
+      : contactDefaultPlaceholders.name;
+    renderFieldErrorText("name", showInlineError ? message : "");
+    return;
+  }
+
+  if (field === "email") {
+    const message = contactValidationState.errors.email || "";
+    const isEmpty = contactForm_email.value.trim().length === 0;
+    const showPlaceholderError = Boolean(message) && isEmpty;
+    const showInlineError = Boolean(message) && !isEmpty;
+    contactForm_email.classList.toggle(
+      "is-error-placeholder",
+      showPlaceholderError,
+    );
+    contactForm_email.setAttribute("aria-invalid", message ? "true" : "false");
+    contactForm_email.placeholder = showPlaceholderError
+      ? message
+      : contactDefaultPlaceholders.email;
+    renderFieldErrorText("email", showInlineError ? message : "");
+    return;
+  }
+
+  if (field === "message") {
+    const message = contactValidationState.errors.message || "";
+    const isEmpty = contactForm_message.value.trim().length === 0;
+    const showPlaceholderError = Boolean(message) && isEmpty;
+    const showInlineError = Boolean(message) && !isEmpty;
+    contactForm_message.classList.toggle(
+      "is-error-placeholder",
+      showPlaceholderError,
+    );
+    contactForm_message.setAttribute(
+      "aria-invalid",
+      message ? "true" : "false",
+    );
+    contactForm_message.placeholder = showPlaceholderError
+      ? message
+      : contactDefaultPlaceholders.message;
+    renderFieldErrorText("message", showInlineError ? message : "");
+    return;
+  }
+
+  if (field === "privacy" && contactForm_privacy) {
+    const message = contactValidationState.errors.privacy || "";
+    contactForm_privacy.classList.toggle("is-error", Boolean(message));
+    contactForm_privacy.setAttribute(
+      "aria-invalid",
+      message ? "true" : "false",
+    );
+    renderFieldErrorText("privacy", message);
+  }
+}
+
+function handleFieldBlur(field) {
+  contactValidationState.touched[field] = true;
+  validateField(field);
+  renderFieldState(field);
+}
+
+function handleFieldInput(field) {
+  if (!contactValidationState.touched[field]) return;
+  validateField(field);
+  renderFieldState(field);
+}
+
+function validateAllFields() {
+  contactValidationState.touched.name = true;
+  contactValidationState.touched.email = true;
+  contactValidationState.touched.message = true;
+  contactValidationState.touched.privacy = true;
+
+  validateField("name");
+  validateField("email");
+  validateField("message");
+  validateField("privacy");
+
+  renderFieldState("name");
+  renderFieldState("email");
+  renderFieldState("message");
+  renderFieldState("privacy");
+
+  return Object.keys(contactValidationState.errors).length === 0;
+}
+
+function focusFirstInvalidField() {
+  if (contactValidationState.errors.name && contactForm_name) {
+    contactForm_name.focus();
+    return;
+  }
+
+  if (contactValidationState.errors.email && contactForm_email) {
+    contactForm_email.focus();
+    return;
+  }
+
+  if (contactValidationState.errors.message && contactForm_message) {
+    contactForm_message.focus();
+    return;
+  }
+
+  if (contactValidationState.errors.privacy && contactForm_privacy) {
+    contactForm_privacy.focus();
+  }
+}
+
+function getBackendErrorMessage(errorKey) {
+  if (errorKey === "Invalid JSON") {
+    return getContactText("contact-backend-invalid-json", "Invalid form data.");
+  }
+  if (errorKey === "Invalid input data") {
+    return getContactText(
+      "contact-backend-invalid-input",
+      "Please check name, email, and message.",
+    );
+  }
+  if (errorKey === "Mail delivery failed") {
+    return getContactText(
+      "contact-backend-mail-failed",
+      "Mail could not be delivered.",
+    );
+  }
+  if (errorKey === "Method not allowed") {
+    return getContactText(
+      "contact-backend-method-not-allowed",
+      "Request method is not allowed.",
+    );
+  }
+  return getContactText(
+    "contact-status-fail",
+    "Message could not be sent. Please try again.",
+  );
+}
+
+function resetContactFormState() {
+  contactValidationState.errors = {};
+  contactValidationState.touched = {
+    name: false,
+    email: false,
+    message: false,
+    privacy: false,
+  };
+
+  renderFieldState("name");
+  renderFieldState("email");
+  renderFieldState("message");
+  renderFieldState("privacy");
+}
+
+async function sendContactForm(formElement) {
+  const payload = {
+    name: contactForm_name.value.trim(),
+    email: contactForm_email.value.trim(),
+    message: contactForm_message.value.trim(),
+  };
+
+  const response = await fetch(formElement.action, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const responseData = await response.json().catch(() => ({}));
+  if (!response.ok || !responseData.success) {
+    throw new Error(getBackendErrorMessage(responseData.error));
+  }
 }
 
 async function handleContactSubmit(event) {
   event.preventDefault();
-  const form = event.currentTarget;
-  const submitButton = form.querySelector('button[type="submit"]');
-  if (submitButton) submitButton.disabled = true;
+  const formElement = event.currentTarget;
 
-  clearValidationState(form);
-
-  const validationMessage = validateContactForm(form);
-  if (validationMessage) {
-    if (validationMessage !== 'privacy-error') {
-      handleSubmitStatus(form, false, validationMessage);
-    }
-    if (submitButton) submitButton.disabled = false;
+  if (!validateAllFields()) {
+    focusFirstInvalidField();
     return;
   }
 
   try {
-    const formData = new FormData(form);
-    const payload = handleFormData(formData);
-    const jsonPayload = JSON.stringify(payload);
-    const response = await transferPayloadToPHP(form.action, jsonPayload);
-    const result = await response.json();
-
-    if (!response.ok || !result.success) {
-      throw new Error(result.error || 'Request failed');
-    }
-
-    form.reset();
-    handleSubmitStatus(form, true);
+    if (contactForm_submit) contactForm_submit.disabled = true;
+    await sendContactForm(formElement);
+    alert(
+      getContactText("contact-status-success", "Message sent successfully."),
+    );
+    formElement.reset();
+    resetContactFormState();
   } catch (error) {
-    handleSubmitStatus(form, false, error.message);
+    const fallbackMessage = getContactText(
+      "contact-status-fail",
+      "Message could not be sent. Please try again.",
+    );
+    alert(error instanceof Error ? error.message : fallbackMessage);
   } finally {
-    if (submitButton) submitButton.disabled = false;
+    if (contactForm_submit) contactForm_submit.disabled = false;
   }
 }
 
-function handleFormData(formData) {
-  const payload = {
-      name: String(formData.get('name') || '').trim(),
-      email: String(formData.get('email') || '').trim(),
-      message: String(formData.get('message') || '').trim(),
-    };
-  return payload;
-}
-
-function handleSubmitStatus(form, isSuccess, errorMessage = '') {
-  if (isSuccess) {
-    showContactStatus(form, 'Message sent successfully.', true);
+function initContactValidation() {
+  if (
+    !contactForm_name ||
+    !contactForm_email ||
+    !contactForm_message ||
+    !contactForm_submit
+  )
     return;
+
+  const formElement = contactForm_submit.closest("form");
+  if (!formElement) return;
+  if (formElement.dataset.contactValidationBound === "true") return;
+  formElement.dataset.contactValidationBound = "true";
+
+  getContactFieldErrorElement("name");
+  getContactFieldErrorElement("email");
+  getContactFieldErrorElement("message");
+  getContactFieldErrorElement("privacy");
+
+  contactForm_name.addEventListener("blur", () => handleFieldBlur("name"));
+  contactForm_email.addEventListener("blur", () => handleFieldBlur("email"));
+  contactForm_message.addEventListener("blur", () =>
+    handleFieldBlur("message"),
+  );
+
+  contactForm_name.addEventListener("input", () => handleFieldInput("name"));
+  contactForm_email.addEventListener("input", () => handleFieldInput("email"));
+  contactForm_message.addEventListener("input", () =>
+    handleFieldInput("message"),
+  );
+
+  if (contactForm_privacy) {
+    contactForm_privacy.addEventListener("blur", () =>
+      handleFieldBlur("privacy"),
+    );
+    contactForm_privacy.addEventListener("change", () =>
+      handleFieldInput("privacy"),
+    );
   }
 
-  showContactStatus(form, errorMessage || 'Message could not be sent. Please try again.', false);
-}
-
-async function transferPayloadToPHP(url, payload) {
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: payload,
-  });
-  return response;
-}
-
-function showContactStatus(form, message, isSuccess) {
-  let status = form.querySelector('[data-contact-status]');
-  if (!status) {
-    status = document.createElement('p');
-    status.setAttribute('data-contact-status', 'true');
-    form.appendChild(status);
-  }
-  status.textContent = message;
-  status.style.color = isSuccess ? '#2e7d32' : '#c62828';
-}
-
-function registerValidationResetHandlers(form) {
-  const fields = getValidatedFields(form);
-
-  fields.forEach((field) => {
-    field.dataset.defaultPlaceholder = field.placeholder;
-    field.addEventListener('input', () => clearFieldError(field));
-  });
-
-  const privacyField = form.querySelector('input[name="privacy"]');
-  if (privacyField) {
-    privacyField.addEventListener('change', () => {
-      privacyField.classList.remove('is-error');
-      clearPrivacyError(form);
-    });
-  }
-}
-
-function validateContactForm(form) {
-  const nameField = form.querySelector('input[name="name"]');
-  const emailField = form.querySelector('input[name="email"]');
-  const messageField = form.querySelector('textarea[name="message"]');
-  const privacyField = form.querySelector('input[name="privacy"]');
-
-  if (!nameField || !emailField || !messageField || !privacyField) {
-    return 'Form setup is incomplete.';
-  }
-
-  const nameValue = nameField.value.trim();
-  const emailValue = emailField.value.trim();
-  const messageValue = messageField.value.trim();
-
-  if (nameValue.length < 2) {
-    setFieldError(nameField, 'Oops! it seems your name is missing.');
-    return 'Please check the highlighted fields.';
-  }
-
-  if (!emailValue) {
-    setFieldError(emailField, 'Please enter your email.');
-    return 'Please check the highlighted fields.';
-  } else if (!isValidEmail(emailValue)) {
-    setFieldError(emailField, 'Please enter a valid email.');
-    return 'Please check the highlighted fields.';
-  }
-
-  if (messageValue.length < 10) {
-    setFieldError(messageField, 'What do you need to develop? Please provide more details.');
-    return 'Please check the highlighted fields.';
-  }
-
-  if (!privacyField.checked) {
-    privacyField.classList.add('is-error');
-    showPrivacyError(form, 'Please accept the privacy policy checkbox.');
-    return 'privacy-error';
-  }
-
-  return '';
-}
-
-function getValidatedFields(form) {
-  return Array.from(form.querySelectorAll('input[name="name"], input[name="email"], textarea[name="message"]'));
-}
-
-function setFieldError(field, errorPlaceholder) {
-  field.value = '';
-  field.placeholder = errorPlaceholder;
-  field.classList.add('is-error-placeholder');
-}
-
-function clearFieldError(field) {
-  field.classList.remove('is-error-placeholder');
-  const defaultPlaceholder = field.dataset.defaultPlaceholder;
-  if (defaultPlaceholder) {
-    field.placeholder = defaultPlaceholder;
-  }
-}
-
-function clearValidationState(form) {
-  getValidatedFields(form).forEach((field) => clearFieldError(field));
-
-  const privacyField = form.querySelector('input[name="privacy"]');
-  if (privacyField) {
-    privacyField.classList.remove('is-error');
-  }
-
-  clearPrivacyError(form);
-}
-
-function showPrivacyError(form, message) {
-  const privacyContainer = form.querySelector('.contact-check');
-  if (!privacyContainer) return;
-
-  let privacyError = form.querySelector('[data-privacy-error]');
-  if (!privacyError) {
-    privacyError = document.createElement('p');
-    privacyError.setAttribute('data-privacy-error', 'true');
-    privacyError.style.margin = '8px 0 0';
-    privacyError.style.color = '#c62828';
-    privacyError.style.fontFamily = '"Karla", sans-serif';
-    privacyError.style.fontSize = '14px';
-    privacyContainer.insertAdjacentElement('afterend', privacyError);
-  }
-
-  privacyError.textContent = message;
-}
-
-function clearPrivacyError(form) {
-  const privacyError = form.querySelector('[data-privacy-error]');
-  if (privacyError) {
-    privacyError.remove();
-  }
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  formElement.addEventListener("submit", handleContactSubmit);
 }

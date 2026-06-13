@@ -12,31 +12,29 @@
     <link rel="stylesheet" href="./styles/legal.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 </head>
-<body class="legal-page" onload="initializePage()">
-    <header class="legal-header content">
-        <div class="legal-nav">
-            <a href="./index.html" class="legal-home-link" aria-label="Back to homepage">
-                <img src="./assets/logo/logo.png" alt="Logo" class="legal-logo">
-            </a>
-            <nav class="legal-links" id="nav-links" aria-label="Primary">
-                <a id="nav-about" href="./index.html#about">About me</a>
-                <a id="nav-skills" href="./index.html#skills">Skills</a>
-                <a id="nav-projects" href="./index.html#projects">Projects</a>
-                <div class="lang-switch">
-                    <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
-                    <label for="language-toggle"></label>
+<body id="top" class="legal-page" onload="initializePage()">
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+    <div class="hero-section">
+        <div class="hero-section-inner content">
+            <div class="nav-bar">
+                <div class="nav-links" id="nav-links">
+                    <a id="nav-about" href="./index.html#about">About me</a>
+                    <a id="nav-skills" href="./index.html#skills">Skills</a>
+                    <a id="nav-projects" href="./index.html#projects">Projects</a>
+                    <div class="lang-switch">
+                        <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
+                        <label for="language-toggle"></label>
+                    </div>
                 </div>
-            </nav>
-            <button class="burger-button legal-burger" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <main class="legal-main content">
-        <section class="legal-card">
+                <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
+                <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="legal-content">
+                <section class="legal-card">
             <h1 class="legal-title" id="legal-title">Legal Notice</h1>
 
             <div class="legal-block">
@@ -84,12 +82,14 @@
                 <p>Date: June 2026</p>
             </div>
         </section>
-    </main>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer content">
         <div class="footer-wrapper">
             <div class="footer-brand">
-                <img src="./assets/logo/logo.PNG" alt="Logo" class="footer-logo">
+                <img src="./assets/logo/logo.PNG" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
                 <p class="footer-role" id="footer-role">Fullstack Developer</p>
                 <p class="footer-location" id="footer-location">Aachen Germany</p>
             </div>

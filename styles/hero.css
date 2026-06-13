@@ -1,15 +1,20 @@
 .hero-section {
   width: 100%;
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+}
+
+.hero-section-inner {
   height: 100vh;
   position: relative;
   isolation: isolate;
- overflow: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+
 }
+
 
 
 .nav-bar {
@@ -41,11 +46,11 @@
 
 .logo {
   width: 48px;
-  height: 48px;
-  opacity: 0.8;
+  height: auto;
+  object-fit: contain;
   margin-left: auto;
+  flex-shrink: 0;
   transition:
-    opacity 0.3s ease,
     transform 0.3s ease;
 }
 
@@ -105,6 +110,36 @@
   display: flex;
   gap: 24px;
   margin-top: 32px;
+}
+
+.button-div button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  border-color: rgba(255, 255, 255, 0.8);
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.button-div button span {
+  display: block;
+  width: max-content;
+  transform: translateX(0);
+  transition: transform 0.8s linear;
+}
+
+.button-div button:hover,
+.button-div button:focus-visible {
+  color: #3dcfb6;
+  border-color: #3dcfb6;
+}
+
+.button-div button:hover span,
+.button-div button:focus-visible span {
+  transform: translateX(-260%);
 }
 
 .hero-floating-group {

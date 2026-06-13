@@ -40,21 +40,6 @@
     font-size: 26px;
   }
 
-  .legal-header {
-    padding: 8px 40px 0;
-  }
-
-  .legal-nav {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    padding: 16px 8px;
-  }
-
-  .legal-links {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
   .legal-main {
     padding: 28px 40px 0;
   }
@@ -63,7 +48,7 @@
     font-size: 52px;
   }
 
-  .about {
+  .about-inner {
     padding: 80px 40px;
   }
 
@@ -107,7 +92,7 @@
     font-size: 17px;
   }
 
-  .skills {
+  .skills-inner {
     padding: 80px 40px;
   }
 
@@ -125,7 +110,7 @@
     padding-top: 0;
   }
 
-  .project-section {
+  .project-section-inner {
     padding: 80px 40px;
     align-items: center;
   }
@@ -152,7 +137,7 @@
   }
 
   .project-stack {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .project-row-preview {
@@ -193,15 +178,15 @@
     bottom: 24px;
   }
 
-  .references {
+  .references-inner {
     padding: 80px 40px;
   }
 
-  .contact {
+  .contact-inner {
     padding: 80px 40px;
   }
 
-  .site-footer {
+  .site-footer-inner {
     padding: 24px 40px 40px;
   }
 
@@ -265,7 +250,7 @@
     z-index: 1001;
   }
 
-  .hero-section {
+  .hero-section-inner {
     height: auto;
     min-height: 100vh;
     padding: 116px 20px 104px;
@@ -288,6 +273,7 @@
   .logo {
     order: 1;
     width: 112px;
+    height: auto;
     margin-left: 0;
   }
 
@@ -394,55 +380,9 @@
     padding: 0 18px;
   }
 
-  .legal-header,
   .legal-main {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .legal-page .legal-nav {
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    justify-items: stretch;
-    gap: 12px;
-  }
-
-  .legal-page .legal-links {
-    position: fixed;
-    top: 88px;
-    right: 16px;
-    width: min(60vw, 246px);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    min-height: 246px;
-    padding: 30px 20px 24px;
-    border: 1px solid #3dcfb6;
-    border-radius: 34px;
-    background: linear-gradient(120deg, #1c1c1c 8%, #0e5a4f 100%);
-    box-sizing: border-box;
-    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
-    z-index: 1001;
-  }
-
-  .legal-page .legal-links .lang-switch {
-    margin-top: 2px;
-    align-self: center;
-    order: 5;
-  }
-
-  body.legal-page.nav-menu-open .legal-links {
-    display: flex;
-  }
-
-  .legal-page .legal-burger {
-    display: block;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1002;
   }
 
   .legal-title {
@@ -454,12 +394,11 @@
     font-size: 22px;
   }
 
-  .legal-block p,
-  .legal-links a {
+  .legal-block p {
     font-size: 16px;
   }
 
-  .project-section {
+  .project-section-inner {
     padding: 56px 20px;
     align-items: center;
   }
@@ -561,7 +500,7 @@
 
   .project-modal-about {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .project-modal-description {
@@ -588,24 +527,24 @@
   .project-modal-next {
     right: 24px;
     bottom: 20px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
-  .references {
+  .references-inner {
     padding: 72px 20px 52px;
   }
 
-  .contact {
+  .contact-inner {
     padding: 56px 20px;
   }
 
-  .site-footer {
+  .site-footer-inner {
     padding: 16px 20px 32px;
   }
 
   .footer-logo {
     width: 112px;
-    height: 48px;
+    height: auto;
   }
 
   .footer-role,
@@ -755,13 +694,12 @@
     z-index: 1001;
   }
 
-  .hero-section {
+  .hero-section-inner {
     height: 100vh;
     min-height: 844px;
     padding: 32px 16px 0;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
     overflow: hidden;
     isolation: auto;
   }
@@ -839,29 +777,6 @@
     gap: 14px;
   }
 
-  .legal-page .legal-links {
-    top: 82px;
-    right: 12px;
-    width: min(64vw, 236px);
-    min-height: 224px;
-    padding: 26px 16px 20px;
-    gap: 14px;
-  }
-
-  .legal-page .legal-links .lang-switch {
-    margin-top: 2px;
-    align-self: center;
-    order: 5;
-  }
-
-  .legal-page .legal-burger {
-    top: 32px;
-    right: 16px;
-    width: 48px;
-    height: 48px;
-    z-index: 1002;
-  }
-
   .nav-links a {
     font-size: 16px;
     line-height: 1.2;
@@ -869,7 +784,7 @@
 
   .logo {
     width: 35px;
-    height: 48px;
+    height: auto;
     margin-left: 0;
   }
 
@@ -928,7 +843,7 @@
     margin-right: 20px;
   }
 
-  .about {
+  .about-inner {
     padding: 56px 20px;
   }
 
@@ -951,7 +866,7 @@
     font-size: 16px;
   }
 
-  .skills {
+  .skills-inner {
     padding: 56px 20px;
   }
 
@@ -1008,12 +923,12 @@
   }
 
   .project-modal-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.45;
   }
 
   .project-tech-badge {
-    font-size: 11px;
+    font-size: 16px;
   }
 
   .project-tech-image {
@@ -1036,7 +951,7 @@
   .project-modal-next {
     right: 16px;
     bottom: 18px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .project-item {
@@ -1050,11 +965,11 @@
     text-align: left;
   }
 
-  .references {
+  .references-inner {
     padding: 56px 16px 44px;
   }
 
-  .site-footer {
+  .site-footer-inner {
     padding: 30px 18px 20px;
   }
 
@@ -1072,7 +987,7 @@
 
   .footer-logo {
     width: 35px;
-    height: 48px;
+    height: auto;
   }
 
   .footer-role,
@@ -1138,7 +1053,7 @@
   }
 
   .reference-name {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .reference-line {
@@ -1159,7 +1074,7 @@
     z-index: 1001;
   }
 
-  .site-footer {
+  .site-footer-inner {
     padding: 30px 18px 20px;
   }
 

@@ -18,12 +18,13 @@
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 </head>
-<body onload="initializePage()">
+<body id="top" onload="initializePage()">
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-    <div class="hero-section content">
+    <div class="hero-section">
+        <div class="hero-section-inner content">
         <div class="nav-bar">
             <div class="nav-links" id="nav-links">
-                <a id="nav-about" href="#about">Ueber mich</a>
+                <a id="nav-about" href="#about">Über mich</a>
                 <a id="nav-skills" href="#skills">Skills</a>
                 <a id="nav-projects" href="#projects">Projekte</a>
                 <div class="lang-switch">
@@ -31,7 +32,7 @@
                     <label for="language-toggle"></label>
                 </div>
             </div>
-            <img src="./assets/logo/logo.png" alt="Logo" class="logo">
+            <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
             <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -42,8 +43,8 @@
         <p id="hero-role">Fullstack Entwickler</p>
        <h1>Andreas Hüpgen</h1>
        <div class="button-div">
-    <button id="hero-btn-work" onclick="location.href='#projects-kicker'">Meine Projekte</button>
-    <button id="hero-btn-contact" onclick="location.href='#contact'">Kontakt</button>
+    <button id="hero-btn-work" onclick="location.href='#projects-kicker'"><span>Meine Projekte</span></button>
+    <button id="hero-btn-contact" onclick="location.href='#contact'"><span>Kontakt</span></button>
        </div>
 </div>
     <div class="hero-floating-group">
@@ -57,17 +58,17 @@
         <div class="carousel content">
             <div class="group">
                 <div class="card" id="carousel-remote-1">Remote Arbeit</div>
-                <div class="card" id="carousel-problem-1">Problemloesung</div>
-                <div class="card" id="carousel-team-1">Teamfaehig</div>
-                <div class="card" id="carousel-open-1">Offen fuer Arbeit</div>
+                <div class="card" id="carousel-problem-1">Problemlösung</div>
+                <div class="card" id="carousel-team-1">Teamfähig</div>
+                <div class="card" id="carousel-open-1">Offen für Arbeit</div>
                 <div class="card" id="carousel-fullstack-1">Fullstack Entwicklung</div>
                 <div class="card" id="carousel-location-1">Standort Aachen</div>
             </div>
             <div aria-hidden class="group">
                 <div class="card" id="carousel-remote-2">Remote Arbeit</div>
-                <div class="card" id="carousel-problem-2">Problemloesung</div>
-                <div class="card" id="carousel-team-2">Teamfaehig</div>
-                <div class="card" id="carousel-open-2">Offen fuer Arbeit</div>
+                <div class="card" id="carousel-problem-2">Problemlösung</div>
+                <div class="card" id="carousel-team-2">Teamfähig</div>
+                <div class="card" id="carousel-open-2">Offen für Arbeit</div>
                 <div class="card" id="carousel-fullstack-2">Fullstack Entwicklung</div>
                 <div class="card" id="carousel-location-2">Standort Aachen</div>
             </div>
@@ -88,8 +89,9 @@
             <hr class="divider-right">
         </div>
     </div>
-</div>
-    <section class="about content" id="about">
+    </div>
+    <section class="about" id="about">
+        <div class="about-inner content">
         <div class="about-wrapper">
             <div class="about-image-frame">
                 <div class="about-image-stripes" aria-hidden="true"></div>
@@ -100,25 +102,27 @@
             <div class="about-text">
                 <p class="about-kicker" id="about-kicker">Wer ich bin</p>
                 <div class="about-card">
-                    <h2 id="about-title">Ueber mich</h2>
+                    <h2 id="about-title">Über mich</h2>
                     <p id="about-text">Hey, ich bin Andreas. Ich entwickle praktische Web-Apps und setze saubere UI-Designs in responsive Frontend-Erlebnisse um.</p>
                     <ul class="about-list">
-                        <li id="about-li-1">Ich lebe in Aachen und bin offen fuer Remote-Arbeit.</li>
+                        <li id="about-li-1">Ich lebe in Aachen und bin offen für Remote-Arbeit.</li>
                         <li id="about-li-2">Ich lerne gerne neue Technologien und verbessere mich kontinuierlich.</li>
-                        <li id="about-li-3">Ich loese Probleme ruhig, strukturiert und kollaborativ.</li>
+                        <li id="about-li-3">Ich löse Probleme ruhig, strukturiert und kollaborativ.</li>
                         <li id="about-li-4">Mehrsprachigkeit hilft mir, effektiv mit diversen Teams zu kommunizieren.</li>
                     </ul>
                 </div>
             </div>
         </div>
+        </div>
     </section>
-    <section class="skills content" id="skills">
+    <section class="skills" id="skills">
+        <div class="skills-inner content">
         <div class="skills-wrapper">
             <div class="skills-text">
                 <p class="skills-kicker" id="skills-kicker">Technologien</p>
                 <div class="skills-card">
                     <h2 id="skills-title">Skill Set</h2>
-                    <p id="skills-text">Ich habe ein solides Fundament in der Frontend-Entwicklung und arbeite sicher mit HTML, CSS und JavaScript, um responsive und benutzerfreundliche Interfaces umzusetzen. Mit Git, REST-APIs und Scrum bringe ich ausserdem Struktur in die Zusammenarbeit und bleibe durch mein Growth Mindset offen fuer neue Technologien und kontinuierliches Lernen.</p>
+                    <p id="skills-text">Ich habe ein solides Fundament in der Frontend-Entwicklung und arbeite sicher mit HTML, CSS und JavaScript, um responsive und benutzerfreundliche Interfaces umzusetzen. Mit Git, REST-APIs und Scrum bringe ich ausserdem Struktur in die Zusammenarbeit und bleibe durch mein Growth Mindset offen für neue Technologien und kontinuierliches Lernen.</p>
                     <h3>
                         <span id="skills-need-prefix">Brauchst du noch einen</span>
                         <strong id="skills-need-strong"> anderen Skill?</strong>
@@ -158,17 +162,19 @@
                 </div>
             </div>
         </div>
-      
+        </div>
     </section>
-    <div class="project-section content" id="projects">
+    <section class="project-section" id="projects">
+        <div class="project-section-inner content">
         <div class="project-header">
             <p id="projects-kicker">Portfolio</p>
             <h2 id="projects-title">Meine Projekte</h2>
-            <p class="projects-description" id="projects-text">Erkunde eine Auswahl meiner Arbeiten - interagiere mit Projekten, um meine Faehigkeiten in Aktion zu sehen.</p>
+            <p class="projects-description" id="projects-text">Erkunde eine Auswahl meiner Arbeiten - interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen.</p>
         </div>
         <div class="project-list" id="project-list"></div>
-    </div>
-    <div class="project-modal" id="project-modal" aria-hidden="true">
+        </div>
+    </section>
+    <div class="project-modal" id="project-modal" aria-hidden="true" inert>
         <div class="project-modal-backdrop" id="project-modal-backdrop"></div>
         <section class="project-modal-panel content" id="project-modal-panel" aria-modal="true" role="dialog" aria-labelledby="project-modal-name">
             <button class="project-modal-close" id="project-modal-close" type="button" aria-label="Close project details">×</button>
@@ -176,6 +182,7 @@
         </section>
     </div>
     <section class="references" id="references">
+        <div class="references-inner content">
         <div class="references-wrapper">
             <h2 class="references-title" id="references-title">Referenzen</h2>
 
@@ -192,14 +199,16 @@
                 <button class="reference-arrow" id="reference-next" type="button" aria-label="Next reference">→</button>
             </div>
         </div>
+        </div>
     </section>
-    <section class="contact content" id="contact" >
+    <section class="contact" id="contact" >
+        <div class="contact-inner content">
         <div class="contact-wrapper">
             <div class="contact-copy">
                 <p class="contact-kicker" id="contact-kicker">Kontakt</p>
                 <h2 class="contact-title" id="contact-title">Lass uns zusammen arbeiten</h2>
-                <h3 class="contact-subtitle" id="contact-subtitle">Hast du ein Problem zu loesen?</h3>
-                <p class="contact-description" id="contact-description">Schreib mir, wenn du Unterstuetzung fuer dein Projekt suchst. Ich antworte zeitnah und klar.</p>
+                <h3 class="contact-subtitle" id="contact-subtitle">Hast du ein Problem zu lösen?</h3>
+                <p class="contact-description" id="contact-description">Schreib mir, wenn du Unterstützung für dein Projekt suchst. Ich antworte zeitnah und klar.</p>
                 <p class="contact-note">
                     <span id="contact-note-prefix">Du suchst einen Frontend Entwickler?</span>
                     <a href="mailto:a.huepgen@web.de" id="contact-note-link">Lass uns sprechen!</a>
@@ -220,7 +229,7 @@
 
                 <div class="contact-field">
                     <label for="contact-message" id="contact-message-label">Wie kann ich dir helfen?</label>
-                    <textarea id="contact-message" name="message" placeholder="Erzaehl mir kurz von deinem Projekt." rows="4" minlength="10" required></textarea>
+                    <textarea id="contact-message" name="message" placeholder="Erzähl mir kurz von deinem Projekt." rows="4" minlength="10" required></textarea>
                     
                 </div>
 
@@ -236,11 +245,13 @@
                 <button type="submit" class="contact-submit" id="contact-submit">Nachricht senden</button>
             </form>
         </div>
+        </div>
     </section>
-    <footer class="site-footer content">
+    <footer class="site-footer">
+        <div class="site-footer-inner content">
         <div class="footer-wrapper">
             <div class="footer-brand">
-                <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo">
+                <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
                 <p class="footer-role" id="footer-role">Fullstack Developer</p>
                 <p class="footer-location" id="footer-location">Aachen, Germany</p>
             </div>
@@ -253,6 +264,7 @@
                 <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
                 <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
             </nav>
+        </div>
         </div>
     </footer>
     <script src="./js/data/de.js"></script>
