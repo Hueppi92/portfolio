@@ -16,13 +16,12 @@
     <link rel="stylesheet" href="./styles/references.css">
     <link rel="stylesheet" href="./styles/contact.css">
     <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body id="top" onload="initializePage()">
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
     <div class="hero-section">
         <div class="hero-section-inner content">
-        <div class="nav-bar">
+        <div class="nav-bar content">
             <div class="nav-links" id="nav-links">
                 <a id="nav-about" href="#about">Über mich</a>
                 <a id="nav-skills" href="#skills">Skills</a>
@@ -39,7 +38,9 @@
                 <span></span>
             </button>
              </div>
+              
              <div class="hero-content">
+              
         <p id="hero-role">Fullstack Entwickler</p>
        <h1>Andreas Hüpgen</h1>
        <div class="button-div">
@@ -55,7 +56,7 @@
 </span>
         </a>
         <hr class="divider-left">
-        <div class="carousel content">
+        <div class="carousel">
             <div class="group">
                 <div class="card" id="carousel-remote-1">Remote Arbeit</div>
                 <div class="card" id="carousel-problem-1">Problemlösung</div>
@@ -88,6 +89,7 @@
             </div>
             <hr class="divider-right">
         </div>
+    </div>
     </div>
     </div>
     <section class="about" id="about">
@@ -237,12 +239,12 @@
                     <input type="checkbox" id="contact-privacy" name="privacy" value="accepted" required>
                     <span>
                         <span id="contact-privacy-prefix">Ich habe die</span>
-                        <a href="./legal-notice.html" id="contact-privacy-link">Datenschutzrichtlinie</a>
+                        <a href="./legal-notice.html#privacy" id="contact-privacy-link">Datenschutzrichtlinie</a>
                         <span id="contact-privacy-suffix">gelesen und stimme der Verarbeitung meiner Daten zu.</span>
                     </span>
                 </label>
 
-                <button type="submit" class="contact-submit" id="contact-submit">Nachricht senden</button>
+                <button type="submit" class="contact-submit" id="contact-submit" disabled></button>
             </form>
         </div>
         </div>

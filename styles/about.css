@@ -3,7 +3,6 @@
 }
 
 .about-inner {
-  min-height: 100vh;
   display: flex;
   align-items: flex-start;
   padding: 0px 72px 96px;
@@ -75,7 +74,8 @@
 }
 
 .about-card {
-  width: 568px;
+  width: 100%; /* Changed from fixed 568px to fluid */
+  max-width: 568px;
   border-radius: 30px;
   border: 1px solid #3dcfb6;
   padding: 32px;
@@ -150,4 +150,172 @@
 .about-list li:nth-child(3)::before,
 .about-list li:nth-child(4)::before {
   background-image: url("../assets/icon/quality.png");
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+@media (max-width: 768px) {
+  .about-inner {
+    padding: 0 24px 60px;
+  }
+  .about-wrapper {
+    margin-top: 48px;
+    row-gap: 48px;
+  }
+  .about-kicker {
+    font-size: 28px;
+  }
+  .about-card {
+    padding: 24px;
+  }
+  .about-card h2 {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+  .about-image-stripes {
+    left: -16px;
+    bottom: -16px;
+    width: calc(100% - 16px);
+    height: calc(100% - 8px);
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-inner {
+    padding: 80px 40px;
+  }
+
+  .about-wrapper {
+    grid-template-columns: minmax(320px, 620px);
+    gap: 40px;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 80px;
+    min-height: auto;
+  }
+
+  .about-image-frame {
+    width: 100%;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-kicker {
+    font-size: 32px;
+  }
+
+  .about-text {
+    width: 100%;
+    min-height: auto;
+    margin-top: 0;
+  }
+
+  .about-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .about-card h2 {
+    font-size: 62px;
+    line-height: 1.1;
+  }
+
+  .about-card p,
+  .about-list li {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-inner {
+    padding: 56px 20px;
+  }
+
+  .about-image-stripes {
+    left: -18px;
+    bottom: -16px;
+  }
+
+  .about-card {
+    padding: 24px 18px;
+  }
+
+  .about-card h2 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+
+  .about-card p,
+  .about-list li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-inner {
+    padding: 20px 16px 56px;
+  }
+
+  .about-wrapper {
+    margin-top: 0;
+    row-gap: 28px;
+  }
+
+  .about-image-frame {
+    max-width: none;
+  }
+
+  .about-image,
+  .about-image-stripes {
+    border-radius: 28px;
+  }
+
+  .about-image-stripes {
+    left: -14px;
+    bottom: -14px;
+    width: calc(100% - 14px);
+    height: calc(100% - 6px);
+  }
+
+  .about-text {
+    gap: 12px;
+  }
+
+  .about-kicker {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .about-card {
+    border-radius: 30px;
+    padding: 18px 18px 22px;
+  }
+
+  .about-card h2 {
+    font-size: 56px;
+    margin-bottom: 16px;
+  }
+
+  .about-card p,
+  .about-list li {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .about-list {
+    gap: 10px;
+  }
+
+  .about-list li {
+    padding-left: 40px;
+    padding-top: 2px;
+  }
+
+  .about-list li::before {
+    width: 24px;
+    height: 24px;
+  }
 }

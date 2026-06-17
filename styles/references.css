@@ -4,23 +4,21 @@
 
 .references-inner {
   box-sizing: border-box;
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top:160px;
-  margin-bottom:144px;
-
+  margin-top: 160px;
+  margin-bottom: 144px;
 }
 
 .references-wrapper {
   width: 100%;
-  max-width: none;
+  max-width: 100%; /* Changed from none to protect overflow */
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .references-title {
@@ -65,13 +63,14 @@
 .references-stage {
   position: relative;
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   display: flex;
   gap: 48px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 28px 0 8px;
+  padding: 28px 16px 8px; /* Added minor horizontal padding */
+  box-sizing: border-box;
 }
 
 .references-stage::after {
@@ -110,7 +109,6 @@
   filter: none;
   background: transparent;
   box-shadow: 0 0 0 1px rgba(61, 207, 182, 0.2);
-  
 }
 
 .reference-card.is-active::before {
@@ -118,9 +116,8 @@
   position: absolute;
   top: -16px;
   left: -16px;
-
-
 }
+
 .reference-quote {
   margin: 0;
   color: rgba(255, 255, 255, 0.94);
@@ -177,4 +174,203 @@
 
 .reference-dot.is-active {
   background: #3dcfb6;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+@media (max-width: 768px) {
+  .references-inner {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+  .references-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .reference-card {
+    width: 100%;
+    flex: 0 0 100%; /* Forces the slider card to adapt to mobile container width */
+    height: auto;   /* Prevent content cutting off if text wraps extra columns */
+    padding: 32px 24px;
+  }
+  .reference-quote {
+    font-size: 16px;
+  }
+  .reference-line {
+    width: 80px; /* Shortened accent line */
+  }
+}
+
+@media (max-width: 1200px) {
+  .references-inner {
+    margin-top: 100px;
+    margin-bottom: 96px;
+    padding: 80px 40px;
+  }
+
+  .reference-card.is-side {
+    display: none;
+  }
+
+  .reference-card.is-active {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .references-inner {
+    padding: 72px 20px 52px;
+  }
+
+  .references-title {
+    margin: 0 0 28px;
+    color: #3dcfb6;
+    font-family: "Fira Code", monospace;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.12;
+    text-align: center;
+    max-width: 16ch;
+  }
+
+  .references-stage {
+    gap: 0;
+    padding: 24px 14px 8px;
+    max-width: 100%;
+    min-height: 380px;
+  }
+
+  .reference-card {
+    width: calc(100% - 44px);
+    flex: 0 0 calc(100% - 44px);
+    min-height: 360px;
+    height: auto;
+    border-radius: 34px;
+    padding: 82px 28px 34px;
+    gap: 26px;
+  }
+
+  .reference-card.is-side {
+    display: block;
+    position: absolute;
+    top: 28px;
+    width: 22px;
+    min-height: 312px;
+    padding: 0;
+    border-radius: 14px;
+    opacity: 1;
+    overflow: hidden;
+    background: rgba(61, 207, 182, 0.22);
+  }
+
+  #reference-prev-slot {
+    left: -10px;
+  }
+
+  #reference-next-slot {
+    right: -10px;
+  }
+
+  .reference-card.is-side .reference-quote,
+  .reference-card.is-side .reference-footer {
+    display: none;
+  }
+
+  .reference-card.is-active {
+    width: calc(100% - 44px);
+    transform: none;
+    box-shadow: 0 0 0 1px rgba(61, 207, 182, 0.25);
+  }
+
+  .reference-card.is-active::before {
+    top: -14px;
+    left: -2px;
+  }
+
+  .reference-quote {
+    font-size: 18px;
+    line-height: 1.38;
+  }
+
+  .reference-footer {
+    gap: 16px;
+  }
+
+  .reference-line {
+    width: 72px;
+  }
+
+  .reference-name {
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .references-controls-bottom {
+    margin-top: 22px;
+    gap: 16px;
+  }
+
+  .reference-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .reference-dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 700px) {
+  .references-inner {
+    padding: 56px 16px 44px;
+  }
+
+  .references-title {
+    font-size: 44px;
+    margin-bottom: 24px;
+  }
+
+  .references-stage {
+    min-height: 330px;
+    padding: 20px 10px 8px;
+  }
+
+  .reference-card {
+    width: calc(100% - 34px);
+    flex: 0 0 calc(100% - 34px);
+    min-height: 318px;
+    border-radius: 30px;
+    padding: 72px 18px 26px;
+    gap: 20px;
+  }
+
+  .reference-card.is-side {
+    width: 16px;
+    min-height: 280px;
+  }
+
+  #reference-prev-slot {
+    left: -8px;
+  }
+
+  #reference-next-slot {
+    right: -8px;
+  }
+
+  .reference-card.is-active {
+    width: calc(100% - 34px);
+  }
+
+  .reference-quote {
+    font-size: 17px;
+  }
+
+  .reference-name {
+    font-size: 16px;
+  }
+
+  .reference-line {
+    width: 56px;
+  }
 }

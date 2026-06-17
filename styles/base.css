@@ -3,12 +3,16 @@ html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling bugs */
 }
 
 body {
   margin: 0;
-  background-color: #1c1c1c;
-    
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .content {
@@ -24,7 +28,7 @@ button {
   background: transparent;
   cursor: pointer;
   font-size: 18px;
- }
+}
 
 #hero-btn-work {
   font-size: 18px;
@@ -81,4 +85,230 @@ button {
   pointer-events: none;
   transform: translate(-50%, -50%);
   will-change: transform;
+  z-index: 9999;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 98px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 40px;
+  box-sizing: border-box;
+  margin-bottom: 51px;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Fira Code", monospace;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-bar a:hover {
+  color: #3dcfb6;
+}
+
+.logo {
+  width: 48px;
+  height: auto;
+  object-fit: contain;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  content: url("../assets/logo/logo_hover.png");
+}
+
+.burger-button {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 14px;
+  padding: 10px 9px;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  z-index: 101; /* Layer over navigation overlays */
+}
+
+.burger-button span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #3dcfb6;
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 1200px) {
+  .nav-bar {
+    gap: 24px;
+    padding: 20px 32px;
+  }
+
+  .nav-bar a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-bar {
+    z-index: 1000;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    padding: 0;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .burger-button {
+    z-index: 1002;
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    order: 2;
+    margin-left: 0;
+  }
+
+  .nav-links {
+    z-index: 1001;
+    position: fixed;
+    top: 88px;
+    right: 16px;
+    width: min(60vw, 246px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 246px;
+    padding: 30px 20px 24px;
+    border: 1px solid #3dcfb6;
+    border-radius: 34px;
+    background: linear-gradient(120deg, #1c1c1c 8%, #0e5a4f 100%);
+    box-sizing: border-box;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+  }
+
+  body.nav-menu-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links a.is-active {
+    color: #3dcfb6;
+  }
+
+  .nav-links a.is-active::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 6px auto 0;
+    border-radius: 50%;
+    background: #caf7f0;
+  }
+
+  .nav-links .lang-switch {
+    margin-top: 2px;
+    align-self: center;
+    order: 5;
+  }
+
+  .logo {
+    order: 1;
+    width: 48px;
+    height: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-bar {
+    top: 32px;
+    left: 16px;
+    right: 16px;
+    width: auto;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .burger-button {
+    top: 32px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-links {
+    top: 82px;
+    right: 12px;
+    width: min(64vw, 236px);
+    min-height: 224px;
+    padding: 26px 16px 20px;
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .logo {
+    width: 35px;
+    height: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-bar {
+    top: 20px;
+    left: 16px;
+    right: 16px;
+    align-items: center;
+  }
+
+  .logo {
+    width: 36px;
+  }
+
+  .burger-button {
+    top: 20px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
 }
