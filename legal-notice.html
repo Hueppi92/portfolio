@@ -4,115 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andreas Hüpgen | Legal Notice</title>
+    <link rel="icon" type="image/png" href="./assets/icon/favicon_a.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/legal.css">
+   
 </head>
 <body id="top" class="legal-page" onload="initializePage()">
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
     <div class="legal-layout">
-        <div class="legal-header">
+        <header class="legal-header">
             <div class="nav-bar content">
-            <div class="nav-links" id="nav-links">
-                <a id="nav-about" href="./index.html#about">Über mich</a>
-                <a id="nav-skills" href="./index.html#skills">Skills</a>
-                <a id="nav-projects" href="./index.html#projects">Projekte</a>
-                <div class="lang-switch">
-                    <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
-                    <label for="language-toggle"></label>
+                <div class="nav-links" id="nav-links">
+                    <a id="nav-about" href="./index.html#about">About me</a>
+                    <a id="nav-skills" href="./index.html#skills">Skills</a>
+                    <a id="nav-projects" href="./index.html#projects">Projects</a>
+                    <div class="lang-switch">
+                        <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
+                        <label for="language-toggle"></label>
+                    </div>
                 </div>
+                <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
+                <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
-            <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            </div>
-        </div>
-        
-        <div class="legal-main">
+        </header>
+
+        <main class="legal-main">
             <div class="legal-content content">
-                <!-- Main Header Toggle -->
-                <h1 id="legal-main-title" class="legal-title"></h1>
+                <section class="legal-card">
+            <h1 class="legal-title" id="legal-title">Legal Notice</h1>
 
-                <!-- Legal Notice Section -->
-                <section>
-                    <h2 id="legal-section-imprint"></h2>
-                    <h3 id="legal-imprint-sub-1"></h3>
-                    <p>
-                        Andreas Hüpgen<br>
-                        Brucknerstr. 20<br>
-                        52134 Herzogenrath
-                    </p>
+            <div class="legal-block">
+                <h2 id="legal-imprint-title">Imprint</h2>
+                <p id="legal-imprint-names">Andreas Hüpgen</p>
+                <p id="legal-imprint-address">Brucknerstr. 20</p>
+                <p id="legal-imprint-city">52134 Herzogenrath</p>
+            </div>
 
-                    <h3 id="legal-imprint-sub-2"></h3>
-                    <p>E-Mail: a.huepgen@web.de</p>
+            <div class="legal-block">
+                <h2 id="legal-project-title">Project Information</h2>
+                <p id="legal-project-text">This website is part of a personal portfolio project and is presented for professional and educational purposes.</p>
+            </div>
 
-                    <h3 id="legal-imprint-sub-3"></h3>
-                    <p id="legal-imprint-project-desc"></p>
+            <div class="legal-block">
+                <h2 id="legal-terms-title">Acceptance of Terms</h2>
+                <p id="legal-terms-text">By accessing and using Portfolio (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.</p>
+            </div>
 
-                    <h3 id="legal-imprint-sub-4"></h3>
-                    <p id="legal-imprint-scope-1"></p>
-                    <p id="legal-imprint-scope-2"></p>
+            <div class="legal-block">
+                <h2 id="legal-scope-title">Scope and Ownership of the Product</h2>
+                <p id="legal-scope-text">Portfolio has been developed as part of a student group project in a web development bootcamp at the Developer Akademie GmbH. It has an educational purpose and is not intended for extensive personal &amp; business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product.</p>
+                <p>The design of Portfolio is owned by the Developer Akademie GmbH. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.</p>
+            </div>
 
-                    <h3 id="legal-imprint-sub-5"></h3>
-                    <p id="legal-imprint-liability"></p>
+            <div class="legal-block">
+                <h2 id="legal-rights-title">Proprietary Rights</h2>
+                <p id="legal-rights-text">Aside from the design owned by Developer Akademie GmbH, we, the listed students, retain all proprietary rights in Portfolio, including any associated copyrighted material, trademarks, and other proprietary information.</p>
+            </div>
+
+            <div class="legal-block">
+                <h2 id="legal-use-title">Use of the Product</h2>
+                <p id="legal-use-text">Portfolio is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of Portfolio for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of Portfolio.</p>
+            </div>
+
+            <div class="legal-block">
+                <h2 id="legal-disclaimer-title">Disclaimer and Limitation of Liability</h2>
+                <p id="legal-disclaimer-text">Portfolio is provided "as is" without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the Developer Akademie, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of Portfolio.</p>
+            </div>
+
+            <div class="legal-block">
+                <h2 id="legal-indemnity-title">Indemnity</h2>
+                <p id="legal-indemnity-text">You agree to indemnify, defend and hold harmless us, the listed students, the Developer Akademie, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice.</p>
+                <p>For any questions or notices, please contact us at a.huepgen@web.de.</p>
+                <p>Date: June 2026</p>
+            </div>
                 </section>
 
-                <hr style="border: 0; height: 1px; background: rgba(61, 207, 182, 0.2); margin: 40px 0;">
+                <hr class="legal-divider">
 
-                <!-- Privacy Policy Section -->
-                <section id="privacy">
-                    <h2 id="legal-section-privacy"></h2>
-                    
-                    <h3 id="legal-privacy-sub-1"></h3>
-                    <p><strong id="legal-privacy-strong-1"></strong> <span id="legal-privacy-p-1"></span></p>
-                    <p><strong id="legal-privacy-strong-2"></strong> <span id="legal-privacy-p-2"></span></p>
+                <section class="legal-card" id="privacy">
+                    <h1 class="legal-title">Privacy Policy</h1>
 
-                    <h3 id="legal-privacy-sub-2"></h3>
-                    <p id="legal-privacy-host-desc"></p>
-                    <p>
-                        <strong id="legal-privacy-strong-host"></strong> 
-                        <span id="legal-privacy-host-details"></span> 
-                        <a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" style="color: #3dcfb6; text-decoration: underline;">Hostinger Privacy Policy</a>.
-                    </p>
+                    <div class="legal-block">
+                        <h2>Responsible Party</h2>
+                        <p>Andreas Hüpgen<br>Brucknerstr. 20<br>52134 Herzogenrath<br>E-Mail: a.huepgen@web.de</p>
+                    </div>
 
-                    <h3 id="legal-privacy-sub-3"></h3>
-                    <p><strong id="legal-privacy-strong-ssl"></strong> <span id="legal-privacy-ssl-desc"></span></p>
-                    <p><strong id="legal-privacy-strong-rights"></strong> <span id="legal-privacy-rights-desc"></span></p>
+                    <div class="legal-block">
+                        <h2>What Data Is Collected</h2>
+                        <p>When you use the contact form on this website, the following personal data is collected and processed:</p>
+                        <p><strong>Name</strong> — to address you correctly in the reply.</p>
+                        <p><strong>E-mail address</strong> — to send you a response.</p>
+                        <p><strong>Message content</strong> — to process your enquiry.</p>
+                        <p>No other personal data (e.g. IP address, browser data) is actively stored or evaluated by this website.</p>
+                    </div>
 
-                    <h3 id="legal-privacy-sub-4"></h3>
-                    <p><strong id="legal-privacy-strong-form"></strong> <span id="legal-privacy-form-desc-1"></span></p>
-                    <p id="legal-privacy-form-desc-2"></p>
-                    <p id="legal-privacy-form-desc-3"></p>
+                    <div class="legal-block">
+                        <h2>Purpose and Legal Basis</h2>
+                        <p>Your data is used exclusively to answer your enquiry (Art. 6 para. 1 lit. b GDPR — processing necessary for the performance of a contract or pre-contractual measures, or Art. 6 para. 1 lit. f GDPR — legitimate interest in responding to contact requests).</p>
+                        <p>Your data will not be passed on to third parties and will not be used for advertising purposes.</p>
+                    </div>
 
-                    <p id="legal-date" style="margin-top: 40px; font-size: 14px; opacity: 0.7;"></p>
+                    <div class="legal-block">
+                        <h2>Hosting &amp; Data Transmission</h2>
+                        <p>This website is hosted by <strong>Hostinger</strong>. When a contact form is submitted, the data is transmitted via an encrypted HTTPS connection and processed on the server to deliver the e-mail. Hostinger's privacy policy can be found at <a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color: #3dcfb6;">hostinger.com/legal/privacy-policy</a>.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>Storage Duration</h2>
+                        <p>Data transmitted via the contact form is not stored in a database. It is sent directly as an e-mail to the responsible party and is only retained in the e-mail inbox. E-mails are deleted as soon as the matter has been resolved and no statutory retention obligations apply.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>Your Rights</h2>
+                        <p>You have the right to obtain information about the personal data stored about you, to have it corrected, deleted, or its processing restricted, and to object to processing (Arts. 15–21 GDPR). You also have the right to data portability (Art. 20 GDPR) and to lodge a complaint with a supervisory authority (Art. 77 GDPR).</p>
+                        <p>To exercise your rights, please contact: a.huepgen@web.de</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>No Cookies / No Tracking</h2>
+                        <p>This website does not use cookies, tracking scripts, analytics tools, or social media plugins that collect personal data.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>Google Fonts</h2>
+                        <p>This website loads fonts from Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). When the page is loaded, your browser connects to Google's servers, which may log your IP address. For details see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color: #3dcfb6;">policies.google.com/privacy</a>.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <p>Last updated: June 2026</p>
+                    </div>
                 </section>
             </div>
-        </div>
+        </main>
 
         <footer class="site-footer legal-footer">
             <div class="site-footer-inner content">
-            <div class="footer-wrapper">
-                <div class="footer-brand">
-                    <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
-                    <p class="footer-role" id="footer-role">Fullstack Developer</p>
-                    <p class="footer-location" id="footer-location">Aachen, Germany</p>
+                <div class="footer-wrapper">
+                    <div class="footer-brand">
+                        <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
+                        <p class="footer-role" id="footer-role">Fullstack Developer</p>
+                        <p class="footer-location" id="footer-location">Aachen Germany</p>
+                    </div>
+
+                    <p class="footer-copy" id="footer-copy">© Andreas Hüpgen 2026</p>
+
+                    <nav class="footer-nav" aria-label="Footer links">
+                        <a href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" id="footer-github">GitHub</a>
+                        <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
+                        <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
+                        <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
+                    </nav>
                 </div>
-
-                <p class="footer-copy" id="footer-copy">© Andreas Hüpgen 2026</p>
-
-                <nav class="footer-nav" aria-label="Footer links">
-                    <a href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" id="footer-github">GitHub</a>
-                    <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
-                    <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
-                    <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
-                </nav>
-            </div>
             </div>
         </footer>
     </div>

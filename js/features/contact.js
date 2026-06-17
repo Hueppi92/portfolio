@@ -129,6 +129,20 @@ function validateField(field) {
   }
 }
 
+function checkFormValiditySilent() {
+  const hasNameError = Boolean(validateNameField());
+  const hasEmailError = Boolean(validateEmailField());
+  const hasMessageError = Boolean(validateMessageField());
+  const hasPrivacyError = Boolean(validatePrivacyField());
+
+  return !hasNameError && !hasEmailError && !hasMessageError && !hasPrivacyError;
+}
+
+function updateSubmitButtonState() {
+  if (!contactForm_submit) return;
+  contactForm_submit.disabled = !checkFormValiditySilent();
+}
+
 function getContactFieldErrorElement(field) {
   const errorId = contactFieldErrorIds[field];
   if (!errorId) return null;
@@ -241,9 +255,11 @@ function handleFieldBlur(field) {
   contactValidationState.touched[field] = true;
   validateField(field);
   renderFieldState(field);
+  updateSubmitButtonState();
 }
 
 function handleFieldInput(field) {
+  updateSubmitButtonState();
   if (!contactValidationState.touched[field]) return;
   validateField(field);
   renderFieldState(field);
@@ -264,6 +280,8 @@ function validateAllFields() {
   renderFieldState("email");
   renderFieldState("message");
   renderFieldState("privacy");
+
+  updateSubmitButtonState();
 
   return Object.keys(contactValidationState.errors).length === 0;
 }
@@ -330,6 +348,8 @@ function resetContactFormState() {
   renderFieldState("email");
   renderFieldState("message");
   renderFieldState("privacy");
+
+  updateSubmitButtonState();
 }
 
 async function sendContactForm(formElement) {
@@ -353,6 +373,31 @@ async function sendContactForm(formElement) {
   }
 }
 
+let contactToastTimer = null;
+
+function showContactToast(message, type) {
+  let toast = document.getElementById("contact-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "contact-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.className = "contact-toast contact-toast--" + type;
+
+  // Force reflow so transition triggers even if re-showing immediately
+  void toast.offsetWidth;
+  toast.classList.add("contact-toast--visible");
+
+  clearTimeout(contactToastTimer);
+  contactToastTimer = setTimeout(() => {
+    toast.classList.remove("contact-toast--visible");
+  }, 5000);
+}
+
 async function handleContactSubmit(event) {
   event.preventDefault();
   const formElement = event.currentTarget;
@@ -365,8 +410,9 @@ async function handleContactSubmit(event) {
   try {
     if (contactForm_submit) contactForm_submit.disabled = true;
     await sendContactForm(formElement);
-    alert(
+    showContactToast(
       getContactText("contact-status-success", "Message sent successfully."),
+      "success",
     );
     formElement.reset();
     resetContactFormState();
@@ -375,9 +421,12 @@ async function handleContactSubmit(event) {
       "contact-status-fail",
       "Message could not be sent. Please try again.",
     );
-    alert(error instanceof Error ? error.message : fallbackMessage);
+    showContactToast(
+      error instanceof Error ? error.message : fallbackMessage,
+      "error",
+    );
   } finally {
-    if (contactForm_submit) contactForm_submit.disabled = false;
+    updateSubmitButtonState();
   }
 }
 
@@ -399,6 +448,8 @@ function initContactValidation() {
   getContactFieldErrorElement("email");
   getContactFieldErrorElement("message");
   getContactFieldErrorElement("privacy");
+
+  updateSubmitButtonState();
 
   contactForm_name.addEventListener("blur", () => handleFieldBlur("name"));
   contactForm_email.addEventListener("blur", () => handleFieldBlur("email"));

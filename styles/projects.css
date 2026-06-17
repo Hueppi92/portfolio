@@ -598,7 +598,7 @@ body.project-modal-open {
 
   .project-modal-about {
     margin-bottom: 12px;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.2;
   }
 
@@ -711,7 +711,7 @@ body.project-modal-open {
 
   .project-header p {
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .project-section h2 {
@@ -722,7 +722,7 @@ body.project-modal-open {
 
   .projects-description {
     margin: 0;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.35;
   }
 

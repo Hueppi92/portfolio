@@ -69,6 +69,13 @@ body.legal-page {
   margin-bottom: 16px;
 }
 
+.legal-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(61, 207, 182, 0.25);
+  margin: 48px 0;
+}
+
 @media (max-width: 900px) {
   .legal-content {
     padding: 52px 20px 40px;
@@ -102,6 +109,10 @@ body.legal-page {
 }
 
 @media (max-width: 900px) {
+  .legal-header {
+    min-height: 124px;
+  }
+
   .legal-main {
     padding-left: 20px;
     padding-right: 20px;
@@ -118,5 +129,17 @@ body.legal-page {
 
   .legal-block p {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .legal-header {
+    min-height: 136px;
+  }
+}
+
+@media (max-width: 420px) {
+  .legal-header {
+    min-height: 124px;
   }
 }

@@ -163,7 +163,7 @@
     row-gap: 48px;
   }
   .about-kicker {
-    font-size: 28px;
+    font-size: 18px;
   }
   .about-card {
     padding: 24px;
@@ -234,6 +234,10 @@
     padding: 56px 20px;
   }
 
+  .about-kicker {
+    font-size: 18px;
+  }
+
   .about-image-stripes {
     left: -18px;
     bottom: -16px;
@@ -259,10 +263,7 @@
     padding: 20px 16px 56px;
   }
 
-  .about-wrapper {
-    margin-top: 0;
-    row-gap: 28px;
-  }
+ 
 
   .about-image-frame {
     max-width: none;
@@ -285,7 +286,7 @@
   }
 
   .about-kicker {
-    font-size: 32px;
+    font-size: 18px;
     line-height: 1;
   }
 
@@ -301,7 +302,7 @@
 
   .about-card p,
   .about-list li {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.25;
   }
 

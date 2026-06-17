@@ -81,20 +81,6 @@
   .site-footer-inner {
     padding: 24px 40px 40px;
   }
-
-  .footer-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    justify-items: center;
-  }
-
-  .footer-copy,
-  .footer-nav {
-    justify-self: center;
-    text-align: center;
-    align-items: center;
-  }
 }
 
 @media (max-width: 900px) {

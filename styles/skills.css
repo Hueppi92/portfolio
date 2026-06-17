@@ -28,8 +28,8 @@
   margin: 0 0 20px;
   color: #3dcfb6;
   font-family: "Karla", sans-serif;
-  font-size: 40px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .skills-card {
@@ -143,7 +143,7 @@
     padding: 40px 24px;
   }
   .skills-kicker {
-    font-size: 28px;
+    font-size: 18px;
   }
   .skills-card h2 {
     font-size: 44px;
@@ -188,7 +188,7 @@
   }
 
   .skills-kicker {
-    font-size: 32px;
+    font-size: 18px;
   }
 
   .skills-card {
@@ -226,7 +226,7 @@
 
   .skills-kicker {
     margin-bottom: 12px;
-    font-size: 28px;
+    font-size: 18px;
     line-height: 1;
   }
 
@@ -242,7 +242,7 @@
 
   .skills-card p {
     margin-bottom: 18px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.32;
   }
 
