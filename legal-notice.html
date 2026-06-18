@@ -22,9 +22,10 @@
                     <a id="nav-about" href="./index.html#about">About me</a>
                     <a id="nav-skills" href="./index.html#skills">Skills</a>
                     <a id="nav-projects" href="./index.html#projects">Projects</a>
-                    <div class="lang-switch">
-                        <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
-                        <label for="language-toggle"></label>
+                    <div class="lang-switch" role="group" aria-label="Language switch">
+                        <span class="lang-switch__thumb" aria-hidden="true"></span>
+                        <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="false">EN</button>
+                        <button type="button" class="lang-switch__option" data-lang="de" aria-pressed="true">DE</button>
                     </div>
                 </div>
                 <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
@@ -87,61 +88,7 @@
             </div>
                 </section>
 
-                <hr class="legal-divider">
-
-                <section class="legal-card" id="privacy">
-                    <h1 class="legal-title">Privacy Policy</h1>
-
-                    <div class="legal-block">
-                        <h2>Responsible Party</h2>
-                        <p>Andreas Hüpgen<br>Brucknerstr. 20<br>52134 Herzogenrath<br>E-Mail: a.huepgen@web.de</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>What Data Is Collected</h2>
-                        <p>When you use the contact form on this website, the following personal data is collected and processed:</p>
-                        <p><strong>Name</strong> — to address you correctly in the reply.</p>
-                        <p><strong>E-mail address</strong> — to send you a response.</p>
-                        <p><strong>Message content</strong> — to process your enquiry.</p>
-                        <p>No other personal data (e.g. IP address, browser data) is actively stored or evaluated by this website.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>Purpose and Legal Basis</h2>
-                        <p>Your data is used exclusively to answer your enquiry (Art. 6 para. 1 lit. b GDPR — processing necessary for the performance of a contract or pre-contractual measures, or Art. 6 para. 1 lit. f GDPR — legitimate interest in responding to contact requests).</p>
-                        <p>Your data will not be passed on to third parties and will not be used for advertising purposes.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>Hosting &amp; Data Transmission</h2>
-                        <p>This website is hosted by <strong>Hostinger</strong>. When a contact form is submitted, the data is transmitted via an encrypted HTTPS connection and processed on the server to deliver the e-mail. Hostinger's privacy policy can be found at <a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color: #3dcfb6;">hostinger.com/legal/privacy-policy</a>.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>Storage Duration</h2>
-                        <p>Data transmitted via the contact form is not stored in a database. It is sent directly as an e-mail to the responsible party and is only retained in the e-mail inbox. E-mails are deleted as soon as the matter has been resolved and no statutory retention obligations apply.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>Your Rights</h2>
-                        <p>You have the right to obtain information about the personal data stored about you, to have it corrected, deleted, or its processing restricted, and to object to processing (Arts. 15–21 GDPR). You also have the right to data portability (Art. 20 GDPR) and to lodge a complaint with a supervisory authority (Art. 77 GDPR).</p>
-                        <p>To exercise your rights, please contact: a.huepgen@web.de</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>No Cookies / No Tracking</h2>
-                        <p>This website does not use cookies, tracking scripts, analytics tools, or social media plugins that collect personal data.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>Google Fonts</h2>
-                        <p>This website loads fonts from Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). When the page is loaded, your browser connects to Google's servers, which may log your IP address. For details see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color: #3dcfb6;">policies.google.com/privacy</a>.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <p>Last updated: June 2026</p>
-                    </div>
-                </section>
+               
             </div>
         </main>
 
@@ -161,6 +108,7 @@
                         <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
                         <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
                         <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
+                        <a href="./privacy.html" id="footer-privacy">Privacy Policy</a>
                     </nav>
                 </div>
             </div>

@@ -14,13 +14,30 @@ function applyTextToElement(id, text) {
   if (!element) return;
 
   const isHeroButton = id === "hero-btn-work" || id === "hero-btn-contact";
-  const span = isHeroButton ? element.querySelector("span") : null;
-  if (span) {
-    span.textContent = text;
+  if (isHeroButton) {
+    // Update both animated labels in the button
+    const labels = element.querySelectorAll(".btn-label");
+    labels.forEach((label) => {
+      label.textContent = text;
+    });
     return;
   }
 
-  element.textContent = text;
+  // IDs that may contain HTML content (br tags, links, strong tags, etc.)
+  const htmlContentIds = [
+    'privacy-responsible-text',
+    'privacy-data-name',
+    'privacy-data-email',
+    'privacy-data-message',
+    'privacy-hosting-text',
+    'privacy-fonts-text'
+  ];
+
+  if (htmlContentIds.includes(id) || text.includes('<')) {
+    element.innerHTML = text;
+  } else {
+    element.textContent = text;
+  }
 }
 
 function applyLocalizedTextEntries(texts) {
@@ -48,10 +65,23 @@ function renderText(lang) {
   document.documentElement.lang = normalizeLang(lang);
 }
 
+function getLangSwitchParts() {
+  const switchElement = document.querySelector(".lang-switch");
+  if (!switchElement) return null;
+  const options = switchElement.querySelectorAll(".lang-switch__option");
+  return { switchElement, options };
+}
+
 function syncToggle() {
-  const toggle = document.getElementById("language-toggle");
-  if (!toggle) return;
-  toggle.checked = currentLang === "de";
+  const parts = getLangSwitchParts();
+  if (!parts) return;
+  const isDe = currentLang === "de";
+  parts.switchElement.classList.toggle("is-de", isDe);
+  parts.options.forEach((option) => {
+    const isActive = option.getAttribute("data-lang") === currentLang;
+    option.classList.toggle("is-active", isActive);
+    option.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
 }
 
 function setLanguage(lang) {
@@ -64,9 +94,17 @@ function setLanguage(lang) {
 }
 
 function bindToggle() {
-  const toggle = document.getElementById("language-toggle");
-  if (!toggle) return;
-  toggle.onchange = () => setLanguage(toggle.checked ? "de" : "en");
+  const parts = getLangSwitchParts();
+  if (!parts) return;
+  if (parts.switchElement.dataset.bound === "true") return;
+  parts.switchElement.dataset.bound = "true";
+  parts.options.forEach((option) => {
+    option.addEventListener("click", () => {
+      const lang = option.getAttribute("data-lang");
+      if (!lang) return;
+      setLanguage(lang);
+    });
+  });
 }
 
 function initLanguage() {

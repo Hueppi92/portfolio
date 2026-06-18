@@ -140,16 +140,16 @@
 }
 
 .about-list li:nth-child(1)::before {
-  background-image: url("../assets/icon/location_on.png");
+  background-image: url("../assets/icon/location_on.svg");
 }
 
 .about-list li:nth-child(2)::before {
-  background-image: url("../assets/icon/cognition.png");
+  background-image: url("../assets/icon/cognition.svg");
 }
 
 .about-list li:nth-child(3)::before,
 .about-list li:nth-child(4)::before {
-  background-image: url("../assets/icon/quality.png");
+  background-image: url("../assets/icon/quality.svg");
 }
 
 /* RESPONSIVE BREAKPOINTS */

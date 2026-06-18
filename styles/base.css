@@ -11,8 +11,6 @@ body {
   margin: 0;
   background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
   width: 100%;
-  overflow-x: hidden;
-  min-height: 100vh;
 }
 
 .content {
@@ -36,39 +34,62 @@ button {
 }
 
 .lang-switch {
-  display: inline-flex;
-  background: transparent;
-  align-items: center;
-}
-
-.lang-switch input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.lang-switch label {
-  cursor: pointer;
+  position: relative;
   width: 84px;
   height: 28px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: background-image 0.2s ease;
-  background-image: url("../assets/icon/EN.png");
+  border-radius: 14px;
+  border: 1px solid #3dcfb6;
+  background: transparent;
+  display: flex;
+  padding: 0;
+  box-sizing: border-box;
+  isolation: isolate;
 }
 
-#language-toggle:not(:checked) + label:hover {
-  background-image: url("../assets/icon/EN_hover.png");
+.lang-switch__thumb {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 44px;
+  height: 28px;
+  border-radius: 14px;
+  background: #3dcfb6;
+  z-index: 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#language-toggle:checked + label {
-  background-image: url("../assets/icon/DE.png");
+.lang-switch.is-de .lang-switch__thumb {
+  transform: translateX(40px);
 }
 
-#language-toggle:checked + label:hover {
-  background-image: url("../assets/icon/DE_hover.png");
+.lang-switch__option {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(61, 207, 182, 0.5);
+  transition: color 0.25s ease;
+  padding: 0;
 }
+
+.lang-switch__option.is-active {
+  color: #ffffff;
+}
+
+.lang-switch__option:focus-visible {
+  outline: 2px solid #3dcfb6;
+  outline-offset: 2px;
+  border-radius: 14px;
+}
+
+
 
 .cursor-glow {
   position: fixed;
@@ -250,7 +271,7 @@ button {
     order: 1;
     width: 48px;
     height: auto;
-    margin-left: 0;
+    margin-left: 32px;
   }
 }
 
@@ -288,7 +309,7 @@ button {
   .logo {
     width: 35px;
     height: auto;
-    margin-left: 0;
+    margin-left: 32px;
   }
 }
 
@@ -302,6 +323,7 @@ button {
 
   .logo {
     width: 36px;
+    margin-left: 32px;
   }
 
   .burger-button {

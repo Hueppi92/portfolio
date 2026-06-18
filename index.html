@@ -23,14 +23,15 @@
         <div class="hero-section-inner content">
         <div class="nav-bar content">
             <div class="nav-links" id="nav-links">
+                <div class="lang-switch" role="group" aria-label="Language switch">
+                    <span class="lang-switch__thumb" aria-hidden="true"></span>
+                    <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="false">EN</button>
+                    <button type="button" class="lang-switch__option" data-lang="de" aria-pressed="true">DE</button>
+                </div>
                 <a id="nav-about" href="#about">Über mich</a>
                 <a id="nav-skills" href="#skills">Skills</a>
                 <a id="nav-projects" href="#projects">Projekte</a>
-                <div class="lang-switch">
-                    <input type="checkbox" id="language-toggle" aria-label="Toggle language between English and German">
-                    <label for="language-toggle"></label>
-                </div>
-            </div>
+               </div>
             <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
             <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
                 <span></span>
@@ -44,8 +45,18 @@
         <p id="hero-role">Fullstack Entwickler</p>
        <h1>Andreas Hüpgen</h1>
        <div class="button-div">
-    <button id="hero-btn-work" onclick="location.href='#projects-kicker'"><span>Meine Projekte</span></button>
-    <button id="hero-btn-contact" onclick="location.href='#contact'"><span>Kontakt</span></button>
+        <button id="hero-btn-work" onclick="location.href='#projects-kicker'">
+            <span class="btn-slide">
+                <span class="btn-label btn-label--primary">Meine Projekte</span>
+                <span class="btn-label btn-label--clone" aria-hidden="true">Meine Projekte</span>
+            </span>
+        </button>
+        <button id="hero-btn-contact" onclick="location.href='#contact'">
+            <span class="btn-slide">
+                <span class="btn-label btn-label--primary">Kontakt</span>
+                <span class="btn-label btn-label--clone" aria-hidden="true">Kontakt</span>
+            </span>
+        </button>
        </div>
 </div>
     <div class="hero-floating-group">
@@ -81,10 +92,10 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#3DCFB6" stroke-width="1.5"/><path d="m2 7 10 7 10-7" stroke="#3DCFB6" stroke-width="1.5" stroke-linecap="round"/></svg>
                 </a>
                 <a class="social-link github" href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                    <img src="./assets/icon/github.png" alt="GitHub">
+                    <img src="./assets/icon/github.svg" alt="GitHub">
                 </a>
                 <a class="social-link linkedin" href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                    <img src="./assets/icon/linkedin.png" alt="LinkedIn">
+                    <img src="./assets/icon/linkedin.svg" alt="LinkedIn">
                 </a>
             </div>
             <hr class="divider-right">
@@ -135,27 +146,27 @@
             </div>
             <div class="skills-grid">
                 <div class="skill-item">
-                    <img src="./assets/icon/HTML.png" alt="HTML">
+                    <img src="./assets/icon/HTML.svg" alt="HTML">
                     <span>HTML</span>
                 </div>
                 <div class="skill-item">
-                    <img src="./assets/icon/CSS.png" alt="CSS">
+                    <img src="./assets/icon/CSS.svg" alt="CSS">
                     <span>CSS</span>
                 </div>
                 <div class="skill-item">
-                    <img src="./assets/icon/JavaScript.png" alt="JavaScript">
+                    <img src="./assets/icon/JavaScript.svg" alt="JavaScript">
                     <span>JavaScript</span>
                 </div>
                 <div class="skill-item skill-item-git">
-                    <img src="./assets/icon/git.png" alt="Git">
+                    <img src="./assets/icon/git.svg" alt="Git">
                     <span>Git</span>
                 </div>
                 <div class="skill-item" id="skills-rest-api">
-                    <img src="./assets/icon/Rest-Api.png" alt="REST-API">
+                    <img src="./assets/icon/Rest-Api.svg" alt="REST-API">
                     <span>REST-API</span>
                 </div>
                 <div class="skill-item">
-                    <img src="./assets/icon/scrum.png" alt="Scrum">
+                    <img src="./assets/icon/scrum.svg" alt="Scrum">
                     <span>Scrum</span>
                 </div>
                 <div class="skill-item">
@@ -265,6 +276,7 @@
                 <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
                 <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
                 <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
+                <a href="./privacy.html" id="footer-privacy">Privacy Policy</a>
             </nav>
         </div>
         </div>

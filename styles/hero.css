@@ -66,6 +66,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
   overflow: hidden;
   white-space: nowrap;
   border-color: rgba(255, 255, 255, 0.8);
@@ -74,11 +75,22 @@
     border-color 0.3s ease;
 }
 
-.button-div button span {
-  display: block;
-  width: max-content;
-  transform: translateX(0);
-  transition: transform 0.8s linear;
+.button-div .btn-slide {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.button-div .btn-label {
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform 0.55s ease;
+}
+
+.button-div .btn-label--clone {
+  position: absolute;
+  left: calc(100% + 24px);
+  top: 0;
 }
 
 .button-div button:hover,
@@ -87,9 +99,9 @@
   border-color: #3dcfb6;
 }
 
-.button-div button:hover span,
-.button-div button:focus-visible span {
-  transform: translateX(-260%);
+.button-div button:hover .btn-label,
+.button-div button:focus-visible .btn-label {
+  transform: translateX(calc(-100% - 24px));
 }
 
 .hero-floating-group {
@@ -261,19 +273,19 @@
 }
 
 .social-link.github img {
-  content: url("../assets/icon/github.png");
+  content: url("../assets/icon/github.svg");
 }
 
 .social-link.github:hover img {
-  content: url("../assets/icon/github_hover.png");
+  content: url("../assets/icon/github_hover.svg");
 }
 
 .social-link.linkedin img {
-  content: url("../assets/icon/linkedin.png");
+  content: url("../assets/icon/linkedin.svg");
 }
 
 .social-link.linkedin:hover img {
-  content: url("../assets/icon/linkedin_hover.png");
+  content: url("../assets/icon/linkedin_hover.svg");
 }
 
 .divider-right {
@@ -378,6 +390,10 @@
 
   .side-email {
     display: none;
+  }
+
+  .social-link.mail {
+    display: inline-flex;
   }
 
   .carousel {

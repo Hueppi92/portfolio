@@ -134,6 +134,14 @@
   opacity: 1;
 }
 
+#contact-message-error-inline {
+  min-height: 1.35em;
+}
+
+#contact-privacy-error-inline {
+  min-height: 1.35em;
+}
+
 .contact-check {
   display: grid;
   grid-template-columns: 18px minmax(0, 1fr);
@@ -223,9 +231,17 @@
   transition: border-color 0.25s ease, color 0.25s ease;
 }
 
-.contact-submit:hover {
+.contact-submit:not(:disabled):hover {
   color: #3dcfb6;
   border-color: #3dcfb6;
+}
+
+.contact-submit:disabled {
+  color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 /* Toast notification */
@@ -256,12 +272,6 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-}
-
-.contact-toast--error {
-  border-color: #ec7b7b;
-  color: #ec7b7b;
-  background: linear-gradient(115deg, rgba(19, 19, 19, 0.97) 15%, rgba(86, 20, 20, 0.35) 100%);
 }
 
 @media (max-width: 1200px) {

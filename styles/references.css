@@ -45,19 +45,19 @@
 }
 
 #reference-prev.reference-arrow {
-  background-image: url("../assets/icon/arrow_back.png");
+  background-image: url("../assets/icon/arrow_back.svg");
 }
 
 #reference-prev.reference-arrow:hover {
-  background-image: url("../assets/icon/arrow_back_hover.png");
+  background-image: url("../assets/icon/arrow_back_hover.svg");
 }
 
 #reference-next.reference-arrow {
-  background-image: url("../assets/icon/arrow_forward.png");
+  background-image: url("../assets/icon/arrow_forward.svg");
 }
 
 #reference-next.reference-arrow:hover {
-  background-image: url("../assets/icon/arrow_forward_hover.png");
+  background-image: url("../assets/icon/arrow_forward_hover.svg");
 }
 
 .references-stage {
@@ -112,7 +112,7 @@
 }
 
 .reference-card.is-active::before {
-  content: url("../assets/icon/quotes.png");
+  content: url("../assets/icon/quotes.svg");
   position: absolute;
   top: -16px;
   left: -16px;

@@ -30,13 +30,13 @@ function getProjectTechnologies(project) {
 
 function getTechnologyIcon(technology) {
   const icons = {
-    CSS: './assets/icon/CSS.png',
-    HTML: './assets/icon/HTML.png',
-    JavaScript: './assets/icon/JavaScript.png',
+    CSS: './assets/icon/CSS.svg',
+    HTML: './assets/icon/HTML.svg',
+    JavaScript: './assets/icon/JavaScript.svg',
     Firebase: './assets/icon/firebase.png',
-    Git: './assets/icon/git.png',
-    'REST-API': './assets/icon/Rest-Api.png',
-    Scrum: './assets/icon/scrum.png'
+    Git: './assets/icon/git.svg',
+    'REST-API': './assets/icon/Rest-Api.svg',
+    Scrum: './assets/icon/scrum.svg'
   };
   return icons[technology] || '';
 }
@@ -47,7 +47,7 @@ function previewMarkup(project) {
 
 function projectMarkup(project, index) {
   const preview = previewMarkup(project);
-  return `<div class="project-item" tabindex="0" data-project-index="${index}"><span class="project-name">${project.name}</span><span class="project-stack">${getProjectStack(project)}</span>${preview}</div>`;
+  return `<div class="project-item" tabindex="0" data-project-index="${index}"><div class="project-item-meta"><span class="project-name">${project.name}</span><span class="project-stack">${getProjectStack(project)}</span></div>${preview}</div>`;
 }
 
 function modalActionsMarkup(project) {

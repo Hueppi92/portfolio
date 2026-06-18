@@ -69,13 +69,6 @@ body.legal-page {
   margin-bottom: 16px;
 }
 
-.legal-divider {
-  border: 0;
-  height: 1px;
-  background: rgba(61, 207, 182, 0.25);
-  margin: 48px 0;
-}
-
 @media (max-width: 900px) {
   .legal-content {
     padding: 52px 20px 40px;
