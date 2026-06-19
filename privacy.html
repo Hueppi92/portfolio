@@ -9,23 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/legal.css">
 </head>
 <body id="top" class="legal-page" onload="initializePage()">
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
     <div class="legal-layout">
-        <header class="legal-header">
+        <header class="hero-header legal-header">
             <div class="nav-bar content">
                 <div class="nav-links" id="nav-links">
-                    <a id="nav-about" href="./index.html#about">About me</a>
-                    <a id="nav-skills" href="./index.html#skills">Skills</a>
-                    <a id="nav-projects" href="./index.html#projects">Projects</a>
                     <div class="lang-switch" role="group" aria-label="Language switch">
                         <span class="lang-switch__thumb" aria-hidden="true"></span>
                         <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="false">EN</button>
                         <button type="button" class="lang-switch__option" data-lang="de" aria-pressed="true">DE</button>
                     </div>
+                    <a id="nav-about" href="./index.html#about">Über mich</a>
+                    <a id="nav-skills" href="./index.html#skills">Skills</a>
+                    <a id="nav-projects" href="./index.html#projects">Projekte</a>
                 </div>
                 <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
                 <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
@@ -94,27 +95,27 @@
             </div>
         </main>
 
-        <footer class="site-footer legal-footer">
-            <div class="site-footer-inner content">
-                <div class="footer-wrapper">
-                    <div class="footer-brand">
-                        <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
-                        <p class="footer-role" id="footer-role">Fullstack Developer</p>
-                        <p class="footer-location" id="footer-location">Aachen Germany</p>
-                    </div>
-
-                    <p class="footer-copy" id="footer-copy">© Andreas Hüpgen 2026</p>
-
-                    <nav class="footer-nav" aria-label="Footer links">
-                        <a href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" id="footer-github">GitHub</a>
-                        <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
-                        <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
-                        <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
-                        <a href="./privacy.html" id="footer-privacy">Privacy Policy</a>
-                    </nav>
+        <footer class="site-footer">
+        <div class="site-footer-inner content">
+            <div class="footer-wrapper">
+                <div class="footer-brand">
+                    <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
+                    <p class="footer-role" id="footer-role">Fullstack Developer</p>
+                    <p class="footer-location" id="footer-location">Aachen, Germany</p>
                 </div>
+
+                <p class="footer-copy" id="footer-copy">© Andreas Hüpgen 2026</p>
+
+                <nav class="footer-nav" aria-label="Footer links">
+                    <a href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" id="footer-github">GitHub</a>
+                    <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
+                    <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
+                    <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
+                    <a href="./privacy.html" id="footer-privacy">Privacy Policy</a>
+                </nav>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
 
     <script src="./js/data/de.js"></script>

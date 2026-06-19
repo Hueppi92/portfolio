@@ -13,10 +13,9 @@ function applyTextToElement(id, text) {
   const element = document.getElementById(id);
   if (!element) return;
 
-  const isHeroButton = id === "hero-btn-work" || id === "hero-btn-contact";
-  if (isHeroButton) {
-    // Update both animated labels in the button
-    const labels = element.querySelectorAll(".btn-label");
+  const labels = element.querySelectorAll(".btn-label");
+  if (labels.length > 0) {
+    // Preserve marquee button structure and only update visible label text.
     labels.forEach((label) => {
       label.textContent = text;
     });

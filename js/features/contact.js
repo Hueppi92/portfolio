@@ -388,7 +388,14 @@ function showContactToast(message, type) {
   toast.textContent = message;
   toast.className = "contact-toast contact-toast--" + type;
 
-  // Force reflow so transition triggers even if re-showing immediately
+  // Position toast above the submit button
+  const submitBtn = document.querySelector(".contact-submit");
+  if (submitBtn) {
+    const rect = submitBtn.getBoundingClientRect();
+    toast.style.left = Math.round(rect.left + rect.width / 2) + "px";
+    toast.style.top = Math.round(rect.top - 16) + "px";
+  }
+
   void toast.offsetWidth;
   toast.classList.add("contact-toast--visible");
 

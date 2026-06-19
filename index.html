@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/hero.css">
     <link rel="stylesheet" href="./styles/about.css">
     <link rel="stylesheet" href="./styles/skills.css">
@@ -19,8 +20,8 @@
 </head>
 <body id="top" onload="initializePage()">
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-    <div class="hero-section">
-        <div class="hero-section-inner content">
+
+    <header class="hero-header">
         <div class="nav-bar content">
             <div class="nav-links" id="nav-links">
                 <div class="lang-switch" role="group" aria-label="Language switch">
@@ -28,20 +29,23 @@
                     <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="false">EN</button>
                     <button type="button" class="lang-switch__option" data-lang="de" aria-pressed="true">DE</button>
                 </div>
-                <a id="nav-about" href="#about">Über mich</a>
-                <a id="nav-skills" href="#skills">Skills</a>
-                <a id="nav-projects" href="#projects">Projekte</a>
-               </div>
+                <a id="nav-about" href="./index.html#about">Über mich</a>
+                <a id="nav-skills" href="./index.html#skills">Skills</a>
+                <a id="nav-projects" href="./index.html#projects">Projekte</a>
+            </div>
             <img src="./assets/logo/logo.png" alt="Logo" class="logo" onclick="location.href='./index.html'">
             <button class="burger-button" id="burger-button" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-             </div>
-              
-             <div class="hero-content">
-              
+        </div>
+    </header>
+
+    <div class="hero-section ">
+
+         <div class="hero-content content ">
+
         <p id="hero-role">Fullstack Entwickler</p>
        <h1>Andreas Hüpgen</h1>
        <div class="button-div">
@@ -58,17 +62,9 @@
             </span>
         </button>
        </div>
-</div>
-    <div class="hero-floating-group">
-        <a class="scroll-indicator" href="#about" aria-label="Scroll down">
-            <span aria-hidden="true"><svg id="scroll-arrow" width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4.18201 0.5C4.18201 0.223858 3.95815 0 3.68201 0C3.40586 0 3.18201 0.223858 3.18201 0.5H4.18201ZM3.32845 12.8536C3.52372 13.0488 3.8403 13.0488 4.03556 12.8536L7.21754 9.67157C7.4128 9.47631 7.4128 9.15973 7.21754 8.96447C7.02228 8.7692 6.7057 8.7692 6.51043 8.96447L3.68201 11.7929L0.85358 8.96447C0.658318 8.7692 0.341735 8.7692 0.146473 8.96447C-0.0487893 9.15973 -0.0487893 9.47631 0.146473 9.67157L3.32845 12.8536ZM3.18201 0.5V12.5H4.18201V0.5H3.18201Z" fill="white"/>
-</svg>
-</span>
-        </a>
-        <hr class="divider-left">
-        <div class="carousel">
-            <div class="group">
+</div><div class="hero-floating-group">
+    <div class="carousel">
+         <div class="group">
                 <div class="card" id="carousel-remote-1">Remote Arbeit</div>
                 <div class="card" id="carousel-problem-1">Problemlösung</div>
                 <div class="card" id="carousel-team-1">Teamfähig</div>
@@ -84,7 +80,27 @@
                 <div class="card" id="carousel-fullstack-2">Fullstack Entwicklung</div>
                 <div class="card" id="carousel-location-2">Standort Aachen</div>
             </div>
-        </div>
+             <div aria-hidden class="group">
+                <div class="card" id="carousel-remote-3">Remote Arbeit</div>
+                <div class="card" id="carousel-problem-3">Problemlösung</div>
+                <div class="card" id="carousel-team-3">Teamfähig</div>
+                <div class="card" id="carousel-open-3">Offen für Arbeit</div>
+                <div class="card" id="carousel-fullstack-3">Fullstack Entwicklung</div>
+                <div class="card" id="carousel-location-3">Standort Aachen</div>
+            </div>
+    </div>
+
+    <div class="content">
+        <a class="scroll-indicator" href="#about" aria-label="Scroll down">
+            <span aria-hidden="true">
+                <svg id="scroll-arrow" width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.18201 0.5C4.18201 0.223858 3.95815 0 3.68201 0C3.40586 0 3.18201 0.223858 3.18201 0.5H4.18201ZM3.32845 12.8536C3.52372 13.0488 3.8403 13.0488 4.03556 12.8536L7.21754 9.67157C7.4128 9.47631 7.4128 9.15973 7.21754 8.96447C7.02228 8.7692 6.7057 8.7692 6.51043 8.96447L3.68201 11.7929L0.85358 8.96447C0.658318 8.7692 0.341735 8.7692 0.146473 8.96447C-0.0487893 9.15973 -0.0487893 9.47631 0.146473 9.67157L3.32845 12.8536ZM3.18201 0.5V12.5H4.18201V0.5H3.18201Z" fill="white"/>
+                </svg>
+            </span>
+        </a>
+
+        <hr class="divider-left">
+
         <div class="side-contact">
             <a class="side-email" href="mailto:a.huepgen@web.de">a.huepgen@web.de</a>
             <div class="side-social">
@@ -101,6 +117,10 @@
             <hr class="divider-right">
         </div>
     </div>
+</div>
+
+        </div>
+    </div>
     </div>
     </div>
     <section class="about" id="about">
@@ -109,7 +129,7 @@
             <div class="about-image-frame">
                 <div class="about-image-stripes" aria-hidden="true"></div>
                 <div class="about-image">
-                   
+
                 </div>
             </div>
             <div class="about-text">
@@ -141,7 +161,12 @@
                         <strong id="skills-need-strong"> anderen Skill?</strong>
                     </h3>
                     <p class="skills-note" id="skills-note">Wenn dein Projekt noch etwas mehr braucht, arbeite ich mich gerne in neue Themen ein und erweitere mein Wissen gezielt weiter.</p>
-                    <a id="skills-btn" href="#contact">Lass uns sprechen</a>
+                    <a id="skills-btn" href="#contact">
+                      <div class="btn-slide">
+                        <span class="btn-label">Lass uns sprechen</span>
+                                                <span class="btn-label btn-label--clone" aria-hidden="true">Lass uns sprechen</span>
+                      </div>
+                    </a>
                 </div>
             </div>
             <div class="skills-grid">
@@ -200,11 +225,11 @@
             <h2 class="references-title" id="references-title">Referenzen</h2>
 
 
-            <div class="references-stage">             
-                <article class="reference-card is-side" id="reference-prev-slot"></article>             
-                <article class="reference-card is-active" id="reference-active-slot"></article>             
-                <article class="reference-card is-side" id="reference-next-slot"></article>             
-            </div>             
+            <div class="references-stage">
+                <article class="reference-card is-side" id="reference-prev-slot"></article>
+                <article class="reference-card is-active" id="reference-active-slot"></article>
+                <article class="reference-card is-side" id="reference-next-slot"></article>
+            </div>
 
             <div class="references-controls-bottom">
                 <button class="reference-arrow" id="reference-prev" type="button" aria-label="Previous reference">←</button>
@@ -231,19 +256,19 @@
                 <div class="contact-field">
                     <label for="contact-name" id="contact-name-label">Wie heisst du?</label>
                     <input type="text" id="contact-name" name="name" placeholder="Dein Name" autocomplete="name" minlength="2" required>
-                   
+
                 </div>
 
                 <div class="contact-field">
                     <label for="contact-email" id="contact-email-label">Wie lautet deine E-Mail?</label>
                     <input type="email" id="contact-email" name="email" placeholder="deinname@email.de" autocomplete="email" required>
-                  
+
                 </div>
 
                 <div class="contact-field">
                     <label for="contact-message" id="contact-message-label">Wie kann ich dir helfen?</label>
                     <textarea id="contact-message" name="message" placeholder="Erzähl mir kurz von deinem Projekt." rows="4" minlength="10" required></textarea>
-                    
+
                 </div>
 
                 <label class="contact-check">
@@ -260,27 +285,29 @@
         </div>
         </div>
     </section>
+
     <footer class="site-footer">
         <div class="site-footer-inner content">
-        <div class="footer-wrapper">
-            <div class="footer-brand">
-                <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
-                <p class="footer-role" id="footer-role">Fullstack Developer</p>
-                <p class="footer-location" id="footer-location">Aachen, Germany</p>
+            <div class="footer-wrapper">
+                <div class="footer-brand">
+                    <img src="./assets/logo/logo.png" alt="Logo" class="footer-logo" onclick="location.href='./index.html'">
+                    <p class="footer-role" id="footer-role">Fullstack Developer</p>
+                    <p class="footer-location" id="footer-location">Aachen, Germany</p>
+                </div>
+
+                <p class="footer-copy" id="footer-copy">© Andreas Hüpgen 2026</p>
+
+                <nav class="footer-nav" aria-label="Footer links">
+                    <a href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" id="footer-github">GitHub</a>
+                    <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
+                    <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
+                    <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
+                    <a href="./privacy.html" id="footer-privacy">Privacy Policy</a>
+                </nav>
             </div>
-
-            <p class="footer-copy" id="footer-copy">© Andreas Hüpgen 2026</p>
-
-            <nav class="footer-nav" aria-label="Footer links">
-                <a href="https://github.com/Hueppi92" target="_blank" rel="noopener noreferrer" id="footer-github">GitHub</a>
-                <a href="https://www.linkedin.com/in/andreas-h%C3%BCpgen-b54b42249/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">LinkedIn</a>
-                <a href="mailto:a.huepgen@web.de" id="footer-email">Email</a>
-                <a href="./legal-notice.html" id="footer-legal">Legal Notice</a>
-                <a href="./privacy.html" id="footer-privacy">Privacy Policy</a>
-            </nav>
-        </div>
         </div>
     </footer>
+
     <script src="./js/data/de.js"></script>
     <script src="./js/data/en.js"></script>
     <script src="./js/features/cursor.js"></script>

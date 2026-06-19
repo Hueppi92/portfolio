@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.hero-section-inner {
+.hero-content {
   height: 100vh;
   height: 100svh;
   min-height: 100vh;
@@ -101,13 +101,31 @@
 
 .button-div button:hover .btn-label,
 .button-div button:focus-visible .btn-label {
-  transform: translateX(calc(-100% - 24px));
+  animation: marquee-hover 2s linear infinite;
+}
+
+@keyframes marquee-hover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 24px));
+  }
 }
 
 .hero-floating-group {
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.hero-floating-group {
+  width: 100%;
+}
+
+.hero-floating-group .content {
+  position: relative;
+  height: 100%;
 }
 
 .scroll-indicator {
@@ -144,6 +162,7 @@
   background-color: #3dcfb6;
   opacity: 0.7;
   left: clamp(32px, 8vw, 110px);
+  z-index:-1;
 }
 
 .carousel {
@@ -294,7 +313,8 @@
   flex-grow: 1;
   border: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #3dcfb6;
+  z-index:-1;
 }
 
 @keyframes scrollPulse {
