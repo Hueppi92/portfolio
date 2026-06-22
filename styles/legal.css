@@ -1,7 +1,13 @@
+html {
+  overflow: hidden;
+}
+
 body.legal-page {
   display: block;
   min-height: 100vh;
+  min-height: 100svh;
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
   background:
     radial-gradient(circle at top right, rgba(61, 207, 182, 0.16), transparent 42%),
@@ -12,7 +18,17 @@ body.legal-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100svh;
   height: 100vh;
+  height: 100svh;
+}
+
+.legal-header {
+  flex: 0 0 auto;
+}
+
+.legal-page .legal-header .nav-bar {
+  margin-bottom: 0;
 }
 
 .legal-main {
@@ -23,72 +39,48 @@ body.legal-page {
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
-
-.legal-main::-webkit-scrollbar {
-  color:#3dcfb6;  
-
-}
-
 
 .legal-content {
   width: 100%;
   margin: 0 auto;
-  padding: 56px 40px 44px;
+  padding: 44px 40px 28px;
   box-sizing: border-box;
   color: rgba(217, 217, 217, 0.86);
-  
 }
 
 .legal-content h1 {
-  font-family: "Karla", sans-serif;
-  font-weight: 700;
-  font-size: 48px;
   margin-top: 0;
   margin-bottom: 24px;
   color: #3dcfb6;
   text-align: center;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
 }
 
 .legal-content h2 {
+  margin-bottom: 16px;
   font-family: "Karla", sans-serif;
   font-weight: 700;
   font-size: 36px;
-  margin-bottom: 16px;
 }
 
 .legal-content p {
+  margin-bottom: 16px;
   font-family: "Karla", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  margin-bottom: 16px;
 }
 
-@media (max-width: 900px) {
-  .legal-content {
-    padding: 52px 20px 40px;
-  }
-
-  .legal-content h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 420px) {
-  .legal-content {
-    padding: 44px 16px 36px;
-  }
-
-  .legal-content h1 {
-    font-size: 34px;
-    margin-bottom: 18px;
-  }
+.legal-layout .site-footer {
+  flex: 0 0 auto;
 }
 
 @media (max-width: 1200px) {
-  .legal-main {
-    padding: 28px 40px 0;
+  .legal-content {
+    padding: 40px 32px 24px;
   }
 
   .legal-title {
@@ -97,9 +89,33 @@ body.legal-page {
 }
 
 @media (max-width: 900px) {
-  .legal-main {
-    padding-left: 20px;
-    padding-right: 20px;
+  .legal-page .legal-header .nav-bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 16px 20px;
+    box-sizing: border-box;
+  }
+
+  .legal-page .legal-header .burger-button {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  .legal-page .legal-header .logo {
+    margin-left: 0;
+  }
+
+  .legal-content {
+    padding: 36px 20px 20px;
+  }
+
+  .legal-content h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
   }
 
   .legal-title {
@@ -113,5 +129,50 @@ body.legal-page {
 
   .legal-block p {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .legal-page .legal-header .nav-bar {
+    padding: 14px 16px;
+  }
+
+  .legal-page .legal-header .burger-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .legal-page .legal-header .logo {
+    width: 35px;
+    margin-left: 0;
+  }
+
+  .legal-content {
+    padding: 30px 16px 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .legal-page .legal-header .nav-bar {
+    padding: 12px 16px;
+  }
+
+  .legal-page .legal-header .burger-button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .legal-page .legal-header .logo {
+    width: 36px;
+  }
+
+  .legal-content {
+    padding: 28px 16px 16px;
+  }
+
+  .legal-content h1 {
+    font-size: 34px;
+    margin-bottom: 18px;
   }
 }

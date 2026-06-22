@@ -53,7 +53,7 @@ function projectMarkup(project, index) {
 function modalActionsMarkup(project) {
   const githubText = getProjectText('project-modal-github', 'GitHub');
   const liveText = getProjectText('project-modal-live', 'Live Test');
-  return `<div class="project-modal-actions"><a class="project-modal-button" href="${project.github}" target="_blank" rel="noopener noreferrer">${githubText} ↗</a><a class="project-modal-button" href="${project.live}" target="_blank" rel="noopener noreferrer">${liveText} ↗</a></div>`;
+  return `<div class="project-modal-actions"><a class="project-modal-button" href="${project.github}" target="_blank" rel="noopener noreferrer">${githubText}<span class="project-modal-button-arrow" aria-hidden="true"></span></a><a class="project-modal-button" href="${project.live}" target="_blank" rel="noopener noreferrer">${liveText}<span class="project-modal-button-arrow" aria-hidden="true"></span></a></div>`;
 }
 
 function technologyBadgeMarkup(technology) {
@@ -89,9 +89,16 @@ function openProjectModal(index) {
   activeProjectIndex = index;
   updateModalContent();
   if (!projectModal) return;
+
+  // Close mobile nav if open so it never sits over the modal controls.
+  document.body.classList.remove('nav-menu-open');
+  const burgerButton = document.getElementById('burger-button');
+  if (burgerButton) burgerButton.setAttribute('aria-expanded', 'false');
+
   projectModal.classList.add('is-open');
   projectModal.setAttribute('aria-hidden', 'false');
-    projectModal.removeAttribute('inert');
+  projectModal.removeAttribute('inert');
+  document.documentElement.classList.add('project-modal-open');
   document.body.classList.add('project-modal-open');
 }
 
@@ -99,7 +106,8 @@ function closeProjectModal() {
   if (!projectModal) return;
   projectModal.classList.remove('is-open');
   projectModal.setAttribute('aria-hidden', 'true');
-    projectModal.setAttribute('inert', '');
+  projectModal.setAttribute('inert', '');
+  document.documentElement.classList.remove('project-modal-open');
   document.body.classList.remove('project-modal-open');
 }
 

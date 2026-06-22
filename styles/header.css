@@ -1,5 +1,5 @@
 .hero-header {
-  position: absolute;
+  position: sticky;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -100,12 +100,13 @@
 @media (max-width: 900px) {
   .nav-bar {
     z-index: 1000;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    width: auto;
-    padding: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 16px 20px;
+    box-sizing: border-box;
     justify-content: space-between;
     gap: 10px;
   }
@@ -113,9 +114,9 @@
   .burger-button {
     z-index: 1002;
     display: block;
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    position: relative;
+    top: auto;
+    right: auto;
     order: 2;
     margin-left: 0;
   }
@@ -176,7 +177,7 @@
     order: 1;
     width: 48px;
     height: auto;
-    margin-left: 32px;
+    margin-left: 0;
   }
 
   .legal-header {
@@ -186,17 +187,17 @@
 
 @media (max-width: 700px) {
   .nav-bar {
-    top: 32px;
-    left: 16px;
-    right: 16px;
-    width: auto;
-    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 14px 16px;
     justify-content: space-between;
   }
 
   .burger-button {
-    top: 32px;
-    right: 16px;
+    top: auto;
+    right: auto;
     width: 48px;
     height: 48px;
   }
@@ -218,7 +219,7 @@
   .logo {
     width: 35px;
     height: auto;
-    margin-left: 32px;
+    margin-left: 0;
   }
 
   .legal-header {
@@ -228,20 +229,22 @@
 
 @media (max-width: 420px) {
   .nav-bar {
-    top: 20px;
-    left: 16px;
-    right: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 12px 16px;
     align-items: center;
   }
 
   .logo {
     width: 36px;
-    margin-left: 32px;
+    margin-left: 0;
   }
 
   .burger-button {
-    top: 20px;
-    right: 16px;
+    top: auto;
+    right: auto;
     width: 40px;
     height: 40px;
     padding: 8px;

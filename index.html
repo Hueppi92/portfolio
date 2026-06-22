@@ -26,8 +26,8 @@
             <div class="nav-links" id="nav-links">
                 <div class="lang-switch" role="group" aria-label="Language switch">
                     <span class="lang-switch__thumb" aria-hidden="true"></span>
-                    <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="false">EN</button>
-                    <button type="button" class="lang-switch__option" data-lang="de" aria-pressed="true">DE</button>
+                    <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="true">EN</button>
+                    <button type="button" class="lang-switch__option" data-lang="de" aria-pressed="false">DE</button>
                 </div>
                 <a id="nav-about" href="./index.html#about">Über mich</a>
                 <a id="nav-skills" href="./index.html#skills">Skills</a>
@@ -163,7 +163,7 @@
                     <p class="skills-note" id="skills-note">Wenn dein Projekt noch etwas mehr braucht, arbeite ich mich gerne in neue Themen ein und erweitere mein Wissen gezielt weiter.</p>
                     <a id="skills-btn" href="#contact">
                       <div class="btn-slide">
-                        <span class="btn-label">Lass uns sprechen</span>
+                                                <span class="btn-label btn-label--primary">Lass uns sprechen</span>
                                                 <span class="btn-label btn-label--clone" aria-hidden="true">Lass uns sprechen</span>
                       </div>
                     </a>
@@ -194,9 +194,14 @@
                     <img src="./assets/icon/scrum.svg" alt="Scrum">
                     <span>Scrum</span>
                 </div>
-                <div class="skill-item">
-                    <img src="./assets/icon/growth.png" alt="Growth mindset">
+                <div class="skill-item skill-item-tooltip" tabindex="0" aria-describedby="skill-tooltip-text">
+                    <img src="./assets/icon/growth.svg" alt="Growth mindset">
                     <span id="skills-growth">Growth Mindset</span>
+                    <div class="skill-tooltip" role="tooltip">
+                        <p class="skill-tooltip-text" id="skill-tooltip-text">I have a special interest in learning</p>
+                        <div class="skill-tooltip-logos" id="skill-tooltip-logos"></div>
+                        <span class="skill-tooltip-arrow" aria-hidden="true"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -316,6 +321,7 @@
     <script src="./js/features/projects.js"></script>
     <script src="./js/features/references.js"></script>
     <script src="./js/features/contact.js"></script>
+    <script src="./js/features/skills-tooltip.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

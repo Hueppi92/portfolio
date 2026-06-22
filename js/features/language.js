@@ -1,7 +1,7 @@
-let currentLang = "de";
+let currentLang = "en";
 
 function normalizeLang(lang) {
-  return lang === "en" ? "en" : "de";
+  return lang === "de" ? "de" : "en";
 }
 
 function getTexts(lang) {
@@ -15,8 +15,16 @@ function applyTextToElement(id, text) {
 
   const labels = element.querySelectorAll(".btn-label");
   if (labels.length > 0) {
-    // Preserve marquee button structure and only update visible label text.
-    labels.forEach((label) => {
+    const slide = element.querySelector(".btn-slide");
+
+    if (slide && labels.length === 1) {
+      const clone = labels[0].cloneNode(true);
+      clone.classList.add("btn-label--clone");
+      clone.setAttribute("aria-hidden", "true");
+      slide.appendChild(clone);
+    }
+
+    element.querySelectorAll(".btn-label").forEach((label) => {
       label.textContent = text;
     });
     return;

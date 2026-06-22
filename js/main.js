@@ -8,6 +8,8 @@ function initializePage() {
   if (typeof initReferences === 'function') initReferences();
   if (typeof initContactValidation === 'function') initContactValidation();
   if (typeof initProjects === 'function') initProjects();
+  if (typeof renderSkillTooltip === 'function') renderSkillTooltip();
+  if (typeof initSkillTooltip === 'function') initSkillTooltip();
 
 }
 
